@@ -1,1 +1,20 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=7377414&assignment_repo_type=AssignmentRepo)
+# Repositorio plantilla para proyectos FIS
+
+| Identificación del proyecto
+|-----------
+| Fundamentos de Ingeniería de Software
+ID M4A - Docente:_____
+Estudiantes: ____
+
+
+
+
+[Instalación](install.md)
+
+[Procedimiento de entrega](proc_entrega.md)
+
+Los informes académicos para cada entrega se realizan en los archivos README.md que están en las carpetas docs (entrega 1) y src (entrega 2).
+* [Informe entrega 1](docs/README.md)
+* [Informe entrega 2](src/README.md)
+
+
