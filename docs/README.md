@@ -28,6 +28,36 @@ Modelo conceptual del problema
 ## Especificación
 
 Definición de requerimientos funcionales y no funcionales
+### Requerimientos Funcionales
+#### Requerimientos de perfil
+1. Login con usuario y contraseña
+1.1 Chequeo de saldo
+1.2  Agregar saldo
+1.3 Cambio de nombre de Usuario
+1.4 Cambio de contraseña de Usuario
+1.5 Mostrar libreria de NFTs
+1.5 Logout
+
+#### Requerimientos de mercado
+2 Mostrar NFTs
+2.1Mostrar listado de NFTs disponibles
+2.2 Mostrar listado de NFTs mas populares basados en likes
+2.3 Mostrar listado de NFTs por fecha
+3 Comprar NFT
+4 Vender NFT
+5 Dar like a un NFT
+
+
+
+### Requerimientos No Funcionales
+#### Interfaz con el Usuario
+Se solicita de parte del cliente la utilizacion de el tipo de letra `Roboto`, el uso de tipos de iconos filled,  el nombre de la aplicacion sea *NFTs*, y la paleta de colores del IU sea creada con  `Material.io`
+#### Seguridad y Control de Acceso
+El sistema mantiene un control de acceso estándar de Login en el cual pide
+documento y contraseña al usuario.
+Para mejorar la seguridad de los datos privados de nuestros clientes incorporamos
+una encriptación punta a punta de la contraseña bajo el algoritmo SHA-2 de 512
+bits.
 
 User Stories / Use Cases detallados
 
@@ -44,6 +74,4 @@ Validar la solución con personas no involucradas en el proyecto
 Detalle del trabajo individual
 
 Técnicas aplicadas y aprendizajes
-
-
 
