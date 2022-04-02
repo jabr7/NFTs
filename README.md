@@ -3,7 +3,7 @@
 | Identificación del proyecto
 |-----------
 | Fundamentos de Ingeniería de Software
-ID M4A - Docente:_____
+ID M4A - Docente: Gerardo Maturro
 Estudiantes: ____
 
 
