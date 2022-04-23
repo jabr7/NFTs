@@ -1,5 +1,5 @@
 # Informe académico entrega 1
-Fecha de entrega: 18-oct-2021
+Fecha de entrega: 18-oct-2022
 
 ## Repositorio Git
 
@@ -18,8 +18,10 @@ Resumen de commits y evolución del proyecto
 ## Elicitación
 
 Evidencia de actividades de investigación
+[link](investigacion/README.md)
 
-Referencias a fuentes de información
+Referencias a fuentes de información:
+[link](investigacion/README.md)
 
 Caracterización de usuarios: User Personas
 
@@ -31,21 +33,20 @@ Definición de requerimientos funcionales y no funcionales
 ### Requerimientos Funcionales
 #### Requerimientos de perfil
 1. Login con usuario y contraseña
-1.1 Chequeo de saldo
-1.2  Agregar saldo
-1.3 Cambio de nombre de Usuario
-1.4 Cambio de contraseña de Usuario
-1.5 Mostrar libreria de NFTs
-1.5 Logout
-
+	1.1 Chequeo de saldo
+	1.2  Agregar saldo
+	1.3 Cambio de nombre de Usuario
+	1.4 Cambio de contraseña de Usuario
+	1.5 Mostrar libreria de NFTs
+	1.5 Logout
 #### Requerimientos de mercado
-2 Mostrar NFTs
-2.1Mostrar listado de NFTs disponibles
-2.2 Mostrar listado de NFTs mas populares basados en likes
-2.3 Mostrar listado de NFTs por fecha
-3 Comprar NFT
-4 Vender NFT
-5 Dar like a un NFT
+1. Mostrar NFTs
+	2.1 Mostrar listado de NFTs disponibles
+	2.2  Mostrar listado de NFTs mas populares basados en likes
+	2.3 Mostrar listado de NFTs por fecha
+	2.4 Comprar NFT
+	2.5 Vender NFT
+	2.5 Dar like a un NFT
 
 
 
@@ -74,4 +75,3 @@ Validar la solución con personas no involucradas en el proyecto
 Detalle del trabajo individual
 
 Técnicas aplicadas y aprendizajes
-
