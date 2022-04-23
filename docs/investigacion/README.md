@@ -1,5 +1,5 @@
 Carpeta para evidencia de investigación
-![plot](imagenes/1.png)
+![plot](imagenes/1.PNG)
  
 
 Vincular y explicar desde el informe académico
