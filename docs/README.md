@@ -164,7 +164,7 @@ bits.
 1. Se valida si hay un filtro activo o no.
 2. Se muestra el listado ordenado según el filtro.
 
-###Mostrar NFT
+### Mostrar NFT
 1. Usuario hace click en la NFT deseada.
 2. Se despliega la ventana con los datos de la NFT.
 
