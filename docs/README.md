@@ -72,19 +72,19 @@ bits.
 1. Usuario hace click en Registrarse.
 2. Se despliega el formulario de resgitro de usuario.
 3. Usuario ingresa sus datos.
-4. Contraseñas no coinciden en la caja de contraseña y confirmación de contraseña, despliegue de mensaje de error y vuelve a 2.
-5. Nombre no disponible, despliegue de mensaje de error y vuelve a 2.
-6. Se despliega mensaje de resgistro exitoso.
-7. Se despliega la ventana principal.
+3.1 Contraseñas no coinciden en la caja de contraseña y confirmación de contraseña, despliegue de mensaje de error y vuelve a 2.
+3.2 Nombre no disponible, despliegue de mensaje de error y vuelve a 2.
+4. Se despliega mensaje de resgistro exitoso.
+5. Se despliega la ventana principal.
 
 ### Login usuario y contraseña
 1. Usuario hace click en botón Login.
 2. Se despliega el formulario de login.
 3. Usuario ingresa sus datos de logeo.
-4. Ingreso de Correo no valido, despliegue de mensaje de error y vuelve a 2.
-5. Ingreso de Contraseña incorrecta, despliegue de mensaje de error y vuelve a 2.
-6. Despliegue de mensaje de Login completado.
-7. Se despliega de ventana principal.
+3.1 Ingreso de Correo no valido, despliegue de mensaje de error y vuelve a 2.
+3.2 Ingreso de Contraseña incorrecta, despliegue de mensaje de error y vuelve a 2.
+4. Despliegue de mensaje de Login completado.
+5. Se despliega de ventana principal.
 
 ### Chequeo de Saldo
 1. Usuario hace click en botón Mi perfil.
@@ -109,9 +109,9 @@ bits.
 4. Se despliega ventana de Modificar datos de usuario.
 5. Usuario hace click en botón de Cambiar nombre
 6. Se despliga formulario de Cambio de nombre.
-7. Nombre no disponible, se despliega mensaje de error y vuelve al 4.
-8. Se despliega mensaje de cambio de nombre exitoso.
-9. Se despliega ventana de Perfil de usuario.
+6.1 Nombre no disponible, se despliega mensaje de error y vuelve al 4.
+7. Se despliega mensaje de cambio de nombre exitoso.
+8. Se despliega ventana de Perfil de usuario.
 
 ### Cambio de contraseña de usuario
 1. Usuario hace click en botón Mi perfil.
@@ -119,10 +119,10 @@ bits.
 3. Usuario hace click en Modificar datos de usuario.
 4. Se despliega ventana de Modificar datos de usuario.
 5. Usuario hace click en botón de Cambiar contraseña.
-6. Se despliga formulario de Cambio de contraseña.
-7. Contraseñas no coinciden en caja de contraseña nueva y confirmación de contraseña nueva, se despliega mensaje de error y vuelve al 4.
-8. Se despliega mensaje de cambio de contraseña exitoso.
-9. Se despliega ventana de Perfil de usuario.
+6. Se despliega formulario de Cambio de contraseña.
+6.1 Contraseñas no coinciden en caja de contraseña nueva y confirmación de contraseña nueva, se despliega mensaje de error y vuelve al 4.
+7. Se despliega mensaje de cambio de contraseña exitoso.
+8. Se despliega ventana de Perfil de usuario.
 
 ### Mostrar libreria de NFTs
 1. Usuario hace click en botón Mi perfil.
@@ -133,7 +133,7 @@ bits.
 1. Usuario hace click en botón Mi perfil.
 2. Se despliega ventana de Perfil de usuario.
 3. Usuario hace click en botón Mis favoritos.
-4. Se despliga ventana de Favoritos y se muestran los NFTs marcados como favoritos.
+4. Se despliega ventana de Favoritos y se muestran los NFTs marcados como favoritos.
 
 ### Logout
 1. Usuario hace click en botón Mi perfil.
@@ -148,7 +148,10 @@ bits.
 4. Se despliega ventana de Modificar datos de usuario.
 5. Usuario hace click en botón Cerrar cuenta.
 6. Se despliega mensaje de confirmación.
-7. Se despliega ventana principal.
+6.1 Usuario hace click en botón cancelar.
+6.1.1 Se despliega ventana de Modificar datos de usuarios.
+6.2 Usuario hace click en botón aceptar.
+6.2.1 Se despliega ventana principal.
 
 ### Editar Banner de usuario
 1. Usuario hace click en botón Mi perfil.
@@ -156,9 +159,9 @@ bits.
 3. Usuario hace click en Modificar datos de usuario.
 4. Se despliega ventana de Modificar datos de usuario.
 5. Usuario hace click en botón de Cambiar banner.
-6. Se despliga formulario de Cambio de banner.
-8. Se despliega mensaje de cambio de banner exitoso.
-9. Se despliega ventana de Perfil de usuario.
+6. Se despliega el seleccionador de archivos de windows de Cambio de banner.
+7. Se despliega mensaje de cambio de banner exitoso.
+8. Se despliega ventana de Perfil de usuario.
 
 ### Mostrar listado NFTs
 1. Se valida si hay un filtro activo o no.
@@ -172,7 +175,8 @@ bits.
 1. Usuario hace click en la NFT deseada.
 2. Se despliega la ventana con los datos de la NFT.
 3. Usuario hace click en botón Comprar.
-4. Saldo del usuario insuficiente para realizar la transacción, despliegue de mensaje de error y vuelve a 2.
+3.1 Saldo del usuario insuficiente para realizar la transacción, despliegue de mensaje de error y vuelve a 2.
+3.2 Se despliega mensaje de compra exitosa.
 
 ### Vender NFT
 1. Usuario hace click en botón Mi perfil.
@@ -197,9 +201,11 @@ bits.
 
 
 
+
 [Bocetos de IU](./bocetosiu/)
 
 Se utiliza la aplicacion Marvel para el boceto de las diferentes paginas de la UI ([Marvel](https://marvelapp.com/))
+
 
 ## Validación y verificación
 
