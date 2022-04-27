@@ -23,7 +23,9 @@ Evidencia de actividades de investigación
 Referencias a fuentes de información:
 [link](investigacion/README.md)
 
-Caracterización de usuarios: User Personas
+Caracterización de usuarios: User Persona
+### Jose Rondon: 
+[link a perfil](investigacion/ImagenesUserPersona/JoseRondon.png)
 
 Modelo conceptual del problema
 
@@ -198,9 +200,7 @@ bits.
 2. Usuario ingresa el nombre.
 3. Se despliega el listado de NFTs que coinciden con el nombre.
 
-## User Persona
-### Jose Rondon: 
-[link a perfil](investigacion/ImagenesUserPersona/JoseRondon.png)
+
 
 
 [Bocetos de IU](./bocetosiu/)
