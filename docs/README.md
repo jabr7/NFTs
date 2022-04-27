@@ -23,7 +23,9 @@ Evidencia de actividades de investigación
 Referencias a fuentes de información:
 [link](investigacion/README.md)
 
-Caracterización de usuarios: User Personas
+Caracterización de usuarios: User Persona
+### Jose Rondon: 
+[link a perfil](investigacion/ImagenesUserPersona/JoseRondon.png)
 
 Modelo conceptual del problema
 
@@ -201,7 +203,6 @@ bits.
 ## User Persona
 ### Jose Rondon: 
 [link a perfil](investigacion/ImagenesUserPersona/JoseRondon.png)
-
 
 [Bocetos de IU](./bocetosiu/)
 
