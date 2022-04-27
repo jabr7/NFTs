@@ -3,23 +3,23 @@
 ## Imagenes de investigacion
 
 ### Imagenes de Binance
-![error](imagenes/1.2.png)
-![plot](imagenes/2.2.PNG)
-![plot](imagenes/3.2.PNG)
-![plot](imagenes/4.2.png)
+![error](ImagenesInvestigacion/1.2.png)
+![plot](ImagenesInvestigacion/2.2.PNG)
+![plot](ImagenesInvestigacion/3.2.PNG)
+![plot](ImagenesInvestigacion/4.2.png)
 
 ### Imagenes de OpenSea
-![plot](imagenes/1.1.PNG)
-![plot](imagenes/2.1.PNG)
-![plot](imagenes/3.1.png)
-![plot](imagenes/4.1.png)
+![plot](ImagenesInvestigacion/1.1.PNG)
+![plot](ImagenesInvestigacion/2.1.PNG)
+![plot](ImagenesInvestigacion/3.1.png)
+![plot](ImagenesInvestigacion/4.1.png)
 
 
 ### Imagenes de Crypto.com
-![plot](imagenes/1.3.png)
-![plot](imagenes/2.3.PNG)
-![plot](imagenes/3.3.png)
-![plot](imagenes/4.3.png)
+![plot](ImagenesInvestigacion/1.3.png)
+![plot](ImagenesInvestigacion/2.3.PNG)
+![plot](ImagenesInvestigacion/3.3.png)
+![plot](ImagenesInvestigacion/4.3.png)
 
 
 ## Link de investigacion
