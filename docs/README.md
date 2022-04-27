@@ -72,8 +72,8 @@ bits.
 1. Usuario hace click en Registrarse.
 2. Se despliega el formulario de resgitro de usuario.
 3. Usuario ingresa sus datos.
-3.1 Contraseñas no coinciden en la caja de contraseña y confirmación de contraseña, despliegue de mensaje de error y vuelve a 2.
-3.2 Nombre no disponible, despliegue de mensaje de error y vuelve a 2.
+	1. Contraseñas no coinciden en la caja de contraseña y confirmación de contraseña, despliegue de mensaje de error y vuelve a 2.
+	2. Nombre no disponible, despliegue de mensaje de error y vuelve a 2.
 4. Se despliega mensaje de resgistro exitoso.
 5. Se despliega la ventana principal.
 
@@ -81,8 +81,8 @@ bits.
 1. Usuario hace click en botón Login.
 2. Se despliega el formulario de login.
 3. Usuario ingresa sus datos de logeo.
-3.1 Ingreso de Correo no valido, despliegue de mensaje de error y vuelve a 2.
-3.2 Ingreso de Contraseña incorrecta, despliegue de mensaje de error y vuelve a 2.
+	1. Ingreso de Correo no valido, despliegue de mensaje de error y vuelve a 2.
+	2. Ingreso de Contraseña incorrecta, despliegue de mensaje de error y vuelve a 2.
 4. Despliegue de mensaje de Login completado.
 5. Se despliega de ventana principal.
 
@@ -109,7 +109,7 @@ bits.
 4. Se despliega ventana de Modificar datos de usuario.
 5. Usuario hace click en botón de Cambiar nombre
 6. Se despliga formulario de Cambio de nombre.
-6.1 Nombre no disponible, se despliega mensaje de error y vuelve al 4.
+	1. Nombre no disponible, se despliega mensaje de error y vuelve al 4.
 7. Se despliega mensaje de cambio de nombre exitoso.
 8. Se despliega ventana de Perfil de usuario.
 
@@ -120,7 +120,7 @@ bits.
 4. Se despliega ventana de Modificar datos de usuario.
 5. Usuario hace click en botón de Cambiar contraseña.
 6. Se despliega formulario de Cambio de contraseña.
-6.1 Contraseñas no coinciden en caja de contraseña nueva y confirmación de contraseña nueva, se despliega mensaje de error y vuelve al 4.
+	1. Contraseñas no coinciden en caja de contraseña nueva y confirmación de contraseña nueva, se despliega mensaje de error y vuelve al 4.
 7. Se despliega mensaje de cambio de contraseña exitoso.
 8. Se despliega ventana de Perfil de usuario.
 
@@ -148,10 +148,10 @@ bits.
 4. Se despliega ventana de Modificar datos de usuario.
 5. Usuario hace click en botón Cerrar cuenta.
 6. Se despliega mensaje de confirmación.
-6.1 Usuario hace click en botón cancelar.
-6.1.1 Se despliega ventana de Modificar datos de usuarios.
-6.2 Usuario hace click en botón aceptar.
-6.2.1 Se despliega ventana principal.
+	1. Usuario hace click en botón cancelar.
+		1. Se despliega ventana de Modificar datos de usuarios.
+	2. Usuario hace click en botón aceptar.
+		1. Se despliega ventana principal.
 
 ### Editar Banner de usuario
 1. Usuario hace click en botón Mi perfil.
@@ -175,8 +175,8 @@ bits.
 1. Usuario hace click en la NFT deseada.
 2. Se despliega la ventana con los datos de la NFT.
 3. Usuario hace click en botón Comprar.
-3.1 Saldo del usuario insuficiente para realizar la transacción, despliegue de mensaje de error y vuelve a 2.
-3.2 Se despliega mensaje de compra exitosa.
+	1. Saldo del usuario insuficiente para realizar la transacción, despliegue de mensaje de error y vuelve a 2.
+	2. Se despliega mensaje de compra exitosa.
 
 ### Vender NFT
 1. Usuario hace click en botón Mi perfil.
