@@ -200,10 +200,6 @@ bits.
 2. Usuario ingresa el nombre.
 3. Se despliega el listado de NFTs que coinciden con el nombre.
 
-## User Persona
-### Jose Rondon: 
-[link a perfil](investigacion/ImagenesUserPersona/JoseRondon.png)
-
 [Bocetos de IU](./bocetosiu/)
 
 Se utiliza la aplicacion Marvel para el boceto de las diferentes paginas de la UI ([Marvel](https://marvelapp.com/))
