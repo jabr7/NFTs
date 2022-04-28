@@ -24,8 +24,10 @@ Referencias a fuentes de información:
 [link](investigacion/README.md)
 
 Caracterización de usuarios: User Persona
-### Jose Rondon: 
+### José Rondón: 
 [link a perfil](investigacion/ImagenesUserPersona/JoseRondon.png)
+### Alfonso Hernández:
+[link a perfil](investigacion/ImagenesUserPersona/AlfonsoHernandez.png)
 
 Modelo conceptual del problema
 
