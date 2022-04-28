@@ -26,6 +26,9 @@ Caracterización de usuarios: User Persona
 [link a perfil](investigacion/ImagenesUserPersona/JoseRondon.png)
 ### Alfonso Hernández:
 [link a perfil](investigacion/ImagenesUserPersona/AlfonsoHernandez.png)
+### Carol Cuenca: 
+[link a perfil](investigacion/ImagenesUserPersona/CarolCuenca.png)
+
 
 Modelo conceptual del problema
 
