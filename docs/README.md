@@ -196,10 +196,13 @@ bits.
 
 
 
-
-[Bocetos de IU](./bocetosiu/)
+## Bocetos de IU
+[Imagenes de bocetos de IU](./bocetosiu/)
 
 Se utiliza la aplicacion Marvel para el boceto de las diferentes paginas de la UI ([Marvel](https://marvelapp.com/))
+
+[Prototipo tentativo](https://marvelapp.com/prototype/ddd5iei/screen/86384836)
+
 
 ## Validación y verificación
 
