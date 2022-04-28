@@ -228,4 +228,4 @@ Creacion, copia, administracion de permisos y knowledge transfer de respositorio
 
 Todos juntos: Requerimientos funcionales y no funcionales, modelo conceptual del problema
 
-Técnicas aplicadas y aprendizajes:
+Técnicas aplicadas y aprendizajes
