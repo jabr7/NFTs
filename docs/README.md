@@ -36,25 +36,25 @@ Definición de requerimientos funcionales y no funcionales
 #### Requerimientos de perfil
 1. Registro de usuario
 2. Login con usuario y contraseña
-	2.1 Chequeo de saldo
-	2.2  Agregar saldo
-	2.3 Cambio de nombre de Usuario
-	2.4 Cambio de contraseña de Usuario
-	2.5 Mostrar libreria de NFTs
-    2.6 Mostrar lista de favoritos
-	2.7 Logout
-    2.8 Dar de baja usuario
-    2.9 Editar Banner de usuario
+	1. Chequeo de saldo
+	2.  Agregar saldo
+	3. Cambio de nombre de Usuario
+	4. Cambio de contraseña de Usuario
+	5. Mostrar libreria de NFTs
+    6. Mostrar lista de favoritos
+	7. Logout
+    8. Dar de baja usuario
+    9. Editar Banner de usuario
 #### Requerimientos de mercado
 3. Mostrar NFTs
-	3.1 Mostrar listado de NFTs disponibles
-	3.2 Mostrar listado de NFTs por filtro
-    3.3 Mostrar NFT
-	3.4 Comprar NFT
-	3.5 Vender NFT
-	3.6 Dar like a un NFT
-    3.7 Agregar a listas de favoritos del usuario
-    3.8 Buscador de NFTs por nombre
+	1. Mostrar listado de NFTs disponibles
+	2. Mostrar listado de NFTs por filtro
+    3. Mostrar NFT
+	4. Comprar NFT
+	5. Vender NFT
+	6. Dar like a un NFT
+    7. Agregar a listas de favoritos del usuario
+    8. Buscador de NFTs por nombre
 
 
 
