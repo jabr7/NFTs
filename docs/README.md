@@ -17,11 +17,9 @@ Resumen de commits y evolución del proyecto
 
 ## Elicitación
 
-Evidencia de actividades de investigación
-[link](investigacion/README.md)
+[Evidencia de actividades de investigación](investigacion/README.md)
 
-Referencias a fuentes de información:
-[link](investigacion/README.md)
+[Referencias a fuentes de información](investigacion/README.md)
 
 Caracterización de usuarios: User Persona
 ### Jose Rondon: 
@@ -200,9 +198,12 @@ bits.
 2. Usuario ingresa el nombre.
 3. Se despliega el listado de NFTs que coinciden con el nombre.
 
-[Bocetos de IU](./bocetosiu/)
+## Bocetos de IU
+[Imagenes de bocetos de IU](./bocetosiu/)
 
 Se utiliza la aplicacion Marvel para el boceto de las diferentes paginas de la UI ([Marvel](https://marvelapp.com/))
+
+[Prototipo tentativo](https://marvelapp.com/prototype/ddd5iei/screen/86384836)
 
 
 ## Validación y verificación
@@ -214,5 +215,10 @@ Validar la solución con personas no involucradas en el proyecto
 ## Reflexión
 
 Detalle del trabajo individual
+Bonifacino: Mitad de los bocetos de IU, Investigacion y referencias a fuentes con imagenes y prototipado.
+
+Cadenas: Diseño de 2 user persona, Casos de uso
+
+Todos juntos: Requerimientos funcionales y no funcionales, modelo conceptual del problema
 
 Técnicas aplicadas y aprendizajes
