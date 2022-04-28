@@ -17,11 +17,9 @@ Resumen de commits y evolución del proyecto
 
 ## Elicitación
 
-Evidencia de actividades de investigación
-[link](investigacion/README.md)
+[Evidencia de actividades de investigación](investigacion/README.md)
 
-Referencias a fuentes de información:
-[link](investigacion/README.md)
+[Referencias a fuentes de información](investigacion/README.md)
 
 Caracterización de usuarios: User Personas
 
@@ -213,5 +211,10 @@ Validar la solución con personas no involucradas en el proyecto
 ## Reflexión
 
 Detalle del trabajo individual
+Bonifacino: Mitad de los bocetos de IU, Investigacion y referencias a fuentes con imagenes y prototipado.
+
+Cadenas: Diseño de 2 user persona, Casos de uso
+
+Todos juntos: Requerimientos funcionales y no funcionales, modelo conceptual del problema
 
 Técnicas aplicadas y aprendizajes
