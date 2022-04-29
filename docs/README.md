@@ -26,6 +26,9 @@ Caracterización de usuarios: User Persona
 [link a perfil](investigacion/ImagenesUserPersona/JoseRondon.png)
 ### Alfonso Hernández:
 [link a perfil](investigacion/ImagenesUserPersona/AlfonsoHernandez.png)
+### Carol Cuenca: 
+[link a perfil](investigacion/ImagenesUserPersona/CarolCuenca.png)
+
 
 Modelo conceptual del problema
 
@@ -216,10 +219,15 @@ Validar la solución con personas no involucradas en el proyecto
 
 ## Reflexión
 
-Detalle del trabajo individual
+Detalle del trabajo individual:
 Bonifacino: Mitad de los bocetos de IU, Investigacion y referencias a fuentes con imagenes y prototipado.
 
 Cadenas: Diseño de 2 user persona, Casos de uso
+
+Caetano: 
+Diseño de la mitad de los bocetos de IU,1 User Persona
+Busqueda de gifs para utilizar como NFTs
+Creacion, copia, administracion de permisos y knowledge transfer de respositorio de Git
 
 Todos juntos: Requerimientos funcionales y no funcionales, modelo conceptual del problema
 
