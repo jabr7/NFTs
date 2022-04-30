@@ -217,6 +217,7 @@ Validar la solución con personas no involucradas en el proyecto
 ## Reflexión
 
 Detalle del trabajo individual:
+
 Bonifacino: Mitad de los bocetos de IU, Investigacion y referencias a fuentes con imagenes y prototipado.
 
 Cadenas: Diseño de 2 user persona, Casos de uso
