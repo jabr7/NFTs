@@ -21,17 +21,15 @@ Resumen de commits y evolución del proyecto
 
 [Referencias a fuentes de información](investigacion/README.md)
 
-Caracterización de usuarios: User Persona
-### José Rondón: 
+### Caracterización de usuarios: User Persona
+#### José Rondón: 
 [link a perfil](investigacion/ImagenesUserPersona/JoseRondon.png)
-### Alfonso Hernández:
+#### Alfonso Hernández:
 [link a perfil](investigacion/ImagenesUserPersona/AlfonsoHernandez.png)
 
-Modelo conceptual del problema
+### Modelo conceptual del problema
 
 ## Especificación
-
-Definición de requerimientos funcionales y no funcionales
 ### Requerimientos Funcionales
 #### Requerimientos de perfil
 1. Registro de usuario
@@ -65,7 +63,7 @@ Se solicita de parte del cliente la utilizacion de el tipo de letra `Roboto`, el
 El sistema mantiene un control de acceso estándar de Login en el cual pide
 correo electrónico y contraseña al usuario.
 Para mejorar la seguridad de los datos privados de nuestros clientes incorporamos
-una encriptación punta a punta de la contraseña bajo el algoritmo SHA-2 de 512
+una encriptación punta a punta de la contraseña bajo el algoritmo `SHA-2 de 512`
 bits.
 
 ## Casos de uso
@@ -203,20 +201,21 @@ bits.
 ## Bocetos de IU
 [Imagenes de bocetos de IU](./bocetosiu/)
 
-Se utiliza la aplicacion Marvel para el boceto de las diferentes paginas de la UI ([Marvel](https://marvelapp.com/))
+Se utiliza la aplicacion [Marvel App](https://marvelapp.com/) para el boceto de las diferentes paginas de la UI.
 
-[Prototipo tentativo](https://marvelapp.com/prototype/ddd5iei/screen/86384836)
+[Prototipo tentativo creado con Marvel App](https://marvelapp.com/prototype/ddd5iei/screen/86384836)
 
 
 ## Validación y verificación
 
 Verificar la especificación
 
-Validar la solución con personas no involucradas en el proyecto
+Validar la solución con personas no involucradas en el proyecto:
+Validaciones hechas a: Mauricio Bonifacino
 
 ## Reflexión
 
-Detalle del trabajo individual:
+### Detalle del trabajo individual:
 
 Bonifacino: Mitad de los bocetos de IU, Investigacion y referencias a fuentes con imagenes y prototipado.
 
@@ -229,4 +228,22 @@ Creacion, copia, administracion de permisos y knowledge transfer de respositorio
 
 Todos juntos: Requerimientos funcionales y no funcionales, modelo conceptual del problema
 
-Técnicas aplicadas y aprendizajes
+Técnicas aplicadas:
+Casos de uso, Bocetos de interfaces de Usuario, User Persona, Prototipacion
+
+### Aprendizajes:
+Aprendimos a tener un manejo basico de versionado y utilizacion de ramas para `Github` lo cual vimos increiblemente util incluso en repetidos casos donde cometiamos un error y teniamos el historial de commits para hacer un rollback.
+
+Tambien aprendimos a utilizar la herramienta de bocetos `UX Marvel App` la cual tambien nos permitio la aplicacion de la tecnica de prototipado para crear un prototipo tentativo el cual fue mostrado a personas fuera del proyecto para la validacion adecuada de las funciones del mismo.
+
+Asimismo, utilizamos `XTensio` para la creacion y formateo de User Persona, trae plantillas predeterminadas para varios usos y fue muy util ya que tiene ciertas features como las barras de nivel para medir determinados atributos de la persona. Nos gusto que es bastante customizable y la version de prueba gratis tiene pocas limitaciones.
+
+Ademas, utilizamos `VisualCode` para la edición de los archivos, nos resulto bastante cómodo ya que `VisualCode` tiene una función de preview de markdown integrada que se activa con *CTRL + K V*, como referencia para aprender el lenguaje markdown usamos [MEditor.md](https://pandao.github.io/editor.md/en.html) con su texto de ejemplo.
+
+Mas alla de que tuvimos varias reuniones presenciales, para ser mas eficientes y no perder tiempo en el transporte (ya que uno de nuestros integrantes vive a mas de 1 hora del resto) decidimos hacer la mitad de las reuniones online a travez de `Discord` y la mitas presenciales.
+
+Para la creación de la paleta de colores para los bocetos UX utilizamos [Adobe Color Explorer](https://color.adobe.com/es/explore) para la definición original de los colores, y luego [Material IO](https://material.io/design) para la ligera modificacion de la paleta para mejorar la legibilidad del texto y contraste.
+
+
+
+
