@@ -218,7 +218,7 @@ Se utiliza la aplicacion [Marvel App](https://marvelapp.com/) para el boceto de 
 Verificar la especificación
 
 Validar la solución con personas no involucradas en el proyecto:
-Validaciones hechas a: Mauricio Bonifacino y Carlos Caetano
+Validaciones hechas con el prototipado a: Mauricio Bonifacino y Carlos Caetano
 
 ## Reflexión
 
