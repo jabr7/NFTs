@@ -1,6 +1,8 @@
 # Informe académico entrega 1
 Fecha de entrega: 02-Mayo-2022
+Integrantes: Joaquin Bonifacino, Tomas Caetano, Rafael Cadenas
 
+[Link al repositorio]( https://github.com/ORTFIS2022/obligatorio-Bonifacino-Cadenas-Caetano)
 ## Repositorio Git
 
 Creación y uso de repositorios locales y remotos
@@ -21,20 +23,22 @@ Resumen de commits y evolución del proyecto
 
 [Referencias a fuentes de información](investigacion/README.md)
 
-Caracterización de usuarios: User Persona
-### José Rondón: 
+### Caracterización de usuarios: User Persona
+#### José Rondón: 
 [link a perfil](investigacion/ImagenesUserPersona/JoseRondon.png)
-### Alfonso Hernández:
+#### Alfonso Hernández:
 [link a perfil](investigacion/ImagenesUserPersona/AlfonsoHernandez.png)
 ### Carol Cuenca: 
 [link a perfil](investigacion/ImagenesUserPersona/CarolCuenca.png)
 
 
-Modelo conceptual del problema
+### Modelo conceptual del problema:
+El Marketplace es un sitio donde los productos son ofrecidos por los comerciantes para ser adquiridos por consumidores, es decir, un mercado en el mundo online. En él, varios comerciantes colocan sus productos a la venta en un sólo canal. En este caso el mercado es especializado en *NFT's*, un NFT es un Non-Fungible Token, en otras palabras, que no se puede ni consumir, reemplazar o sustituir. El mismo se basa en ser un certificado digital de autenticidad de compra de un archivo en especifico que se guarda en la cadena de blockchain para su seguridad, por lo tanto es el equivalente a vender obras digitales donde el comprador se queda con el certificado que comprueba que es suyo, por ejemplo: 
+![plot](Nyan-Cat-NFT.PNG)
+Este NFT llamado Nyan Cat fue vendido por 600.000 USD, este Nyan Cat NFT esta contenido en la cadena de blockchain de Ethereum.
 
+Una cadena de blockchain es una tecnologia muy popular hoy en dia que consta de bloques (block) que juntos crean una cadena (chain) donde cada bloque guarda internamente un calculo el cual fue creado a partir del bloque anterior en la cadena, eso asegura que si cualquier bloque en la cadena es modificado,movido,agregado o quitado, la propia cadena lo rechaza. Esto ayuda a verificar que este NFT solo existe una vez en toda la blockchain y se crea un token de autenticacion unico para el mismo, el cual es transferido a la persona que lo compra para verificar que es su nuevo dueño. 
 ## Especificación
-
-Definición de requerimientos funcionales y no funcionales
 ### Requerimientos Funcionales
 #### Requerimientos de perfil
 1. Registro de usuario
@@ -68,7 +72,7 @@ Se solicita de parte del cliente la utilizacion de el tipo de letra `Roboto`, el
 El sistema mantiene un control de acceso estándar de Login en el cual pide
 correo electrónico y contraseña al usuario.
 Para mejorar la seguridad de los datos privados de nuestros clientes incorporamos
-una encriptación punta a punta de la contraseña bajo el algoritmo SHA-2 de 512
+una encriptación punta a punta de la contraseña bajo el algoritmo `SHA-2 de 512`
 bits.
 
 ## Casos de uso
@@ -206,20 +210,22 @@ bits.
 ## Bocetos de IU
 [Imagenes de bocetos de IU](./bocetosiu/)
 
-Se utiliza la aplicacion Marvel para el boceto de las diferentes paginas de la UI ([Marvel](https://marvelapp.com/))
+Se utiliza la aplicacion [Marvel App](https://marvelapp.com/) para el boceto de las diferentes paginas de la UI.
 
-[Prototipo tentativo](https://marvelapp.com/prototype/ddd5iei/screen/86384836)
+[Prototipo tentativo creado con Marvel App](https://marvelapp.com/prototype/ddd5iei/screen/86384836)
 
 
 ## Validación y verificación
 
 Verificar la especificación
 
-Validar la solución con personas no involucradas en el proyecto
+Validar la solución con personas no involucradas en el proyecto:
+Validaciones hechas con el prototipado a: Mauricio Bonifacino y Carlos Caetano
 
 ## Reflexión
 
-Detalle del trabajo individual:
+### Detalle del trabajo individual:
+
 Bonifacino: Mitad de los bocetos de IU, Investigacion y referencias a fuentes con imagenes y prototipado.
 
 Cadenas: Diseño de 2 user persona, Casos de uso
@@ -231,4 +237,22 @@ Creacion, copia, administracion de permisos y knowledge transfer de respositorio
 
 Todos juntos: Requerimientos funcionales y no funcionales, modelo conceptual del problema
 
-Técnicas aplicadas y aprendizajes
+Técnicas aplicadas:
+Casos de uso, Bocetos de interfaces de Usuario, User Persona, Prototipacion
+
+### Aprendizajes:
+Aprendimos a tener un manejo basico de versionado y utilizacion de ramas para `Github` lo cual vimos increiblemente util incluso en repetidos casos donde cometiamos un error y teniamos el historial de commits para hacer un rollback.
+
+Tambien aprendimos a utilizar la herramienta de bocetos `UX Marvel App` la cual tambien nos permitio la aplicación de la tecnica de prototipado para crear un prototipo tentativo el cual fue mostrado a personas fuera del proyecto para la validacion adecuada de las funciones del mismo.
+
+Asimismo, utilizamos `XTensio` para la creacion y formateo de User Persona, trae plantillas predeterminadas para varios usos y fue muy util ya que tiene ciertas features como las barras de nivel para medir determinados atributos de la persona. Nos gusto que es bastante customizable y la version de prueba gratis tiene pocas limitaciones.
+
+Ademas, utilizamos `VisualCode` para la edición de los archivos, nos resulto bastante cómodo ya que `VisualCode` tiene una función de preview de markdown integrada que se activa con *CTRL + K V*, como referencia para aprender el lenguaje markdown usamos [MEditor.md](https://pandao.github.io/editor.md/en.html) con su texto de ejemplo.
+
+Mas alla de que tuvimos varias reuniones presenciales, para ser mas eficientes y no perder tiempo en el transporte (ya que uno de nuestros integrantes vive a mas de 1 hora del resto) decidimos hacer la mitad de las reuniones online a travez de `Discord` y la mitad presenciales.
+
+Para la creación de la paleta de colores para los bocetos UX utilizamos [Adobe Color Explorer](https://color.adobe.com/es/explore) para la definición original de los colores, y luego [Material IO](https://material.io/design) para la ligera modificacion de la paleta para mejorar la legibilidad del texto y contraste.
+
+
+
+
