@@ -35,6 +35,7 @@ Resumen de commits y evolución del proyecto
 ### Modelo conceptual del problema:
 El Marketplace es un sitio donde los productos son ofrecidos por los comerciantes para ser adquiridos por consumidores, es decir, un mercado en el mundo online. En él, varios comerciantes colocan sus productos a la venta en un sólo canal. En este caso el mercado es especializado en *NFT's*, un NFT es un Non-Fungible Token, en otras palabras, que no se puede ni consumir, reemplazar o sustituir. El mismo se basa en ser un certificado digital de autenticidad de compra de un archivo en especifico que se guarda en la cadena de blockchain para su seguridad, por lo tanto es el equivalente a vender obras digitales donde el comprador se queda con el certificado que comprueba que es suyo, por ejemplo: 
 ![plot](Nyan-Cat-NFT.PNG)
+<br>
 Este NFT llamado Nyan Cat fue vendido por 600.000 USD, este Nyan Cat NFT esta contenido en la cadena de blockchain de Ethereum.
 
 Una cadena de blockchain es una tecnologia muy popular hoy en dia que consta de bloques (block) que juntos crean una cadena (chain) donde cada bloque guarda internamente un calculo el cual fue creado a partir del bloque anterior en la cadena, eso asegura que si cualquier bloque en la cadena es modificado,movido,agregado o quitado, la propia cadena lo rechaza. Esto ayuda a verificar que este NFT solo existe una vez en toda la blockchain y se crea un token de autenticacion unico para el mismo, el cual es transferido a la persona que lo compra para verificar que es su nuevo dueño. 

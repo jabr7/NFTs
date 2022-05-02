@@ -9,4 +9,4 @@ Carpeta para bocetos de interfaz de usuario
 ![plot](imagenes/registro.png)
 ![plot](imagenes/informacion_perfil.png)
 ## Paleta de Colores
-![plot](imagenes/Paleta de Colores.PNG)
+![plot](imagenes/Paleta_de_Colores.PNG)
