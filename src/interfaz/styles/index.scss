@@ -38,9 +38,9 @@ body {
 
 
 .mdc-text-field {
-    margin-left: 20%;
-    margin-top: 1em;
-    text-align: center;
+  margin: 1rem auto;
+  margin-left: 14%;
+  margin-bottom: 6px;
 }
 
 
@@ -50,13 +50,25 @@ body {
   margin-right: 40%;
 }
 
+#login_button{
+  margin-left: 30%;
+  margin-bottom: 5px;
+}
+
 #div_imagen_login{
-  height:200px
+  height: 90px;
+  margin-bottom: 1em;
 }
 
 #imagen_login{
   width: auto; 
   max-height: 100%; 
+  
+}
+
+#registro{
+  margin-top: 10px;
+  margin-left: 33%; 
 }
 
 
