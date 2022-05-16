@@ -1,6 +1,6 @@
 @use "@material/theme" with (
-  $primary: #00bcd4,
-  $secondary: #f44336,
+  $primary: #118EBF,
+  $secondary: #0D5B8C,
   $background: #c7c7c7,
 );
 @use '@material/button/mdc-button';
@@ -36,45 +36,28 @@ body {
   margin: 0px auto;
 }
 
-.app-bar {
-  position: absolute;
-}
-
-.mdc-top-app-bar {
-  z-index: 7;
-  @include icon-button.core-styles;
-}
-
-section {
-  text-align: center;
-}
-
-.content {
-  margin: 10rem auto;
-  padding-bottom: 20rem;
-  text-align: center;
-}
-
-.sample-content--hidden {
-  display: none;
-}
-
-.mdc-tab {
-    background-color: #67daff;
-}
-
-.mdc-tab__content .mdc-tab__text-label {
-    color: black;
-}
 
 .mdc-text-field {
-    margin: 1rem auto;
+    margin-left: 20%;
+    margin-top: 1em;
+    text-align: center;
 }
 
-.button {
-  margin-top: 1rem;
+
+#login{
+  margin-top: 10%;
+  margin-left: 40%;
+  margin-right: 40%;
 }
 
-.mdc-snackbar__actions .mdc-button__label {
-  color: #67daff;
+#div_imagen_login{
+  height:200px
 }
+
+#imagen_login{
+  width: auto; 
+  max-height: 100%; 
+}
+
+
+
