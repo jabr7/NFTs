@@ -36,7 +36,51 @@ body {
   margin: 0px auto;
 }
 
+/* 
+Top Bar Login
+*/
+.mdc-top-app-bar{
+  background-color: #ffffff;
+  border-style:solid;
+}
+#div_imagen_login_topbar{
+  margin: 1rem;
+  height: 30px;
+  margin-left: 5%;
 
+}
+
+#imagen_login_topbar{
+  width: auto; 
+  max-height: 100%; 
+}
+
+#marketplace_button{
+  margin-left: 5%;
+}
+
+.material-icons{ 
+  color: rgba(0, 0, 0, 0.54); 
+}
+
+.material-iconsmd-inactive {
+   color: rgba(0, 0, 0, 0.26); 
+  }
+
+#profile_button{
+   font-size: 48px;
+   margin-right: 10%;
+}
+
+hr{
+  height: 1px;
+  background-color: #c7c7c7;
+  border: none;
+}
+
+/* 
+Central Login Box
+*/
 .mdc-text-field {
   margin: 1rem auto;
   margin-left: 3rem;
@@ -45,13 +89,15 @@ body {
 
 #login{
   margin-top: 10rem;
-  margin-right: 48rem;
-  margin-left: 47rem;
+  margin-right: 40%;
+  margin-left: 40%;
+  min-width: 25rem;
+  max-width: 40rem;
 }
 
 #login_button{
-  margin-left: 7.3rem;
-  margin-bottom: 1rem;
+  margin-left: 30%;
+  margin-bottom: 20px;
 }
 
 #div_imagen_login{
@@ -66,7 +112,7 @@ body {
 }
 
 #registro{
-  margin-left: 7.9rem; 
+  margin-left: 33%; 
 }
 
 
