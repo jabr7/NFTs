@@ -87,7 +87,7 @@ Central Login Box
 }
 
 
-#login{
+#caja-login{
   margin-top: 10rem;
   margin-right: 40%;
   margin-left: 40%;
@@ -113,6 +113,21 @@ Central Login Box
 
 #registro{
   margin-left: 33%; 
+  margin-bottom: 0.5rem;
+}
+
+#olvide{
+  margin-left:22%;
+  display: block; 
+}
+
+//Utilizado para desaparecer o aparecer las pantallas
+.login {
+
+}
+
+.sample-content--hidden {
+  display: none;
 }
 
 

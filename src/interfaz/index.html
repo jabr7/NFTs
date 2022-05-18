@@ -9,58 +9,64 @@
 
 <body>
 
-  <!---TOP_BAR-->
-  <header class="mdc-top-app-bar">
-    <div class="mdc-top-app-bar__row">
-      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-        <div id="div_imagen_login_topbar"><img id="imagen_login_topbar" src="./imagenes/logo.png"/></div> 
-        <button class="mdc-button mdc-button--raised" id="marketplace_button">
-          <span class="mdc-button__label">Marketplace</span>
-        </button>
-      </section>
-      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-        <span class="material-icons" id="profile_button">account_circle</span>
-      </section>
+    <!---TOP_BAR-->
+    <header class="mdc-top-app-bar">
+      <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+          <div id="div_imagen_login_topbar"><img id="imagen_login_topbar" src="./imagenes/logo.png"/></div> 
+          <button class="mdc-button mdc-button--raised" id="marketplace_button">
+            <span class="mdc-button__label">Marketplace</span>
+          </button>
+        </section>
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+          <span class="material-icons" id="profile_button">account_circle</span>
+        </section>
 
-      
-    </div>
-  </header>
-  <main class="mdc-top-app-bar--fixed-adjust">
-   
-  </main>
-  <hr>
-
-
+        
+      </div>
+    </header>
+    <main class="mdc-top-app-bar--fixed-adjust">
+    
+    </main>
+    <hr>
 
 
-  <!--CAJA LOGIN-->
-  <div id="login"> 
-    <div id="div_imagen_login"><img id="imagen_login" src="./imagenes/logo.png"/></div> 
+
+
+
+
+    <!--CAJA LOGIN-->
+    <div id="caja-login" class="login"> 
+      <div id="div_imagen_login"><img id="imagen_login" src="./imagenes/logo.png"/></div> 
+    
+
+      <label class="mdc-text-field mdc-text-field--filled" id="user">
+        <span class="mdc-text-field__ripple"></span>
+        <span class="mdc-floating-label" id="my-label-id">Usuario</span>
+        <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id">
+        <span class="mdc-line-ripple"></span>
+      </label>
+
+      <label class="mdc-text-field mdc-text-field--filled" id="password">
+        <span class="mdc-text-field__ripple"></span>
+        <span class="mdc-floating-label" id="my-label-id">Contraseña</span>
+        <input class="mdc-text-field__input" type="password" aria-labelledby="my-label-id">
+        <span class="mdc-line-ripple"></span>
+      </label>
+
+      <button class="mdc-button mdc-button--raised" id="login_button">
+        <span class="mdc-button__label">Login</span>
+      </button>
+      <br>
+      <a id="registro" href="http://localhost:8080/">Registro</a>
+      <a id="olvide" href="http://localhost:8080/">Olvide mi contraseña</a>
+      </div>
+
+    
   
+</div>
 
-    <label class="mdc-text-field mdc-text-field--filled" id="user">
-      <span class="mdc-text-field__ripple"></span>
-      <span class="mdc-floating-label" id="my-label-id">Usuario</span>
-      <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id">
-      <span class="mdc-line-ripple"></span>
-    </label>
 
-    <label class="mdc-text-field mdc-text-field--filled" id="password">
-      <span class="mdc-text-field__ripple"></span>
-      <span class="mdc-floating-label" id="my-label-id">Contraseña</span>
-      <input class="mdc-text-field__input" type="password" aria-labelledby="my-label-id">
-      <span class="mdc-line-ripple"></span>
-    </label>
-
-    <button class="mdc-button mdc-button--raised" id="login_button">
-      <span class="mdc-button__label">Login</span>
-    </button>
-    <br>
-    <a id="registro" href="http://localhost:8080/">Registro</a>
-    </div>
-
-  </div>
-  
 
 </body>
 <script src="bundle.js" async></script>

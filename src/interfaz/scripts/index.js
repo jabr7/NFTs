@@ -12,10 +12,18 @@ const login = new MDCRipple(document.getElementById('login_button'));
 const topAppBarElement = document.querySelector('.mdc-top-app-bar');
 const marketplace = new MDCRipple(document.getElementById('marketplace_button'));
 
-
-
 login.listen('click', () => {
-    console.log();    
+    
+    if(user.value==="Joaquin" && password.value === "1234"){
+        
+        document.querySelectorAll(".login").forEach((element, index) => {
+            element.classList.add("sample-content--hidden");
+          });
+          
+         
+    }else{
+        alert("Error");
+    }
 })
 
 
