@@ -47,7 +47,7 @@ Top Bar Login
   margin: 1rem;
   height: 30px;
   margin-left: 5%;
-
+  position: relative;
 }
 
 #imagen_login_topbar{
@@ -78,6 +78,8 @@ hr{
   border: none;
 }
 
+
+
 /* 
 Central Login Box
 */
@@ -96,7 +98,7 @@ Central Login Box
 }
 
 #login_button{
-  margin-left: 30%;
+  margin-left: 28%;
   margin-bottom: 20px;
 }
 
@@ -112,7 +114,14 @@ Central Login Box
 }
 
 #registro{
-  margin-left: 33%; 
+  margin-left: 31%; 
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+#olvidado{
+  margin-left: 20%;
+  display: inline-block;
 }
 
 
