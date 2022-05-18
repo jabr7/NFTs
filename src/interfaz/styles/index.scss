@@ -47,7 +47,7 @@ Top Bar Login
   margin: 1rem;
   height: 30px;
   margin-left: 5%;
-
+  position: relative;
 }
 
 #imagen_login_topbar{
@@ -78,6 +78,8 @@ hr{
   border: none;
 }
 
+
+
 /* 
 Central Login Box
 */
@@ -96,7 +98,7 @@ Central Login Box
 }
 
 #login_button{
-  margin-left: 30%;
+  margin-left: 28%;
   margin-bottom: 20px;
 }
 
@@ -116,10 +118,6 @@ Central Login Box
   margin-bottom: 0.5rem;
 }
 
-#olvide{
-  margin-left:22%;
-  display: block; 
-}
 
 //Utilizado para desaparecer o aparecer las pantallas
 .login {
@@ -128,6 +126,12 @@ Central Login Box
 
 .sample-content--hidden {
   display: none;
+}
+
+#olvidado{
+  margin-left: 20%;
+  display: inline-block;
+
 }
 
 
