@@ -18,9 +18,6 @@ login.listen('click', () => {
         document.querySelectorAll(".content").forEach((element, index) => {
             element.classList.add("sample-content--hidden");
           });
-    user.value="";
-    password.value="";
-
     }else{
         alert("Error");
     }
