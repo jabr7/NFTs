@@ -21,6 +21,9 @@ login.listen('click', () => {
     }else{
         alert("Error");
     }
+
+    user.value="";
+    password.value="";
 })
 
 //Trae de vuelta el login
