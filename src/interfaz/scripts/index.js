@@ -10,13 +10,24 @@ const login = new MDCRipple(document.getElementById('login_button'));
 
 //Top Bar
 const topAppBarElement = document.querySelector('.mdc-top-app-bar');
-const topAppBar = new MDCTopAppBar(topAppBarElement);
 const marketplace = new MDCRipple(document.getElementById('marketplace_button'));
 
-
-
+//Elimina el contenido de la pagina
 login.listen('click', () => {
-    console.log();    
+    if(user.value==="Joaquin" && password.value === "1234"){
+        document.querySelectorAll(".content").forEach((element, index) => {
+            element.classList.add("sample-content--hidden");
+          });
+    }else{
+        alert("Error");
+    }
+})
+
+//Trae de vuelta el login
+marketplace.listen('click', () => {
+    document.querySelectorAll(".login").forEach((element, index) => {
+         element.classList.remove("sample-content--hidden");
+    });
 })
 
 
