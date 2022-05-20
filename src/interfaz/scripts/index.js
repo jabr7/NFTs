@@ -1,46 +1,46 @@
-import { MDCRipple } from '@material/ripple';
-import { MDCTopAppBar } from '@material/top-app-bar';
-import { MDCTabBar } from '@material/tab-bar';
-import { MDCTextField } from '@material/textfield';
-import { MDCSelect } from '@material/select';
-import {MDCSnackbar} from '@material/snackbar';
-import ListaPeliculas from '../../dominio/lista-peliculas.mjs';
-import Pelicula from '../../dominio/pelicula.mjs';
+import {MDCTextField} from '@material/textfield';
+import {MDCRipple} from '@material/ripple';
+import {MDCSelect} from '@material/select';
 
-const listaPeliculas = new ListaPeliculas();
 
+//Login Box
+const user = new MDCTextField(document.getElementById('user'));
+const password = new MDCTextField(document.getElementById('password'));
+const login = new MDCRipple(document.getElementById('login_button'));
+
+
+//Top Bar
 const topAppBarElement = document.querySelector('.mdc-top-app-bar');
-const topAppBar = new MDCTopAppBar(topAppBarElement);
+const marketplace = new MDCRipple(document.getElementById('marketplace_button'));
 
-const tabBar = new MDCTabBar(document.querySelector(".mdc-tab-bar"));
-tabBar.listen("MDCTabBar:activated", (activatedEvent) => {
-  document.querySelectorAll(".content").forEach((element, index) => {
-    if (index === activatedEvent.detail.index) {
-      element.classList.remove("sample-content--hidden");
-    } else {
-      element.classList.add("sample-content--hidden");
+//Elimina el contenido de la pagina
+login.listen('click', () => {
+    if(user.value==="Joaquin" && password.value === "1234"){
+        document.querySelectorAll(".content").forEach((element, index) => {
+            element.classList.add("sample-content--hidden");
+          });
+    }else{
+        alert("Error");
     }
-  });
+
+    user.value="";
+    password.value="";
+})
+
+//Trae de vuelta el login
+marketplace.listen('click', () => {
+    document.querySelectorAll(".login").forEach((element, index) => {
+         element.classList.remove("sample-content--hidden");
+    });
+})
+
+//MARKETPLACE
+const search = new MDCTextField(document.getElementById('search'));
+
+
+const select = new MDCSelect(document.querySelector('.mdc-select'));
+
+select.listen('MDCSelect:change', () => {
+  //alert(`Selected option at index ${select.selectedIndex} with value "${select.value}"`);
 });
 
-const textFieldTitle = new MDCTextField(document.getElementById('title'));
-const textFieldYear = new MDCTextField(document.getElementById('year'));
-const selectGenre = new MDCSelect(document.querySelector('.mdc-select'));
-
-const addButton = new MDCRipple(document.getElementById('addButton'));
-addButton.listen('click', () => {
-  let title = textFieldTitle.value;
-  let year = textFieldYear.value;
-  let genre = selectGenre.value;
-  try {
-    let newPelicula = new Pelicula(title, genre, year);
-    listaPeliculas.agregar(newPelicula);
-  } catch (error) {
-    const snackbar = new MDCSnackbar(document.querySelector('.mdc-snackbar'));
-    snackbar.labelText = error.message;
-    snackbar.open();
-  } finally {
-    let peliculas = listaPeliculas.getPeliculas();
-    console.log(peliculas);
-  }
-})
