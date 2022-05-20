@@ -1,5 +1,6 @@
 import {MDCTextField} from '@material/textfield';
 import {MDCRipple} from '@material/ripple';
+import {MDCSelect} from '@material/select';
 
 
 //Login Box
@@ -21,6 +22,9 @@ login.listen('click', () => {
     }else{
         alert("Error");
     }
+
+    user.value="";
+    password.value="";
 })
 
 //Trae de vuelta el login
@@ -30,4 +34,13 @@ marketplace.listen('click', () => {
     });
 })
 
+//MARKETPLACE
+const search = new MDCTextField(document.getElementById('search'));
+
+
+const select = new MDCSelect(document.querySelector('.mdc-select'));
+
+select.listen('MDCSelect:change', () => {
+  //alert(`Selected option at index ${select.selectedIndex} with value "${select.value}"`);
+});
 
