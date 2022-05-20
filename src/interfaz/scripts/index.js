@@ -1,5 +1,7 @@
 import {MDCTextField} from '@material/textfield';
 import {MDCRipple} from '@material/ripple';
+import {MDCMenu} from '@material/menu';
+
 
 
 //Login Box
@@ -32,5 +34,8 @@ marketplace.listen('click', () => {
          element.classList.remove("sample-content--hidden");
     });
 })
+
+//MARKETPLACE
+const search = new MDCTextField(document.getElementById('search'));
 
 
