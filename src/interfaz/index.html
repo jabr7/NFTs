@@ -79,16 +79,19 @@
     <!--MARKETPLACE-->
       <div id="caja-marketplace" class="content marketplace">
         <div id="banner-principal">
-
+          <div id="hover_text">Hover over one!</div> 
           <div id="div_imagen_banner"><img id="imagen_banner" src="./imagenes/logo.png"/></div> 
           <div class="float-area"><img src="./imagenes/2 - QSmhcSe.gif" class="floating-img" alt="my floating image"></div> 
-          <div class="float-area"><img src="./imagenes/2 - f1LkIrz.gif" class="floating-img" alt="my floating image"></div> 
+          <div class="float-area"><img src="./imagenes/2 - f1LkIrz.gif" class="floating-img" alt="my floating image"></div>
           <div class="float-area"><img src="./imagenes/2 - Iq7UBSd.gif" class="floating-img" alt="my floating image"></div> 
           <div class="float-area"><img src="./imagenes/21 - qCLhzY5.gif" class="floating-img" alt="my floating image"></div> 
-
+         
         </div>
-
+  
+     
         <div id="contenido_marketplace">
+          <aside>
+            <!--Searcher-->
           <label class="mdc-text-field mdc-text-field--filled" id="search">
             <span class="mdc-text-field__ripple"></span>
             <span class="mdc-floating-label" id="my-label-id">Busqueda</span>
@@ -96,12 +99,117 @@
             <span class="mdc-line-ripple"></span>
           </label>
 
+          <!--ComboBox-->
+          <div class="mdc-select mdc-select--filled demo-width-class">
+            <div class="mdc-select__anchor"
+                 role="button"
+                 aria-haspopup="listbox"
+                 aria-expanded="false"
+                 aria-labelledby="demo-label demo-selected-text" id="combobox">
+              <span class="mdc-select__ripple"></span>
+              <span id="demo-label" class="mdc-floating-label">Elija un Filtro</span>
+              <span class="mdc-select__selected-text-container">
+                <span id="demo-selected-text" class="mdc-select__selected-text"></span>
+              </span>
+              <span class="mdc-select__dropdown-icon">
+                <svg
+                    class="mdc-select__dropdown-icon-graphic"
+                    viewBox="7 10 10 5" focusable="false">
+                  <polygon
+                      class="mdc-select__dropdown-icon-inactive"
+                      stroke="none"
+                      fill-rule="evenodd"
+                      points="7 10 12 15 17 10">
+                  </polygon>
+                  <polygon
+                      class="mdc-select__dropdown-icon-active"
+                      stroke="none"
+                      fill-rule="evenodd"
+                      points="7 15 12 10 17 15">
+                  </polygon>
+                </svg>
+              </span>
+              <span class="mdc-line-ripple"></span>
+            </div>
+          
+            <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth">
+              <ul class="mdc-list" role="listbox" aria-label="Food picker listbox">
+                <li class="mdc-list-item mdc-list-item--selected" aria-selected="true" data-value="" role="option">
+                  <span class="mdc-list-item__ripple"></span>
+                </li>
+                <li class="mdc-list-item" aria-selected="false" data-value="grains" role="option">
+                  <span class="mdc-list-item__ripple"></span>
+                  <span class="mdc-list-item__text">
+                    Los mas gustados
+                  </span>
+                </li>
+                <li class="mdc-list-item" aria-selected="false" data-value="fruit" role="option">
+                  <span class="mdc-list-item__ripple"></span>
+                  <span class="mdc-list-item__text">
+                    Disponibilidad
+                  </span>
+                </li>
+                <li class="mdc-list-item" aria-selected="false" data-value="fruit" role="option">
+                  <span class="mdc-list-item__ripple"></span>
+                  <span class="mdc-list-item__text">
+                    Precio: Alto-Bajo
+                  </span>
+                </li>
+                <li class="mdc-list-item" aria-selected="false" data-value="fruit" role="option">
+                  <span class="mdc-list-item__ripple"></span>
+                  <span class="mdc-list-item__text">
+                    Precio: Bajo-Alto
+                  </span>
+                </li>
+                <li class="mdc-list-item" aria-selected="false" data-value="fruit" role="option">
+                  <span class="mdc-list-item__ripple"></span>
+                  <span class="mdc-list-item__text">
+                    Fecha
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
 
-       
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </aside>
+
+
+
+
+
+        
         </div>
 
-
+      
 
       </div>
 
