@@ -1,7 +1,6 @@
 import {MDCTextField} from '@material/textfield';
 import {MDCRipple} from '@material/ripple';
-import {MDCMenu} from '@material/menu';
-
+import {MDCSelect} from '@material/select';
 
 
 //Login Box
@@ -38,4 +37,10 @@ marketplace.listen('click', () => {
 //MARKETPLACE
 const search = new MDCTextField(document.getElementById('search'));
 
+
+const select = new MDCSelect(document.querySelector('.mdc-select'));
+
+select.listen('MDCSelect:change', () => {
+  //alert(`Selected option at index ${select.selectedIndex} with value "${select.value}"`);
+});
 

@@ -133,10 +133,40 @@ Central Login Box
 #imagen_banner{
   width: auto; 
   max-height: 100%;
-  margin-top: 6em;
   margin-left: 12%; 
 }
 
+#hover_text{
+  margin-left: 60%;
+  margin-top: 6em;
+  color: #a19f9f;
+}
+
+
+//Combobox
+.demo-width-class {
+  width: 400px;
+  display: inline;
+}
+
+#combobox{
+  margin-left: 12.3%;
+}
+
+.mdc-menu-surface--fullwidth{
+  width: 15%;
+}
+
+.mdc-select__anchor {
+  width: 212px;
+  min-width: 0;
+  flex: 1 1 auto;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  outline: none;
+  cursor: pointer;
+}
 
 //Sistema de imagenes flotantes
 .float-area{
