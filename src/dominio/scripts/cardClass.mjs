@@ -10,5 +10,11 @@ export default class Carta{
         this.fecha = fecha;
 
     }
+    getLikes(){
+        return this.likes;
+    }
 
+    likeCard(){
+        this.likes = this.getLikes+1;
+    }
 }
