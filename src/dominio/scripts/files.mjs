@@ -1,13 +1,17 @@
 //funcion que retoran arhivos .gif del folder que le pasemos como parametro
-function files(dir){
+import * as path from 'path';
+
+import * as fs from 'fs';
+
+export default function files(dir){
     const files = [];
     const folders = fs.readdirSync(dir);
-    for (folder of folders){
-        nombre = path.join(dir,folder);
-        res = fs.readdirSync(nombre, { withFileTypes: true });
-        for (i of res){
+    for (let folder of folders){
+        let nombre = path.join(dir,folder);
+        let res = fs.readdirSync(nombre, { withFileTypes: true });
+        for (let i of res){
             if (!i.isDirectory()){
-                fileName = i.name;
+                let fileName = i.name;
                 if (fileName.endsWith('.gif')){
                     files.push(path.join(nombre,i.name));
                 }
@@ -18,5 +22,3 @@ function files(dir){
     }
     return files;
 }
-
-export default files;
