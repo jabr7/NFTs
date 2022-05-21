@@ -21,9 +21,16 @@ const marketplace = new MDCRipple(document.getElementById('marketplace_button'))
 //Elimina el contenido de la pagina
 login.listen('click', () => {
     if(user.value==="Joaquin" && password.value === "1234"){
+
         document.querySelectorAll(".content").forEach((element, index) => {
             element.classList.add("sample-content--hidden");
           });
+
+          document.querySelectorAll(".marketplace").forEach((element, index) => {
+            element.classList.remove("sample-content--hidden");
+       });
+
+
     }else{
         alert("Error");
     }
@@ -34,6 +41,10 @@ login.listen('click', () => {
 
 //Trae de vuelta el login
 marketplace.listen('click', () => {
+    document.querySelectorAll(".content").forEach((element, index) => {
+        element.classList.add("sample-content--hidden");
+      });
+
     document.querySelectorAll(".login").forEach((element, index) => {
          element.classList.remove("sample-content--hidden");
     });
@@ -46,6 +57,6 @@ const search = new MDCTextField(document.getElementById('search'));
 const select = new MDCSelect(document.querySelector('.mdc-select'));
 
 select.listen('MDCSelect:change', () => {
-  //alert(`Selected option at index ${select.selectedIndex} with value "${select.value}"`);
+    //alert(`Selected option at index ${select.selectedIndex} with value "${select.value}"`);
 });
 
