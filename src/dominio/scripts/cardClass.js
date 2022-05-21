@@ -1,4 +1,4 @@
-export default class Carta{
+class Carta{
     constructor(imagePath){
         this.id = uuidv4();
         this.likes = 0;
@@ -9,3 +9,4 @@ export default class Carta{
 
 }
 
+export default Carta;

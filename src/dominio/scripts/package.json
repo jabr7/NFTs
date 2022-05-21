@@ -1,5 +1,6 @@
 {
-  "name": "dominio",
+  "type": "module",
+  "name": "scripts",
   "version": "1.0.0",
   "description": "",
   "main": "init.js",
@@ -11,6 +12,6 @@
   "dependencies": {
     "fs": "^0.0.1-security",
     "path": "^0.12.7",
-    "uuidv4": "^6.2.13"
+    "uuid": "^8.3.2"
   }
 }

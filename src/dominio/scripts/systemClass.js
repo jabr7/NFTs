@@ -1,4 +1,4 @@
-export default class Sistema{
+class Sistema{
     constructor(){
         this.cartas = [];
         this.usuarios = [];
@@ -48,3 +48,4 @@ export default class Sistema{
 
     }   
 }
+export default Sistema;

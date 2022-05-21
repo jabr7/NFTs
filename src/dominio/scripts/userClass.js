@@ -1,4 +1,4 @@
-export default class Usuario{
+class Usuario{
     constructor(nombre,password,saldo,admin) {
         this.nombre = nombre;
         this.password = password;
@@ -7,3 +7,5 @@ export default class Usuario{
     }
     
 }
+
+export default Usuario;
