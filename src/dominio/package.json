@@ -1,15 +1,16 @@
 {
-  "name": "cartelera",
+  "name": "dominio",
   "version": "1.0.0",
-  "description": "Ejemplo de modelo dominio Cartelera",
-  "main": "index.js",
+  "description": "",
+  "main": "init.js",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "FIS",
-  "license": "",
-  "type": "module",
-  "devDependencies": {
-    "jest": "^26.6.3"
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "uuidv4": "^6.2.13"
   }
 }

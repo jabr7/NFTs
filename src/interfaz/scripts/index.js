@@ -3,6 +3,11 @@ import {MDCRipple} from '@material/ripple';
 import {MDCSelect} from '@material/select';
 
 
+
+//const uuidv4 = require("uuid/v4")
+//const path = require('path');
+//const fs = require('fs');
+
 //Login Box
 const user = new MDCTextField(document.getElementById('user'));
 const password = new MDCTextField(document.getElementById('password'));
