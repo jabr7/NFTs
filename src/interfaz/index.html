@@ -31,8 +31,8 @@
       </section>
       <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
        
-        <a href="https://www.google.com.uy">
-          <span class="material-icons" id="profile_button">account_circle</span>
+        <a>
+          <span class="material-icons" id="profile_button" >account_circle</span>
         </a>
       </section>
         
@@ -232,7 +232,144 @@
     
 
 </div>
+ <!--PestañaPrincipalPerfil-->
+ <div id="caja-perfilPrinc" class="content perfilPrinc sample-content--hidden">
+    <div class="mdc-tab-bar" role="tablist">
+      <div class="mdc-tab-scroller">
+        <div class="mdc-tab-scroller__scroll-area">
+          <div class="mdc-tab-scroller__scroll-content">
+            <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="1">
+              <span class="mdc-tab__content">
+                <span class="mdc-tab__icon material-icons" aria-hidden="true">favorite</span>
+                <span class="mdc-tab__text-label">Favoritos</span>
+              </span>
+              <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+              </span>
+              <span class="mdc-tab__ripple"></span>
+            </button>
+            <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
+              <span class="mdc-tab__content">
+                <span class="mdc-tab__icon material-icons" aria-hidden="true">account_balance_wallet</span>
+                <span class="mdc-tab__text-label">Wallet</span>
+              </span>
+              <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+              </span>
+              <span class="mdc-tab__ripple"></span>
+            </button>
+            <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="2">
+              <span class="mdc-tab__content">
+                <span class="mdc-tab__icon material-icons" aria-hidden="true">portrait</span>
+                <span class="mdc-tab__text-label">Información</span>
+              </span>
+              <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+              </span>
+              <span class="mdc-tab__ripple"></span>
+            </button>
+            <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="4">
+              <span class="mdc-tab__content">
+                <span class="mdc-tab__icon material-icons" aria-hidden="true">attach_money</span>
+                <span class="mdc-tab__text-label">Vender</span>
+              </span>
+              <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+              </span>
+              <span class="mdc-tab__ripple"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="contenido_perfilPrinc">
+      <aside id="filtros_y_Buscador_PerfilPrinc">
+          <!--Searcher-->
+        <label class="mdc-text-field mdc-text-field--filled" id="search_P">
+          <span class="mdc-text-field__ripple"></span>
+          <span class="mdc-floating-label" id="my-label-id">Busqueda</span>
+          <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id">
+          <span class="mdc-line-ripple"></span>
+        </label>
 
+        <!--ComboBox-->
+        <div class="mdc-select mdc-select--filled demo-width-class" id = "filtro_lib">
+          <div class="mdc-select__anchor"
+               role="button"
+               aria-haspopup="listbox"
+               aria-expanded="false"
+               aria-labelledby="demo-label demo-selected-text" id="combobox">
+            <span class="mdc-select__ripple"></span>
+            <span id="demo-label" class="mdc-floating-label">Elija un Filtro</span>
+            <span class="mdc-select__selected-text-container">
+              <span id="demo-selected-text" class="mdc-select__selected-text"></span>
+            </span>
+            <span class="mdc-select__dropdown-icon">
+              <svg
+                  class="mdc-select__dropdown-icon-graphic"
+                  viewBox="7 10 10 5" focusable="false">
+                <polygon
+                    class="mdc-select__dropdown-icon-inactive"
+                    stroke="none"
+                    fill-rule="evenodd"
+                    points="7 10 12 15 17 10">
+                </polygon>
+                <polygon
+                    class="mdc-select__dropdown-icon-active"
+                    stroke="none"
+                    fill-rule="evenodd"
+                    points="7 15 12 10 17 15">
+                </polygon>
+              </svg>
+            </span>
+            <span class="mdc-line-ripple"></span>
+          </div>
+        
+          <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth">
+            <ul class="mdc-list" role="listbox" aria-label="Food picker listbox">
+              <li class="mdc-list-item mdc-list-item--selected" aria-selected="true" data-value="" role="option">
+                <span class="mdc-list-item__ripple"></span>
+              </li>
+              <li class="mdc-list-item" aria-selected="false" data-value="Los mas gustados" role="option">
+                <span class="mdc-list-item__ripple"></span>
+                <span class="mdc-list-item__text">
+                  Los mas gustados
+                </span>
+              </li>
+              <li class="mdc-list-item" aria-selected="false" data-value="Disponibilidad" role="option">
+                <span class="mdc-list-item__ripple"></span>
+                <span class="mdc-list-item__text">
+                  Disponibilidad
+                </span>
+              </li>
+              <li class="mdc-list-item" aria-selected="false" data-value="Precio: Alto-Bajo" role="option">
+                <span class="mdc-list-item__ripple"></span>
+                <span class="mdc-list-item__text">
+                  Precio: Alto-Bajo
+                </span>
+              </li>
+              <li class="mdc-list-item" aria-selected="false" data-value="Precio: Bajo-Alto" role="option">
+                <span class="mdc-list-item__ripple"></span>
+                <span class="mdc-list-item__text">
+                  Precio: Bajo-Alto
+                </span>
+              </li>
+              <li class="mdc-list-item" aria-selected="false" data-value="Fecha" role="option">
+                <span class="mdc-list-item__ripple"></span>
+                <span class="mdc-list-item__text">
+                  Fecha
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+
+
+        
+      </aside>
+  </div>
 
 </body>
 <script src="bundle.js" async></script>

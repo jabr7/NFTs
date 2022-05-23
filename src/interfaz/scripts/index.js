@@ -12,6 +12,7 @@ const login = new MDCRipple(document.getElementById('login_button'));
 //Top Bar
 const topAppBarElement = document.querySelector('.mdc-top-app-bar');
 const marketplace = new MDCRipple(document.getElementById('marketplace_button'));
+const perfil = new MDCRipple(document.getElementById('profile_button'));
 
 //Elimina el contenido de la pagina
 login.listen('click', () => {
@@ -29,6 +30,21 @@ login.listen('click', () => {
     }else{
         alert("Error");
     }
+
+    user.value="";
+    password.value="";
+})
+
+perfil.listen('click', () => {
+    
+
+        document.querySelectorAll(".content").forEach((element, index) => {
+            element.classList.add("sample-content--hidden");
+          });
+
+          document.querySelectorAll(".perfilPrinc").forEach((element, index) => {
+            element.classList.remove("sample-content--hidden");
+       });
 
     user.value="";
     password.value="";
@@ -52,5 +68,16 @@ const search = new MDCTextField(document.getElementById('search'));
 const select = new MDCSelect(document.querySelector('.mdc-select'));
 
 select.listen('MDCSelect:change', () => {
+    //alert(`Selected option at index ${select.selectedIndex} with value "${select.value}"`);
+});
+
+//Pestaña Principal Perfil
+
+const searchP = new MDCTextField(document.getElementById('search'));
+
+
+const selectP = new MDCSelect(document.getElementById('filtro_lib'));
+
+selectP.listen('MDCSelect:change', () => {
     //alert(`Selected option at index ${select.selectedIndex} with value "${select.value}"`);
 });
