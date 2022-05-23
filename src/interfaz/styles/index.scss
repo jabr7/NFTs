@@ -23,6 +23,9 @@
 @use "@material/menu/mdc-menu";
 @use "@material/select/styles";
 @use "@material/snackbar/mdc-snackbar";
+@use "@material/image-list/mdc-image-list"
+;@use "@material/image-list";
+
 
 @include card.core-styles;
 @include textfield.core-styles;
@@ -121,7 +124,6 @@ Central Login Box
   margin-top: 0.5rem;
   margin-left: 20%;
   display: inline-block;
-
 }
 
 //Marketplace
@@ -207,7 +209,6 @@ Central Login Box
 }
 
 
-
 @keyframes floater {
   0%{transform:rotateX(51deg) rotateZ(43deg);transition: ease 0.5s;}
   50%{transform:rotateX(0deg) rotateZ(0deg);transition: ease 0.5s;}
@@ -215,20 +216,37 @@ Central Login Box
 
 
 //Contenido de Marketplace
+
+#contenido_marketplace{
+  margin-top: 3em;
+}
+
 #search{
   margin-left: 12.3%;
   margin-top: 5%;
 }
 
-//Utilizado para desaparecer o aparecer las pantallas
-.content {
-
+#filtros_y_Buscador{
+  margin-left: 5%;
+  border-style: solid;
+  float: left;
+  margin-right: 5%;
 }
+
+
+#NFT_List{
+ // border-style: solid;
+  display: block;
+ 
+}
+.my-image-list {
+  @include image-list.standard-columns(5);
+}
+//Utilizado para desaparecer o aparecer las pantallas
 
 .sample-content--hidden {
   display: none;
 }
-
 
 
 
