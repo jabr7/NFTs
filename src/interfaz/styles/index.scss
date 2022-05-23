@@ -214,7 +214,26 @@ Central Login Box
   50%{transform:rotateX(0deg) rotateZ(0deg);transition: ease 0.5s;}
 }
 
+@media only screen and (min-width: 1500px){
 
+  #animated{
+    display: inline;
+  }
+}
+@media only screen and (max-width: 1500px){
+
+  #animated{
+    margin-left: 10%;
+  }
+  #banner-principal{
+   margin: auto;
+   width: 700px;
+  }
+}
+
+#hover_text{
+  display: none;
+}
 //Contenido de Marketplace
 
 #contenido_marketplace{
