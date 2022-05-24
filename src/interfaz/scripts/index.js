@@ -25,6 +25,7 @@ login.listen('click', () => {
           document.querySelectorAll(".marketplace").forEach((element, index) => {
             element.classList.remove("sample-content--hidden");
        });
+       document.getElementById('caja-marketplace').prepend(document.getElementById('banner-principal'));
 
 
     }else{
