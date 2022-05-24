@@ -138,8 +138,8 @@ Central Login Box
   margin-left: 12%; 
 }
 
-#hover_text{
-  margin-left: 60%;
+#hover_text1{
+  margin-left: 48%;
   margin-top: 6em;
   color: #a19f9f;
 }
@@ -219,6 +219,15 @@ Central Login Box
   #animated{
     display: inline;
   }
+  #hover_text2{
+    display: none;    
+  }
+  #hover_text1{
+    text-align: center;
+    margin-top: 2em;
+    color: #a19f9f;
+  }
+
 }
 @media only screen and (max-width: 1500px){
 
@@ -229,11 +238,19 @@ Central Login Box
    margin: auto;
    width: 700px;
   }
+  #hover_text2{
+    text-align: center;
+    margin-top: 2em;
+    color: #a19f9f;
+  }
+  #hover_text1{
+    display: none;
+  }
+
 }
 
-#hover_text{
-  display: none;
-}
+
+
 //Contenido de Marketplace
 
 .mdc-typography--headline3{
@@ -266,7 +283,6 @@ Central Login Box
   background-size: 200% auto;
   color: #fff;
   background-clip: text;
-  text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textclip 2s linear infinite;
