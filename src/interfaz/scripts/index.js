@@ -45,6 +45,7 @@ perfil.listen('click', () => {
           document.querySelectorAll(".perfilPrinc").forEach((element, index) => {
             element.classList.remove("sample-content--hidden");
        });
+       document.getElementById('caja-perfilPrinc').prepend(document.getElementById('banner-principal'));
 
     user.value="";
     password.value="";
@@ -73,7 +74,7 @@ select.listen('MDCSelect:change', () => {
 
 //Pestaña Principal Perfil
 
-const searchP = new MDCTextField(document.getElementById('search'));
+const searchP = new MDCTextField(document.getElementById('searchP'));
 
 
 const selectP = new MDCSelect(document.getElementById('filtro_lib'));

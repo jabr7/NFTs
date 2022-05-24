@@ -323,7 +323,6 @@ Central Login Box
 
 #filtros_y_Buscador_PerfilPrinc{
   margin-left: 5%;
-  border-style: solid;
   float: left;
   margin-right: 5%;
 }
@@ -337,6 +336,10 @@ Central Login Box
 #NFT_List{
   display: inline;
 }
+#NFT_Lib{
+  display: inline;
+}
+
 .my-image-list {
   @include image-list.standard-columns(5);
 }
