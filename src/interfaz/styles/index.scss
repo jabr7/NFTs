@@ -139,7 +139,7 @@ Central Login Box
 }
 
 #hover_text1{
-  margin-left: 48%;
+  margin-left: 32%;
   margin-top: 6em;
   color: #a19f9f;
 }
@@ -160,7 +160,7 @@ Central Login Box
 }
 
 .mdc-select__anchor {
-  width: 202px;
+  width: 188px;
   min-width: 0;
   flex: 1 1 auto;
   position: relative;
@@ -335,16 +335,31 @@ Central Login Box
   display: none;
 }
 
+
+//Sistema Listado de NFTs
 #NFT_List{
   display: inline;
+}
+
+.mdc-image-list__item{
+  padding: 20px;
 }
 #NFT_Lib{
   display: inline;
 }
 
 .my-image-list {
-  @include image-list.standard-columns(5);
+  @include image-list.standard-columns(4);
 }
+.mdc-card__media--16-9::before {
+  margin-top: 0%;
+}
+
+.mdc-card{
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
 //Utilizado para desaparecer o aparecer las pantallas
 
 .sample-content--hidden {

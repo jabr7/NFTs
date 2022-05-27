@@ -83,3 +83,4 @@ const selectP = new MDCSelect(document.getElementById('filtro_lib'));
 selectP.listen('MDCSelect:change', () => {
     //alert(`Selected option at index ${select.selectedIndex} with value "${select.value}"`);
 });
+
