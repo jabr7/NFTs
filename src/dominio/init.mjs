@@ -11,7 +11,7 @@ import usuarios from "./users.mjs";
 import gifFiles from "./cartas.mjs";
 
 export default function init(){
-    let system = new Sistema;
+    let system = new Sistema();
     //inicializar users
     for (let i of usuarios) {
         let user = new Usuario(i.nombre, i.password, i.saldo, i.admin);
