@@ -30,7 +30,6 @@ export default function init(){
         let carta = new Carta(gifFiles[index],fecha, nombre);
         system.agregarCarta(carta);
     }
-    console.log(system);
     return system;
 
 

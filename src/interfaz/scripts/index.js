@@ -2,9 +2,9 @@ import {MDCTextField} from '@material/textfield';
 import {MDCRipple} from '@material/ripple';
 import {MDCSelect} from '@material/select';
 
-//import init from '../../dominio/init.mjs';
-
-//let sistma = init();
+import init from '../../dominio/init.mjs';
+let sistema = init();
+console.log(sistema.getUsers());    
 //Login Box
 const user = new MDCTextField(document.getElementById('user'));
 const password = new MDCTextField(document.getElementById('password'));
@@ -17,9 +17,13 @@ const marketplace = new MDCRipple(document.getElementById('marketplace_button'))
 const perfil = new MDCRipple(document.getElementById('profile_button'));
 
 //Elimina el contenido de la pagina
-login.listen('click', () => {
-    if(user.value==="Joaquin" && password.value === "1234"){
 
+login.listen('click', () => {
+    let username = user.value;
+    let pass = password.value;
+    let status = login_f (username,pass);
+    console.log(status);
+    if (status){
         document.querySelectorAll(".content").forEach((element, index) => {
             element.classList.add("sample-content--hidden");
           });
@@ -28,7 +32,6 @@ login.listen('click', () => {
             element.classList.remove("sample-content--hidden");
        });
        document.getElementById('caja-marketplace').prepend(document.getElementById('banner-principal'));
-
 
     }else{
         alert("Error");
