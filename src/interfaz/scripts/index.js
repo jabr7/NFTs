@@ -4,8 +4,10 @@ import {MDCSelect} from '@material/select';
 
 import init from '../../dominio/init.mjs';
 
-let sistema = init();
+var sistema = init();
 console.log(sistema.getUsers());
+
+
 //Login Box
 const user = new MDCTextField(document.getElementById('user'));
 const password = new MDCTextField(document.getElementById('password'));
@@ -19,8 +21,7 @@ const perfil = new MDCRipple(document.getElementById('profile_button'));
 
 //Elimina el contenido de la pagina
 login.listen('click', () => {
-    if(user.value==="Joaquin" && password.value === "1234"){
-
+    if(sistema.logIn(user.value, password.value)){
         document.querySelectorAll(".content").forEach((element, index) => {
             element.classList.add("sample-content--hidden");
           });

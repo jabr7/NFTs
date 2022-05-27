@@ -40,11 +40,11 @@ export default class Sistema{
 
     }
     //proceso interno de login
-    logIn(username, passowrd){
+    logIn(username, password){
         let exitoso = false;
         let user = this.findUser(username);
         if (user!=null){
-            if (user.passowrd == passowrd){
+            if (user.password == password){
                 exitoso = true;
             }
         }
