@@ -123,7 +123,7 @@ export default class Sistema{
     //vende la carta del usuario
     vednerCarta(id,user){
         let carta = user.getCarta(id);
-        system.addCard(carta);
+        this.agregarCarta(carta);
         user.removeCard(carta.id);
     }
 }

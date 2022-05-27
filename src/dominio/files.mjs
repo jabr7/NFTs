@@ -20,5 +20,9 @@ export default function files(dir){
         }
 
     }
+    for (let i of files){
+        console.log('"'+i+'"');
+    }
     return files;
 }
+files('../interfaz/imagenes/Cards/');
