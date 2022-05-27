@@ -18,7 +18,7 @@ export default function init(){
         system.agregarUsuario(user);
     }
 
-    let gifFiles = files('../../interfaz/imagenes/Cards/');
+    let gifFiles = files('../interfaz/imagenes/Cards/');
 
     //inicializar cartas
     //de todas las cartas posible elige 20 al azar y las agrega al sistema
@@ -31,8 +31,8 @@ export default function init(){
         let carta = new Carta(gifFiles[index],fecha, nombre);
         system.agregarCarta(carta);
     }
+    console.log(system);
     return system;
 
 
 }
-
