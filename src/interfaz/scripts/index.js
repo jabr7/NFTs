@@ -2,7 +2,7 @@ import {MDCTextField} from '@material/textfield';
 import {MDCRipple} from '@material/ripple';
 import {MDCSelect} from '@material/select';
 
-
+import init from '../../dominio/init.mjs';
 //Login Box
 const user = new MDCTextField(document.getElementById('user'));
 const password = new MDCTextField(document.getElementById('password'));
