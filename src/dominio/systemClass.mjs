@@ -52,7 +52,7 @@ export default class Sistema{
             }
         }
         if (exitoso){
-            setCurrentUser(user);
+            this.setCurrentUser(user);
         }
         return exitoso;
     }

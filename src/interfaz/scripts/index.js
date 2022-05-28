@@ -8,6 +8,14 @@ var sistema = init();
 console.log(sistema.getUsers());
 
 
+//Marketplace
+sistema.getCartas()[0]
+let cartas = sistema.getCartas();
+document.getElementById('NFT1').src = cartas[0].getPath();
+document.getElementById('NFT2').src = cartas[1].getPath();
+document.getElementById('NFT3').src = cartas[2].getPath();
+document.getElementById('NFT4').src = cartas[3].getPath();
+
 //Login Box
 const user = new MDCTextField(document.getElementById('user'));
 const password = new MDCTextField(document.getElementById('password'));
