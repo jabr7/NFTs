@@ -29,6 +29,9 @@ export default class Sistema{
     setCurrentUser(usuario){
         this.currentUser = usuario;
     }
+    getCurrentUser(usuario){
+        return this.currentUser;
+    }
     // dado un nombre de usuario, devuelve el objeto ussuario si lo encuentra, sino devuelve null
     findUser(username){
         for (let user of this.getUsers()){
@@ -49,7 +52,7 @@ export default class Sistema{
             }
         }
         if (exitoso){
-            this.setCurrentUser = user;
+            setCurrentUser(user);
         }
         return exitoso;
     }
