@@ -18,4 +18,24 @@ export default class Carta{
     likeCard(){
         this.likes = this.getLikes+1;
     }
+
+    getId(){
+        return this.id;
+    }
+
+    getPrecio(){
+        return this.precio;
+    }
+
+    getPath(){
+        return this.path;
+    }
+
+    getFecha(){
+        return this.fecha;
+    }
+
+    getNombre(){
+        return this.nombre;
+    }
 }
