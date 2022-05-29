@@ -4,7 +4,6 @@
 import Sistema from './systemClass.mjs';
 import Usuario from './userClass.mjs';
 import Carta from './cardClass.mjs';
-//import files from './files.mjs';
 import generateRandomDate from './fecha.mjs';
 import randomName from './names.mjs';
 import usuarios from "./users.mjs";
@@ -17,12 +16,17 @@ export default function init(){
         let user = new Usuario(i.nombre, i.password, i.saldo, i.admin);
         system.agregarUsuario(user);
     }
+    
 
     //inicializar cartas
-    //de todas las cartas posible elige 20 al azar y las agrega al sistema
+    //de todas las cartas posible elige 20 al azar y las agrega al sistema, se comprueban que no se repitan ya que el round puede llegar a repetirlas
+    let valoresUsados = [];
     for (let i=0; i<20; i++){
         let index = Math.round(Math.random() * gifFiles.length );
-
+        while (valoresUsados.includes(index)){
+            index = Math.round(Math.random() * gifFiles.length );
+        }
+        valoresUsados.push(index);
         let start = new Date(2020, 0, 1);
         let end = new Date();
         let fecha = generateRandomDate(start, end);
