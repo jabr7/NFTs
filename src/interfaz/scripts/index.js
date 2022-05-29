@@ -9,12 +9,76 @@ console.log(sistema.getUsers());
 
 
 //Marketplace
-sistema.getCartas()[0]
 let cartas = sistema.getCartas();
 document.getElementById('NFT1').src = cartas[0].getPath();
 document.getElementById('NFT2').src = cartas[1].getPath();
 document.getElementById('NFT3').src = cartas[2].getPath();
 document.getElementById('NFT4').src = cartas[3].getPath();
+
+
+//Creacion de la lista NFT
+
+
+cartas.forEach(element => {
+    let listaInterna = document.getElementById("NFT_lista_interna");
+
+    var divCarta = document.createElement("div");
+    divCarta.className="mdc-card";
+    listaInterna.appendChild(divCarta);
+    
+    var divPrimaryAction = document.createElement("div");
+    divPrimaryAction.className="mdc-card__primary-action";
+    divCarta.appendChild(divPrimaryAction);
+    
+    var divMediaCard = document.createElement("div");
+    divMediaCard.className="my-card__media mdc-card__media mdc-card__media--16-9 ";
+    divPrimaryAction.appendChild(divMediaCard);
+    
+    var link = document.createElement("a");
+    link.href="https://www.google.com/m?client=ms-android-samsung-gs-rev1&source=android-home";
+    divMediaCard.appendChild(link);
+    
+    var img = document.createElement("img");
+    img.className="mdc-image-list__image";
+    img.src=element.getPath();
+    link.appendChild(img);
+    
+    var divRipple = document.createElement("div");
+    divRipple.className="mdc-card__ripple";
+    divMediaCard.appendChild(divRipple);
+    
+    var divCardActions = document.createElement("div");
+    divCardActions.className="mdc-card__actions";
+    divCarta.appendChild(divCardActions);
+    
+    var divFullBleed = document.createElement("div");
+    divFullBleed.className="mdc-card__actions mdc-card__actions--full-bleed";
+    divCardActions.appendChild(divFullBleed);
+    
+    var link_button = document.createElement("a");
+    link_button.className="mdc-button mdc-card__action mdc-card__action--button";
+    link_button.href="#";
+    divFullBleed.appendChild(link_button);
+    
+    var divButtonRiple = document.createElement("div");
+    divButtonRiple.className="mdc-button__ripple";
+    link_button.appendChild(divButtonRiple);
+    
+    var button_label = document.createElement("span");
+    button_label.className="mdc-button__label"
+    button_label.innerHTML=element.getNombre();
+    link_button.appendChild(button_label);
+    
+    var arrowIcon = document.createElement("i");
+    arrowIcon.className="material-icons mdc-button__icon";
+    arrowIcon.ariaHidden=true;
+    arrowIcon.innerHTML="arrow_forward";
+    link_button.appendChild(arrowIcon);
+
+});
+
+
+
 
 //Login Box
 const user = new MDCTextField(document.getElementById('user'));
