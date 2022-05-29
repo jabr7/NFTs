@@ -19,29 +19,6 @@ document.getElementById('NFT4').src = cartas[3].getPath();
 //Creacion de la lista NFT
 
 
-/*
- <ul class="mdc-image-list my-image-list">
-
-
-  <div class="mdc-card">
-            <div class="mdc-card__primary-action">
-              <div class="my-card__media mdc-card__media mdc-card__media--16-9 ">
-                <!--Valor a cambiar para el action principal del nft-->
-                <a href="https://www.google.com/m?client=ms-android-samsung-gs-rev1&source=android-home"><img class="mdc-image-list__image" src="./imagenes/2 - f1LkIrz.gif"></a>
-              </div>
-              <div class="mdc-card__ripple"></div>
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__actions mdc-card__actions--full-bleed">
-                <a class="mdc-button mdc-card__action mdc-card__action--button" href="#">
-                  <div class="mdc-button__ripple"></div>
-                  <span class="mdc-button__label">Nombre del NFT</span>
-                  <i class="material-icons mdc-button__icon" aria-hidden="true">arrow_forward</i>
-                </a>
-              </div>
-            </div>
-          </div>
-*/ 
 cartas.forEach(element => {
     let listaInterna = document.getElementById("NFT_lista_interna");
 
