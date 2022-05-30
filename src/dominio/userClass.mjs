@@ -52,6 +52,5 @@ export default class Usuario{
     addCard(card){
         this.getCartas().push(card);
     }
-    
 }
 

@@ -3,6 +3,7 @@ import {MDCRipple} from '@material/ripple';
 import {MDCSelect} from '@material/select';
 
 import init from '../../dominio/init.mjs';
+import Usuario from '../../dominio/userClass.mjs';
 
 var sistema = init();
 console.log(sistema.getUsers());
@@ -85,6 +86,42 @@ const user = new MDCTextField(document.getElementById('user'));
 const password = new MDCTextField(document.getElementById('password'));
 const login = new MDCRipple(document.getElementById('login_button'));
 
+//Register Box
+document.getElementById("registro").addEventListener("click", abrirRegistro);
+function abrirRegistro(){
+    document.querySelectorAll(".content").forEach((element, index) => {
+        element.classList.add("sample-content--hidden");
+      });
+
+      document.querySelectorAll(".registro").forEach((element, index) => {
+        element.classList.remove("sample-content--hidden");
+   });
+}
+const registro_user = new MDCTextField(document.getElementById('registro_user'));
+const registro_password = new MDCTextField(document.getElementById('registro_password'));
+const registro_verificar_password = new MDCTextField(document.getElementById('verificar_password'));
+const registro_email = new MDCTextField(document.getElementById('registro_email'));
+
+
+let boton_registro=new MDCRipple(document.getElementById("register_button"));
+
+boton_registro.listen('click', () => {
+    if(registro_password.value==registro_verificar_password.value){
+        let usuario = sistema.findUser(registro_user.value);
+        if(!usuario){ 
+            let user = new Usuario(registro_user.value,registro_password,0,false);
+            sistema.agregarUsuario(user);
+            alert("Usuario agregado exitosamente");
+            alert(sistema.findUser(registro_user.value));
+        }else{
+            alert("Un usuario con ese username ya existe")
+        }
+    }else{
+        alert("La contraseña ingresada no coincide")
+    }
+
+});
+
 
 //Top Bar
 const topAppBarElement = document.querySelector('.mdc-top-app-bar');
@@ -114,7 +151,6 @@ login.listen('click', () => {
 
 perfil.listen('click', () => {
     
-
         document.querySelectorAll(".content").forEach((element, index) => {
             element.classList.add("sample-content--hidden");
           });
@@ -141,8 +177,6 @@ marketplace.listen('click', () => {
 
 //MARKETPLACE
 const search = new MDCTextField(document.getElementById('search'));
-
-
 const select = new MDCSelect(document.querySelector('.mdc-select'));
 
 select.listen('MDCSelect:change', () => {
@@ -151,9 +185,7 @@ select.listen('MDCSelect:change', () => {
 
 //Pestaña Principal Perfil
 
-const searchP = new MDCTextField(document.getElementById('searchP'));
-
-
+const searchP = new MDCTextField(document.getElementById('search_P'));
 const selectP = new MDCSelect(document.getElementById('filtro_lib'));
 
 selectP.listen('MDCSelect:change', () => {
