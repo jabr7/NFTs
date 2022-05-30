@@ -72,6 +72,7 @@ export default class Usuario{
     addCard(card){
         this.getCartas().push(card);
     }
+
     //consulta si el usuario es admin
     isAdmin(){
         return this.admin;
@@ -86,6 +87,7 @@ export default class Usuario{
 
         return "Nombre: " + this.getNombre() + ", Password: " + this.getPassword() + ", Saldo: " + this.getSaldo() + " is Admin: " + this.isAdmin() + ", Cant Cartas: " + this.getCartas().length;
     }
+
 }
 
 
