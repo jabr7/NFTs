@@ -141,8 +141,6 @@ marketplace.listen('click', () => {
 
 //MARKETPLACE
 const search = new MDCTextField(document.getElementById('search'));
-
-
 const select = new MDCSelect(document.querySelector('.mdc-select'));
 
 select.listen('MDCSelect:change', () => {
@@ -151,9 +149,7 @@ select.listen('MDCSelect:change', () => {
 
 //Pestaña Principal Perfil
 
-const searchP = new MDCTextField(document.getElementById('searchP'));
-
-
+const searchP = new MDCTextField(document.getElementById('search_P'));
 const selectP = new MDCSelect(document.getElementById('filtro_lib'));
 
 selectP.listen('MDCSelect:change', () => {
