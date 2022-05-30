@@ -62,6 +62,10 @@ Top Bar Login
   margin-left: 5%;
 }
 
+#logout_button{
+  margin-left: 20%;
+}
+
 .material-icons{ 
   color: rgba(0, 0, 0, 0.54); 
 }
@@ -73,6 +77,11 @@ Top Bar Login
 #profile_button{
    font-size: 48px;
    margin-right: 10%;
+}
+
+#pfr_img{
+  font-size: 100px;
+  margin-left: 27%;
 }
 
 hr{
@@ -114,6 +123,12 @@ Central Login Box
   width: auto; 
   max-height: 100%; 
   
+}
+
+#nombre_perfil{
+  display: block;
+  margin-left: 22%;
+  margin-bottom: 5%; 
 }
 
 #registro{

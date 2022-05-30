@@ -187,6 +187,17 @@ select.listen('MDCSelect:change', () => {
 
 const searchP = new MDCTextField(document.getElementById('search_P'));
 const selectP = new MDCSelect(document.getElementById('filtro_lib'));
+const logout = new MDCRipple(document.getElementById('logout_button'))
+
+logout.listen('click', () => {
+    document.querySelectorAll(".content").forEach((element, index) => {
+        element.classList.add("sample-content--hidden");
+      });
+
+    document.querySelectorAll(".login").forEach((element, index) => {
+         element.classList.remove("sample-content--hidden");
+    });
+})
 
 selectP.listen('MDCSelect:change', () => {
     //alert(`Selected option at index ${select.selectedIndex} with value "${select.value}"`);
