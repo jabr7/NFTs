@@ -80,5 +80,12 @@ export default class Usuario{
     toogleAdmin(){
         this.admin = !this.admin;
     }
+
+
+    toString(){
+
+        return "Nombre: " + this.getNombre() + ", Password: " + this.getPassword() + ", Saldo: " + this.getSaldo() + " is Admin: " + this.isAdmin() + ", Cant Cartas: " + this.getCartas().length;
+    }
 }
+
 

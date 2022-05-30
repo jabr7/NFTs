@@ -38,4 +38,8 @@ export default class Carta{
     getNombre(){
         return this.nombre;
     }
+
+    toString(){
+        return "Id: " + this.getId() + ", Likes: " + this.getLikes() + ", Precio" + this.getPrecio() + ", Fecha: " + this.getFecha() + ", Nombre: " + this.getNombre(); 
+    }
 }
