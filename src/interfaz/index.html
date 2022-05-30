@@ -4,6 +4,7 @@
 <head>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="bundle.css">
+  <script src="./scripts/index.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -93,10 +94,49 @@
         <span class="mdc-button__label">Login</span>
       </button>
       <br>
-      <a id="registro" href="http://localhost:8080/">Registro</a>
-      <a id="olvide" href="http://localhost:8080/">Olvide mi contraseña</a>
+      <a id="registro" href="#">Registro</a>
+      
+      <a id="olvide" href="#">Olvide mi contraseña</a>
       </div>
 
+      <!--CAJA REGISTRO-->
+      <div id="caja-login" class="content registro sample-content--hidden"> 
+        <h1 style="color:#118EBF;">Registro de Usuario</h1>
+  
+        <label class="mdc-text-field mdc-text-field--filled" id="registro_user">
+          <span class="mdc-text-field__ripple"></span>
+          <span class="mdc-floating-label" id="my-label-id">Usuario</span>
+          <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id">
+          <span class="mdc-line-ripple"></span>
+        </label>
+  
+        <label class="mdc-text-field mdc-text-field--filled" id="registro_password">
+          <span class="mdc-text-field__ripple"></span>
+          <span class="mdc-floating-label" id="my-label-id">Contraseña</span>
+          <input class="mdc-text-field__input" type="password" aria-labelledby="my-label-id">
+          <span class="mdc-line-ripple"></span>
+        </label>
+
+        <label class="mdc-text-field mdc-text-field--filled" id="verificar_password">
+          <span class="mdc-text-field__ripple"></span>
+          <span class="mdc-floating-label" id="my-label-id">Verificar Contraseña</span>
+          <input class="mdc-text-field__input" type="password" aria-labelledby="my-label-id">
+          <span class="mdc-line-ripple"></span>
+        </label>
+
+        <label class="mdc-text-field mdc-text-field--filled" id="registro_email">
+          <span class="mdc-text-field__ripple"></span>
+          <span class="mdc-floating-label" id="my-label-id">Email</span>
+          <input class="mdc-text-field__input" type="email" aria-labelledby="my-label-id">
+          <span class="mdc-line-ripple"></span>
+        </label>
+  
+        <button class="mdc-button mdc-button--raised" id="register_button">
+          <span class="mdc-button__label">Registrarse</span>
+        </button>
+        <br>
+       
+        </div>
     <!--MARKETPLACE-->
       <div id="caja-marketplace" class="content marketplace">
         <div id="contenido_marketplace">          
