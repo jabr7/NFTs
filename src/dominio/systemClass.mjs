@@ -6,8 +6,8 @@ export default class Sistema{
     }
     // devuelve un objeto carta al azar del array
     getRandomCard(){
-        let randomIndex = Math.floor(Math.random() * arr.length);
-        let carta = system.getCartas[randomIndex];
+        let randomIndex = Math.floor(Math.random() * this.getCartas().length);
+        let carta = this.getCartas()[randomIndex];
         return carta;
         }
     // agrega carta al sistema
