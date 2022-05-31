@@ -67,7 +67,7 @@ cartas.forEach(element => {
     
     var button_label = document.createElement("span");
     button_label.className="mdc-button__label"
-    button_label.innerHTML=element.getNombre();
+    button_label.innerHTML= element.getNombre();
     link_button.appendChild(button_label);
     
     var arrowIcon = document.createElement("i");
@@ -77,7 +77,6 @@ cartas.forEach(element => {
     link_button.appendChild(arrowIcon);
 
 });
-
 
 
 
