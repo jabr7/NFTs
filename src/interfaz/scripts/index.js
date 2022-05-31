@@ -108,7 +108,7 @@ boton_registro.listen('click', () => {
     if(registro_password.value==registro_verificar_password.value){
         let usuario = sistema.findUser(registro_user.value);
         if(!usuario){ 
-            let user = new Usuario(registro_user.value,registro_password,0,false);
+            let user = new Usuario(registro_user.value,registro_password.value,0,false);
             sistema.agregarUsuario(user);
             alert("Usuario agregado exitosamente");
             alert(sistema.findUser(registro_user.value));
