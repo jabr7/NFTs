@@ -11,16 +11,14 @@ console.log(sistema.getUsers());
 
 //Marketplace
 let cartas = sistema.getCartas();
-document.getElementById('NFT1').src = cartas[0].getPath();
-document.getElementById('NFT2').src = cartas[1].getPath();
-document.getElementById('NFT3').src = cartas[2].getPath();
-document.getElementById('NFT4').src = cartas[3].getPath();
+document.getElementById('NFT1').src = sistema.getRandomCard().getPath();
+document.getElementById('NFT2').src = sistema.getRandomCard().getPath();
+document.getElementById('NFT3').src = sistema.getRandomCard().getPath();
+document.getElementById('NFT4').src = sistema.getRandomCard().getPath();
 
 
-//Creacion de la lista NFT
-
-
-cartas.forEach(element => {
+//Creacion de la lista NFT y filtros
+function mostrarCarta(carta){
     let listaInterna = document.getElementById("NFT_lista_interna");
 
     var divCarta = document.createElement("div");
@@ -41,7 +39,7 @@ cartas.forEach(element => {
     
     var img = document.createElement("img");
     img.className="mdc-image-list__image";
-    img.src=element.getPath();
+    img.src=carta.getPath();
     link.appendChild(img);
     
     var divRipple = document.createElement("div");
@@ -67,7 +65,7 @@ cartas.forEach(element => {
     
     var button_label = document.createElement("span");
     button_label.className="mdc-button__label"
-    button_label.innerHTML= element.getNombre();
+    button_label.innerHTML= carta.getNombre();
     link_button.appendChild(button_label);
     
     var arrowIcon = document.createElement("i");
@@ -75,15 +73,47 @@ cartas.forEach(element => {
     arrowIcon.ariaHidden=true;
     arrowIcon.innerHTML="arrow_forward";
     link_button.appendChild(arrowIcon);
-
+}
+//Iniciaizacion de lista NFTs
+cartas.forEach(element => {
+    mostrarCarta(element);
 });
 
+const search = new MDCTextField(document.getElementById('search'));
+const select = new MDCSelect(document.querySelector('.mdc-select'));
+const botonBuscar = new MDCRipple(document.getElementById('aplicar_filtros'));
 
+botonBuscar.listen('click', () =>{
+    if(!search.value.toLowerCase()==""){
 
+    }else{
+        alert("Por favor rellene el campo de busqueda");
+    }
+});
 //Login Box
 const user = new MDCTextField(document.getElementById('user'));
 const password = new MDCTextField(document.getElementById('password'));
 const login = new MDCRipple(document.getElementById('login_button'));
+
+login.listen('click', () => {
+    if(sistema.logIn(user.value, password.value)){
+        document.querySelectorAll(".content").forEach((element, index) => {
+            element.classList.add("sample-content--hidden");
+          });
+
+          document.querySelectorAll(".marketplace").forEach((element, index) => {
+            element.classList.remove("sample-content--hidden");
+       });
+       document.getElementById('caja-marketplace').prepend(document.getElementById('banner-principal'));
+
+
+    }else{
+        alert("Error");
+    }
+
+    user.value="";
+    password.value="";
+})
 
 //Register Box
 document.getElementById("registro").addEventListener("click", abrirRegistro);
@@ -127,27 +157,6 @@ const topAppBarElement = document.querySelector('.mdc-top-app-bar');
 const marketplace = new MDCRipple(document.getElementById('marketplace_button'));
 const perfil = new MDCRipple(document.getElementById('profile_button'));
 
-//Elimina el contenido de la pagina
-login.listen('click', () => {
-    if(sistema.logIn(user.value, password.value)){
-        document.querySelectorAll(".content").forEach((element, index) => {
-            element.classList.add("sample-content--hidden");
-          });
-
-          document.querySelectorAll(".marketplace").forEach((element, index) => {
-            element.classList.remove("sample-content--hidden");
-       });
-       document.getElementById('caja-marketplace').prepend(document.getElementById('banner-principal'));
-
-
-    }else{
-        alert("Error");
-    }
-
-    user.value="";
-    password.value="";
-})
-
 perfil.listen('click', () => {
     
         document.querySelectorAll(".content").forEach((element, index) => {
@@ -163,7 +172,7 @@ perfil.listen('click', () => {
     password.value="";
 })
 
-//Trae de vuelta el login
+//Boton marketplace trae de vuelta el login
 marketplace.listen('click', () => {
     document.querySelectorAll(".content").forEach((element, index) => {
         element.classList.add("sample-content--hidden");
@@ -174,13 +183,7 @@ marketplace.listen('click', () => {
     });
 })
 
-//MARKETPLACE
-const search = new MDCTextField(document.getElementById('search'));
-const select = new MDCSelect(document.querySelector('.mdc-select'));
 
-select.listen('MDCSelect:change', () => {
-    //alert(`Selected option at index ${select.selectedIndex} with value "${select.value}"`);
-});
 
 //Pestaña Principal Perfil
 
