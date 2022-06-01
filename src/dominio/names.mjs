@@ -27,6 +27,6 @@ let nombres = ["albattani", "allen", "almeida", "archimedes", "ardinghelli", "ar
 "stonebraker", "swanson", "swartz", "swirles", "tesla", "thompson", "torvalds", "turing", "varahamihira",
 "visvesvaraya", "volhard", "wescoff", "williams", "wilson", "wing", "wozniak", "wright", "yalow", "yonath"];
 
-let ret = adjetivos[Math.round(Math.random() * adjetivos.length)] + " " + nombres[Math.round(Math.random() * nombres.length)];
+let ret = adjetivos[Math.floor(Math.random() * adjetivos.length)] + " " + nombres[Math.floor(Math.random() * nombres.length)];
 return ret;
 }
