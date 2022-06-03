@@ -308,46 +308,57 @@
  <!--PestañaPrincipalPerfil-->
  <div id="caja-perfilPrinc" class="content perfilPrinc sample-content--hidden">
   <div id="contenido_perfilPrinc">          
-    <div class="mdc-tab-bar" role="tablist">
+    <!--Tabs-->
+    <div class="mdc-tab-bar" role="tablist" id="tab_perfil">
       <div class="mdc-tab-scroller">
         <div class="mdc-tab-scroller__scroll-area">
           <div class="mdc-tab-scroller__scroll-content">
-            <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="1">
+            <button class="mdc-tab mdc-tab--active" id="lib_btn" role="tab" aria-selected="true" tabindex="0">
+              <span class="mdc-tab__content">
+                <span class="mdc-tab__icon material-icons" aria-hidden="true">local_library</span>
+                <span class="mdc-tab__text-label">Librería</span>
+              </span>
+              <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+              </span>
+              <span class="mdc-tab__ripple"></span>
+            </button>
+            <button class="mdc-tab mdc-tab--hidden" id="fav_btn" role="tab" aria-selected="false" tabindex="1">
               <span class="mdc-tab__content">
                 <span class="mdc-tab__icon material-icons" aria-hidden="true">favorite</span>
                 <span class="mdc-tab__text-label">Favoritos</span>
               </span>
-              <span class="mdc-tab-indicator mdc-tab-indicator--active">
+              <span class="mdc-tab-indicator mdc-tab-indicator--hidden">
                 <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
               </span>
               <span class="mdc-tab__ripple"></span>
             </button>
-            <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
+            <button class="mdc-tab mdc-tab--hidden" id="wallet_btn" role="tab" aria-selected="false" tabindex="2">
               <span class="mdc-tab__content">
                 <span class="mdc-tab__icon material-icons" aria-hidden="true">account_balance_wallet</span>
                 <span class="mdc-tab__text-label">Wallet</span>
               </span>
-              <span class="mdc-tab-indicator mdc-tab-indicator--active">
+              <span class="mdc-tab-indicator mdc-tab-indicator--hidden">
                 <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
               </span>
               <span class="mdc-tab__ripple"></span>
             </button>
-            <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="2">
+            <button class="mdc-tab mdc-tab--hidden" id="info_btn" role="tab" aria-selected="false" tabindex="3">
               <span class="mdc-tab__content">
                 <span class="mdc-tab__icon material-icons" aria-hidden="true">portrait</span>
                 <span class="mdc-tab__text-label">Información</span>
               </span>
-              <span class="mdc-tab-indicator mdc-tab-indicator--active">
+              <span class="mdc-tab-indicator mdc-tab-indicator--hidden">
                 <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
               </span>
               <span class="mdc-tab__ripple"></span>
             </button>
-            <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="4">
+            <button class="mdc-tab mdc-tab--hidden" id="vender_btn" role="tab" aria-selected="false" tabindex="4">
               <span class="mdc-tab__content">
                 <span class="mdc-tab__icon material-icons" aria-hidden="true">attach_money</span>
                 <span class="mdc-tab__text-label">Vender</span>
               </span>
-              <span class="mdc-tab-indicator mdc-tab-indicator--active">
+              <span class="mdc-tab-indicator mdc-tab-indicator--hidden">
                 <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
               </span>
               <span class="mdc-tab__ripple"></span>
@@ -467,6 +478,12 @@
       </div>
   </div>
 
+
+  <!--Caja Wallet-->
+  <div id="caja-wallet" class="content wallet sample-content--hidden">
+    <div id="contenido_wallet"> 
+
+  </div>
 </body>
 <script src="bundle.js" async></script>
 

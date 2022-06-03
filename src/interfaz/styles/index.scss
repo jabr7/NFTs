@@ -77,6 +77,7 @@ Top Bar Login
 #profile_button{
    font-size: 48px;
    margin-right: 10%;
+   cursor:pointer;
 }
 
 #pfr_img{
@@ -380,6 +381,12 @@ Registro
 .mdc-card{
   margin-left: 30px;
   margin-top: 30px;
+}
+
+//Caja Wallet
+
+#caja-wallet{
+  margin-top: 3em;
 }
 
 //Utilizado para desaparecer o aparecer las pantallas

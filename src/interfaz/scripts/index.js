@@ -1,6 +1,7 @@
 import {MDCTextField} from '@material/textfield';
 import {MDCRipple} from '@material/ripple';
 import {MDCSelect} from '@material/select';
+import {MDCTabBar} from '@material/tab-bar';
 
 import init from '../../dominio/init.mjs';
 import Usuario from '../../dominio/userClass.mjs';
@@ -188,6 +189,7 @@ select.listen('MDCSelect:change', () => {
 const searchP = new MDCTextField(document.getElementById('search_P'));
 const selectP = new MDCSelect(document.getElementById('filtro_lib'));
 const logout = new MDCRipple(document.getElementById('logout_button'))
+const tabBar = new MDCTabBar(document.getElementById('tab_perfil'));
 
 logout.listen('click', () => {
     document.querySelectorAll(".content").forEach((element, index) => {
@@ -202,4 +204,36 @@ logout.listen('click', () => {
 selectP.listen('MDCSelect:change', () => {
     //alert(`Selected option at index ${select.selectedIndex} with value "${select.value}"`);
 });
+
+tabBar.listen('MDCTabBar:activated', ()=> {
+    let tab0 = document.getElementById('lib_btn');
+    let tab1 = document.getElementById('fav_btn');
+    let tab2 = document.getElementById('wallet_btn');
+    let tab3 = document.getElementById('info_btn');
+    let tab4 = document.getElementById('vender_btn');
+    if(tab0.ariaSelected == "true"){
+    alert('entro 0');
+    } else if(tab1.ariaSelected  == "true"){
+        
+    } else if(tab2.ariaSelected  == "true"){
+        ventanaWallet();
+    } else if(tab3.ariaSelected  == "true"){
+        alert('entro 3');
+    } else {
+        alert('entro 4');
+    }
+});
+
+function ventanaWallet(){
+    document.querySelectorAll(".content").forEach((element, index) => {
+        element.classList.add("sample-content--hidden");
+      });
+
+    document.querySelectorAll(".wallet").forEach((element, index) => {
+         element.classList.remove("sample-content--hidden");
+    });
+    document.getElementById('caja-wallet').prepend(document.getElementById('banner-principal'));
+    document.getElementById('contenido_wallet').prepend(document.getElementById(document.getElementById('tab_perfil')));
+
+}
 
