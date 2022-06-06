@@ -18,8 +18,15 @@ document.getElementById('NFT3').src = sistema.getRandomCard().getPath();
 document.getElementById('NFT4').src = sistema.getRandomCard().getPath();
 
 
+
+document.querySelectorAll("link_carta").forEach((element) => {
+    alert(element);
+  });
+
 //Creacion de la lista NFT y filtros
 function mostrarCarta(carta){
+    
+
     let listaInterna = document.getElementById("NFT_lista_interna");
 
     var divCarta = document.createElement("div");
@@ -35,7 +42,6 @@ function mostrarCarta(carta){
     divPrimaryAction.appendChild(divMediaCard);
     
     var link = document.createElement("a");
-    link.href="https://www.google.com/m?client=ms-android-samsung-gs-rev1&source=android-home";
     divMediaCard.appendChild(link);
     
     var img = document.createElement("img");
@@ -55,9 +61,13 @@ function mostrarCarta(carta){
     divFullBleed.className="mdc-card__actions mdc-card__actions--full-bleed";
     divCardActions.appendChild(divFullBleed);
     
+
     var link_button = document.createElement("a");
     link_button.className="mdc-button mdc-card__action mdc-card__action--button";
-    link_button.href="#";
+    link_button.onClick="prueba;";
+
+
+    //link_button.data="Prueba";
     divFullBleed.appendChild(link_button);
     
     var divButtonRiple = document.createElement("div");
@@ -70,11 +80,28 @@ function mostrarCarta(carta){
     link_button.appendChild(button_label);
     
     var arrowIcon = document.createElement("i");
-    arrowIcon.className="material-icons mdc-button__icon";
+    arrowIcon.className="material-icons mdc-button__icon link_carta";
     arrowIcon.ariaHidden=true;
-    arrowIcon.innerHTML="arrow_forward";
+    arrowIcon.innerHTML="favorite_border";
     link_button.appendChild(arrowIcon);
+
+    var numberOfLikes = document.createElement("span");
+    numberOfLikes.innerHTML=carta.getLikes();
+    link_button.appendChild(numberOfLikes);
+
 }
+
+function prueba(){
+    alert("Hola");
+}
+
+function exampleFunction() {
+    alert('You triggered an alert!');
+}
+ 
+
+
+
 //Iniciaizacion de lista NFTs
 cartas.forEach(element => {
     mostrarCarta(element);
