@@ -64,10 +64,13 @@ function mostrarCarta(carta){
 
     var link_button = document.createElement("a");
     link_button.className="mdc-button mdc-card__action mdc-card__action--button";
-    link_button.onClick="prueba;";
-    link_button.data="Prueba";
+    link_button.data=carta.getId();
     divFullBleed.appendChild(link_button);
-    
+
+    link_button.onclick=function(){
+        alert(link_button.data)
+    }
+
     var divButtonRiple = document.createElement("div");
     divButtonRiple.className="mdc-button__ripple";
     link_button.appendChild(divButtonRiple);
@@ -80,8 +83,10 @@ function mostrarCarta(carta){
     var arrowIcon = document.createElement("i");
     arrowIcon.className="material-icons mdc-button__icon link_carta";
     arrowIcon.ariaHidden=true;
+    
     arrowIcon.innerHTML="favorite_border";
     link_button.appendChild(arrowIcon);
+
 
     var numberOfLikes = document.createElement("span");
     numberOfLikes.innerHTML=carta.getLikes();
@@ -94,8 +99,6 @@ function mostrarCarta(carta){
 
     var link_button2 = document.createElement("a");
     link_button2.className="mdc-button mdc-card__action mdc-card__action--button";
-    link_button2.onClick="prueba;";
-    link_button2.data="Prueba";
     divFullBleed2.appendChild(link_button2);
     
     var divButtonRiple2 = document.createElement("div");
@@ -108,7 +111,13 @@ function mostrarCarta(carta){
     
     var button_comprar2=document.createElement("button");
     button_comprar2.className="mdc-button mdc-button--raised comprar_NFT";
+    button_comprar2.data=carta.getId();
     button_label2.appendChild(button_comprar2);
+
+    button_comprar2.onclick=function(){
+        sistema.compraCarta(button_comprar2.data,sistema.getCurrentUser());
+    }
+ 
 
     var button_label3 = document.createElement("span");
     button_label3.className="mdc-button__label"
@@ -116,9 +125,7 @@ function mostrarCarta(carta){
     button_comprar2.appendChild(button_label3);
 } 
 
-function prueba(){
-    alert("Hola");
-}
+
 
 function exampleFunction() {
     alert('You triggered an alert!');
