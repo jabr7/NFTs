@@ -66,18 +66,19 @@ export default class Sistema{
     }
     //dado un id devuelve la carta, en caso de no existir devuelve null
     getCarta(id){;
+        let ret;
         for (let carta of this.getCartas()){
             if (carta.id == id){
-                return carta;
+                ret= carta;
             }
         }
-        return null;
+        return ret;
     }
     //dado un id de carta, devuelve el index en el array
     getIndexCarta(id){
         if (this.getCarta(id)!=null){
-            for (let i=0; i<this.getCartas.length; i++){
-                if (this.getCartas[i].id == id){
+            for (let i=0; i<this.getCartas().length; i++){
+                if (this.getCartas()[i].getId() == id){
                     return i;
                 }
             }
@@ -116,15 +117,15 @@ export default class Sistema{
     }
     // se efectua la compra de una carta, la carta se remueve del sistema y se agrega al array de cartas del usuario
     compraCarta(id, user){
-        let index = getIndexCarta(id);
+        let index = this.getIndexCarta(id);
         if (index>=0){
             let carta = this.getCarta(id);
-            this.getCartas.splice(index, 1);
             user.addCard(carta);
+            this.getCartas().splice(index, 1);
         }   
     }
     //vende la carta del usuario
-    vednerCarta(id,user){
+    venderCarta(id,user){
         let carta = user.getCarta(id);
         this.agregarCarta(carta);
         user.removeCard(carta.id);
