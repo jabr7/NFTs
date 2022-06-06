@@ -150,6 +150,9 @@
 
 
         <aside id="filtros_y_buscador">
+          <!--Titulo Aside-->
+
+          <h2 style="color:#118EBF; margin-left: 40%;">Filtros</h2>
             <!--Searcher-->
           <label class="mdc-text-field mdc-text-field--filled" id="search">
             <span class="mdc-text-field__ripple"></span>
@@ -157,6 +160,11 @@
             <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id">
             <span class="mdc-line-ripple"></span>
           </label>
+
+          <!--Boton Buscar-->
+          <button class="mdc-button mdc-button--raised" id="aplicar_filtros">
+            <span class="mdc-button__label">Buscar</span>
+          </button>
 
           <!--ComboBox-->
           <div class="mdc-select mdc-select--filled demo-width-class">
@@ -190,7 +198,7 @@
               </span>
               <span class="mdc-line-ripple"></span>
             </div>
-          
+        
             <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth">
               <ul class="mdc-list" role="listbox" aria-label="Food picker listbox">
                 <li class="mdc-list-item mdc-list-item--selected" aria-selected="true" data-value="" role="option">
@@ -200,12 +208,6 @@
                   <span class="mdc-list-item__ripple"></span>
                   <span class="mdc-list-item__text">
                     Los mas gustados
-                  </span>
-                </li>
-                <li class="mdc-list-item" aria-selected="false" data-value="Disponibilidad" role="option">
-                  <span class="mdc-list-item__ripple"></span>
-                  <span class="mdc-list-item__text">
-                    Disponibilidad
                   </span>
                 </li>
                 <li class="mdc-list-item" aria-selected="false" data-value="Precio: Alto-Bajo" role="option">
@@ -231,9 +233,8 @@
           </div>
 
 
+      
 
-
-          
         </aside>
 
         

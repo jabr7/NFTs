@@ -6,8 +6,8 @@ export default class Sistema{
     }
     // devuelve un objeto carta al azar del array
     getRandomCard(){
-        let randomIndex = Math.floor(Math.random() * arr.length);
-        let carta = system.getCartas[randomIndex];
+        let randomIndex = Math.floor(Math.random() * this.getCartas().length);
+        let carta = this.getCartas()[randomIndex];
         return carta;
         }
     // agrega carta al sistema
@@ -128,5 +128,15 @@ export default class Sistema{
         let carta = user.getCarta(id);
         this.agregarCarta(carta);
         user.removeCard(carta.id);
+    }
+    //Busca por nombre, si el nombre incluye el substring devuelve el array de las cartas que lo cumplan
+    buscarPorNombre(texto){
+        let ret = [];
+        for (let carta of this.getCartas()){
+            if (carta.getNombre().toLowerCase().includes(texto)){
+                ret.push(carta);
+            }
+        }
+        return ret;
     }
 }
