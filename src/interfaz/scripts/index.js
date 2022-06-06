@@ -80,17 +80,53 @@ cartas.forEach(element => {
     mostrarCarta(element);
 });
 
+
+//Filtros y buscador de marketplace
 const search = new MDCTextField(document.getElementById('search'));
 const select = new MDCSelect(document.querySelector('.mdc-select'));
 const botonBuscar = new MDCRipple(document.getElementById('aplicar_filtros'));
 
 botonBuscar.listen('click', () =>{
-    if(!search.value.toLowerCase()==""){
-
+    if(!search.value==""){
+            let array = sistema.buscarPorNombre(search.value.toLowerCase());
+            let listaInterna = document.getElementById("NFT_lista_interna");
+            listaInterna.innerHTML='';
+            array.forEach(element => {
+                mostrarCarta(element);
+            });
     }else{
-        alert("Por favor rellene el campo de busqueda");
+        cartas.forEach(element => {
+            mostrarCarta(element);
+        });
     }
 });
+
+
+select.listen('MDCSelect:change', () => {
+    let listaInterna = document.getElementById("NFT_lista_interna");
+    listaInterna.innerHTML='';
+   if(select.selectedIndex==1){
+        sistema.orderByLike();
+   }
+   
+    if(select.selectedIndex==2){
+        sistema.orderByPrecioMayor();
+        }
+    if(select.selectedIndex==3){
+        sistema.orderByPrecioMenor();
+    }   
+    if(select.selectedIndex==4){
+        sistema.orderByFecha();
+    }
+
+   sistema.getCartas().forEach(element => {
+        mostrarCarta(element);
+    });
+
+});
+
+
+
 //Login Box
 const user = new MDCTextField(document.getElementById('user'));
 const password = new MDCTextField(document.getElementById('password'));
