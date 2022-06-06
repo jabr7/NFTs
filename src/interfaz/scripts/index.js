@@ -18,8 +18,15 @@ document.getElementById('NFT3').src = sistema.getRandomCard().getPath();
 document.getElementById('NFT4').src = sistema.getRandomCard().getPath();
 
 
+
+document.querySelectorAll("link_carta").forEach((element) => {
+    alert(element);
+  });
+
 //Creacion de la lista NFT y filtros
 function mostrarCarta(carta){
+    
+
     let listaInterna = document.getElementById("NFT_lista_interna");
 
     var divCarta = document.createElement("div");
@@ -35,7 +42,6 @@ function mostrarCarta(carta){
     divPrimaryAction.appendChild(divMediaCard);
     
     var link = document.createElement("a");
-    link.href="https://www.google.com/m?client=ms-android-samsung-gs-rev1&source=android-home";
     divMediaCard.appendChild(link);
     
     var img = document.createElement("img");
@@ -50,14 +56,16 @@ function mostrarCarta(carta){
     var divCardActions = document.createElement("div");
     divCardActions.className="mdc-card__actions";
     divCarta.appendChild(divCardActions);
-    
+    //
     var divFullBleed = document.createElement("div");
     divFullBleed.className="mdc-card__actions mdc-card__actions--full-bleed";
     divCardActions.appendChild(divFullBleed);
     
+
     var link_button = document.createElement("a");
     link_button.className="mdc-button mdc-card__action mdc-card__action--button";
-    link_button.href="#";
+    link_button.onClick="prueba;";
+    link_button.data="Prueba";
     divFullBleed.appendChild(link_button);
     
     var divButtonRiple = document.createElement("div");
@@ -70,27 +78,107 @@ function mostrarCarta(carta){
     link_button.appendChild(button_label);
     
     var arrowIcon = document.createElement("i");
-    arrowIcon.className="material-icons mdc-button__icon";
+    arrowIcon.className="material-icons mdc-button__icon link_carta";
     arrowIcon.ariaHidden=true;
-    arrowIcon.innerHTML="arrow_forward";
+    arrowIcon.innerHTML="favorite_border";
     link_button.appendChild(arrowIcon);
+
+    var numberOfLikes = document.createElement("span");
+    numberOfLikes.innerHTML=carta.getLikes();
+    link_button.appendChild(numberOfLikes);
+    //
+    var divFullBleed2 = document.createElement("div");
+    divFullBleed2.className="mdc-card__actions mdc-card__actions--full-bleed";
+    divCardActions.appendChild(divFullBleed2);
+    
+
+    var link_button2 = document.createElement("a");
+    link_button2.className="mdc-button mdc-card__action mdc-card__action--button";
+    link_button2.onClick="prueba;";
+    link_button2.data="Prueba";
+    divFullBleed2.appendChild(link_button2);
+    
+    var divButtonRiple2 = document.createElement("div");
+    divButtonRiple2.className="mdc-button__ripple";
+    link_button2.appendChild(divButtonRiple2);
+    
+    var button_label2 = document.createElement("span");
+    button_label2.className="mdc-button__label"
+    link_button2.appendChild(button_label2);
+    
+    var button_comprar2=document.createElement("button");
+    button_comprar2.className="mdc-button mdc-button--raised comprar_NFT";
+    button_label2.appendChild(button_comprar2);
+
+    var button_label3 = document.createElement("span");
+    button_label3.className="mdc-button__label"
+    button_label3.innerHTML=carta.getPrecio()+"$";
+    button_comprar2.appendChild(button_label3);
+} 
+
+function prueba(){
+    alert("Hola");
 }
+
+function exampleFunction() {
+    alert('You triggered an alert!');
+}
+ 
+
+
+
 //Iniciaizacion de lista NFTs
 cartas.forEach(element => {
     mostrarCarta(element);
 });
 
+
+//Filtros y buscador de marketplace
 const search = new MDCTextField(document.getElementById('search'));
 const select = new MDCSelect(document.querySelector('.mdc-select'));
 const botonBuscar = new MDCRipple(document.getElementById('aplicar_filtros'));
 
 botonBuscar.listen('click', () =>{
-    if(!search.value.toLowerCase()==""){
-
+    if(!search.value==""){
+            let array = sistema.buscarPorNombre(search.value.toLowerCase());
+            let listaInterna = document.getElementById("NFT_lista_interna");
+            listaInterna.innerHTML='';
+            array.forEach(element => {
+                mostrarCarta(element);
+            });
     }else{
-        alert("Por favor rellene el campo de busqueda");
+        cartas.forEach(element => {
+            mostrarCarta(element);
+        });
     }
 });
+
+
+select.listen('MDCSelect:change', () => {
+    let listaInterna = document.getElementById("NFT_lista_interna");
+    listaInterna.innerHTML='';
+   if(select.selectedIndex==1){
+        sistema.orderByLike();
+   }
+   
+    if(select.selectedIndex==2){
+        sistema.orderByPrecioMayor();
+        }
+    if(select.selectedIndex==3){
+        sistema.orderByPrecioMenor();
+    }   
+    if(select.selectedIndex==4){
+        sistema.orderByFecha();
+    }
+
+   sistema.getCartas().forEach(element => {
+        mostrarCarta(element);
+    });
+
+});
+
+
+
 //Login Box
 const user = new MDCTextField(document.getElementById('user'));
 const password = new MDCTextField(document.getElementById('password'));
