@@ -56,7 +56,7 @@ function mostrarCarta(carta){
     var divCardActions = document.createElement("div");
     divCardActions.className="mdc-card__actions";
     divCarta.appendChild(divCardActions);
-    
+    //
     var divFullBleed = document.createElement("div");
     divFullBleed.className="mdc-card__actions mdc-card__actions--full-bleed";
     divCardActions.appendChild(divFullBleed);
@@ -65,9 +65,7 @@ function mostrarCarta(carta){
     var link_button = document.createElement("a");
     link_button.className="mdc-button mdc-card__action mdc-card__action--button";
     link_button.onClick="prueba;";
-
-
-    //link_button.data="Prueba";
+    link_button.data="Prueba";
     divFullBleed.appendChild(link_button);
     
     var divButtonRiple = document.createElement("div");
@@ -88,8 +86,35 @@ function mostrarCarta(carta){
     var numberOfLikes = document.createElement("span");
     numberOfLikes.innerHTML=carta.getLikes();
     link_button.appendChild(numberOfLikes);
+    //
+    var divFullBleed2 = document.createElement("div");
+    divFullBleed2.className="mdc-card__actions mdc-card__actions--full-bleed";
+    divCardActions.appendChild(divFullBleed2);
+    
 
-}
+    var link_button2 = document.createElement("a");
+    link_button2.className="mdc-button mdc-card__action mdc-card__action--button";
+    link_button2.onClick="prueba;";
+    link_button2.data="Prueba";
+    divFullBleed2.appendChild(link_button2);
+    
+    var divButtonRiple2 = document.createElement("div");
+    divButtonRiple2.className="mdc-button__ripple";
+    link_button2.appendChild(divButtonRiple2);
+    
+    var button_label2 = document.createElement("span");
+    button_label2.className="mdc-button__label"
+    link_button2.appendChild(button_label2);
+    
+    var button_comprar2=document.createElement("button");
+    button_comprar2.className="mdc-button mdc-button--raised comprar_NFT";
+    button_label2.appendChild(button_comprar2);
+
+    var button_label3 = document.createElement("span");
+    button_label3.className="mdc-button__label"
+    button_label3.innerHTML=carta.getPrecio()+"$";
+    button_comprar2.appendChild(button_label3);
+} 
 
 function prueba(){
     alert("Hola");
