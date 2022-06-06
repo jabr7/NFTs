@@ -77,6 +77,12 @@ Top Bar Login
 #profile_button{
    font-size: 48px;
    margin-right: 10%;
+   cursor:pointer;
+}
+
+#pfr_img{
+  font-size: 100px;
+  margin-left: 27%;
 }
 
 #pfr_img{
@@ -393,6 +399,12 @@ Registro
   max-width: 230px;
   min-height: 428px;
   max-height: 432px;
+}
+
+//Caja Wallet
+
+#caja-wallet{
+  margin-top: 3em;
 }
 
 //Utilizado para desaparecer o aparecer las pantallas
