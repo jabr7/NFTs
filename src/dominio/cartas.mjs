@@ -191,7 +191,6 @@ let gifFiles= [
     './imagenes/Cards/Northern Realms/32 - bO4oNg2.gif',
     './imagenes/Cards/Northern Realms/33 - P0vEeQ1.gif',
     './imagenes/Cards/Northern Realms/34 - YiORE61.gif',
-    './imagenes/Cards/Northern Realms/36 - M3wwcfo.gif',
     './imagenes/Cards/Northern Realms/4 - 3BW8z4B.gif',
     './imagenes/Cards/Northern Realms/5 - x2v9Q7M.gif',
     './imagenes/Cards/Northern Realms/6 - Vff3T8h.gif',

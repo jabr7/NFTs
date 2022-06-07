@@ -116,12 +116,20 @@ export default class Sistema{
         })
     }
     // se efectua la compra de una carta, la carta se remueve del sistema y se agrega al array de cartas del usuario
+    // devuelve true o false dependiendo de si fue exitosa o no 
     compraCarta(id, user){
         let index = this.getIndexCarta(id);
         if (index>=0){
             let carta = this.getCarta(id);
-            user.addCard(carta);
-            this.getCartas().splice(index, 1);
+            if (restarSaldo(carta.getPrecio())){
+                user.addCard(carta);
+                this.getCartas().splice(index, 1);
+                return true;
+            }
+            else{
+                return false;
+
+            }
         }   
     }
     //vende la carta del usuario
@@ -129,6 +137,7 @@ export default class Sistema{
         let carta = user.getCarta(id);
         this.agregarCarta(carta);
         user.removeCard(carta.id);
+        user.agregarSaldo(carta.precio);
     }
     //Busca por nombre, si el nombre incluye el substring devuelve el array de las cartas que lo cumplan
     buscarPorNombre(texto){
