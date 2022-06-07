@@ -121,7 +121,7 @@ export default class Sistema{
         let index = this.getIndexCarta(id);
         if (index>=0){
             let carta = this.getCarta(id);
-            if (restarSaldo(carta.getPrecio())){
+            if (user.restarSaldo(carta.getPrecio())){
                 user.addCard(carta);
                 this.getCartas().splice(index, 1);
                 return true;

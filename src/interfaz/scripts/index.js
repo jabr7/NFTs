@@ -7,8 +7,9 @@ import init from '../../dominio/init.mjs';
 import Usuario from '../../dominio/userClass.mjs';
 
 var sistema = init();
-console.log(sistema.getUsers());
 
+
+sistema.logIn("admin","admin")
 
 //Marketplace
 let cartas = sistema.getCartas();
@@ -19,15 +20,15 @@ document.getElementById('NFT4').src = sistema.getRandomCard().getPath();
 
 
 
-document.querySelectorAll("link_carta").forEach((element) => {
-    alert(element);
-  });
+
+
 
 //Creacion de la lista NFT y filtros
-function mostrarCarta(carta){
+//Recibe como parametro la carta, el nombre de la lista y 0 si es para comprar, 1 si es para vender y 2 si es para favoritos
+function mostrarCarta(carta,nombre_lista,modo){
     
 
-    let listaInterna = document.getElementById("NFT_lista_interna");
+    let listaInterna = document.getElementById(nombre_lista);
 
     var divCarta = document.createElement("div");
     divCarta.className="mdc-card";
@@ -59,17 +60,17 @@ function mostrarCarta(carta){
     //
     var divFullBleed = document.createElement("div");
     divFullBleed.className="mdc-card__actions mdc-card__actions--full-bleed";
+    divFullBleed.data=carta.getId();
     divCardActions.appendChild(divFullBleed);
     
+    divFullBleed.onclick=function(){
+        
+    }
 
     var link_button = document.createElement("a");
     link_button.className="mdc-button mdc-card__action mdc-card__action--button";
     link_button.data=carta.getId();
     divFullBleed.appendChild(link_button);
-
-    link_button.onclick=function(){
-        alert(link_button.data)
-    }
 
     var divButtonRiple = document.createElement("div");
     divButtonRiple.className="mdc-button__ripple";
@@ -84,6 +85,7 @@ function mostrarCarta(carta){
     arrowIcon.className="material-icons mdc-button__icon link_carta";
     arrowIcon.ariaHidden=true;
     
+    //Icono corazon
     arrowIcon.innerHTML="favorite_border";
     link_button.appendChild(arrowIcon);
 
@@ -91,6 +93,7 @@ function mostrarCarta(carta){
     var numberOfLikes = document.createElement("span");
     numberOfLikes.innerHTML=carta.getLikes();
     link_button.appendChild(numberOfLikes);
+    
     //
     var divFullBleed2 = document.createElement("div");
     divFullBleed2.className="mdc-card__actions mdc-card__actions--full-bleed";
@@ -115,13 +118,27 @@ function mostrarCarta(carta){
     button_label2.appendChild(button_comprar2);
 
     button_comprar2.onclick=function(){
-        sistema.compraCarta(button_comprar2.data,sistema.getCurrentUser());
-        let listaInterna = document.getElementById("NFT_lista_interna");
-        listaInterna.innerHTML='';
-        cartas.forEach(element => {
-            mostrarCarta(element);
-        });
-        
+        if(modo==0){
+            if (sistema.compraCarta(button_comprar2.data,sistema.getCurrentUser())){
+                let listaInterna = document.getElementById("NFT_lista_interna");
+                listaInterna.innerHTML='';
+                cartas.forEach(element => {
+                    mostrarCarta(element,"NFT_lista_interna",0);
+                });
+                alert("Se ha realizado la compra exitosamente!")
+            }else{
+                alert("Saldo insuficiente")
+            }
+        }else if(modo==1){
+            sistema.venderCarta(button_comprar2.data,sistema.getCurrentUser())
+            let listaInterna = document.getElementById("NFT_lista_interna");
+                listaInterna.innerHTML='';
+                cartas.forEach(element => {
+                    mostrarCarta(element,"NFT_lista_interna",0);
+                });
+
+            alert('Se ha realizado la venta correctamente')
+        }        
     }
  
 
@@ -129,20 +146,15 @@ function mostrarCarta(carta){
     button_label3.className="mdc-button__label"
     button_label3.innerHTML=carta.getPrecio()+"$";
     button_comprar2.appendChild(button_label3);
-} 
-
-
-
-function exampleFunction() {
-    alert('You triggered an alert!');
 }
+
  
 
 
 
 //Iniciaizacion de lista NFTs
 cartas.forEach(element => {
-    mostrarCarta(element);
+    mostrarCarta(element,"NFT_lista_interna",0);
 });
 
 
@@ -157,11 +169,11 @@ botonBuscar.listen('click', () =>{
             let listaInterna = document.getElementById("NFT_lista_interna");
             listaInterna.innerHTML='';
             array.forEach(element => {
-                mostrarCarta(element);
+                mostrarCarta(element,"NFT_lista_interna",0);
             });
     }else{
         cartas.forEach(element => {
-            mostrarCarta(element);
+            mostrarCarta(element,"NFT_lista_interna",0);
         });
     }
 });
@@ -185,7 +197,7 @@ select.listen('MDCSelect:change', () => {
     }
 
    sistema.getCartas().forEach(element => {
-        mostrarCarta(element);
+        mostrarCarta(element,"NFT_lista_interna",0);
     });
 
 });
@@ -243,7 +255,13 @@ boton_registro.listen('click', () => {
             let user = new Usuario(registro_user.value,registro_password.value,0,false);
             sistema.agregarUsuario(user);
             alert("Usuario agregado exitosamente");
-            alert(sistema.findUser(registro_user.value));
+            document.querySelectorAll(".content").forEach((element, index) => {
+                element.classList.add("sample-content--hidden");
+              });
+        
+            document.querySelectorAll(".login").forEach((element, index) => {
+                 element.classList.remove("sample-content--hidden");
+            });
         }else{
             alert("Un usuario con ese username ya existe")
         }
@@ -260,7 +278,11 @@ const marketplace = new MDCRipple(document.getElementById('marketplace_button'))
 const perfil = new MDCRipple(document.getElementById('profile_button'));
 
 perfil.listen('click', () => {
-    
+    let listaInterna = document.getElementById("NFT_Lib_interna");
+        listaInterna.innerHTML='';
+          sistema.getCurrentUser().getCartas().forEach(element => {
+            mostrarCarta(element,"NFT_Lib_interna",1);
+        });
         document.querySelectorAll(".content").forEach((element, index) => {
             element.classList.add("sample-content--hidden");
           });
@@ -274,15 +296,20 @@ perfil.listen('click', () => {
     password.value="";
 })
 
-//Boton marketplace trae de vuelta el login
+//Boton marketplace abre marketplace
 marketplace.listen('click', () => {
-    document.querySelectorAll(".content").forEach((element, index) => {
-        element.classList.add("sample-content--hidden");
-      });
+    if(sistema.getCurrentUser()==undefined){
+        alert("Debe logearse con usuario y contraseña")
+    }else{
 
-    document.querySelectorAll(".login").forEach((element, index) => {
-         element.classList.remove("sample-content--hidden");
-    });
+        document.querySelectorAll(".content").forEach((element, index) => {
+            element.classList.add("sample-content--hidden");
+        });
+
+        document.querySelectorAll(".marketplace").forEach((element, index) => {
+            element.classList.remove("sample-content--hidden");
+        });
+    }
 })
 
 
@@ -300,14 +327,14 @@ logout.listen('click', () => {
         element.classList.add("sample-content--hidden");
       });
 
+      sistema.logOut();
+
     document.querySelectorAll(".login").forEach((element, index) => {
          element.classList.remove("sample-content--hidden");
     });
 })
 
-selectP.listen('MDCSelect:change', () => {
-    //alert(`Selected option at index ${select.selectedIndex} with value "${select.value}"`);
-});
+
 
 tabBar.listen('MDCTabBar:activated', ()=> {
     let tab0 = document.getElementById('lib_btn');
@@ -315,8 +342,13 @@ tabBar.listen('MDCTabBar:activated', ()=> {
     let tab2 = document.getElementById('wallet_btn');
     let tab3 = document.getElementById('info_btn');
     let tab4 = document.getElementById('vender_btn');
+    
     if(tab0.ariaSelected == "true"){
-    alert('entro 0');
+        let listaInterna = document.getElementById("NFT_Lib_interna");
+        listaInterna.innerHTML='';
+          sistema.getCurrentUser().getCartas().forEach(element => {
+            mostrarCarta(element,"NFT_Lib_interna",1);
+        });
     } else if(tab1.ariaSelected  == "true"){
         
     } else if(tab2.ariaSelected  == "true"){
