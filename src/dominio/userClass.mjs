@@ -20,17 +20,17 @@ export default class Usuario{
     }
     //resta saldo del usuario (devuleve true), si no alcanza el saldo, devuelve false.
     restarSaldo(monto){
-        saldo = this.getSaldo;
+        let saldo = this.getSaldo();
         if (saldo<monto){
             return false;
         }
         else{
-            this.saldo = this.getSaldo-monto;
+            this.saldo = this.getSaldo()-monto;
             return true;
         }
     }
     agregarSaldo(monto){
-        this.saldo = this.getSaldo+monto;
+        this.saldo = this.getSaldo()+monto;
     }
     getCartas(){
         return this.cartas;
@@ -48,8 +48,8 @@ export default class Usuario{
     //dado un id de carta, devuelve el index en el array, devuelve -1 si no la encuentra
     getIndexCarta(id){
         if (this.getCarta(id)!=null){
-            for (let i=0; i<this.getCartas.length; i++){
-                if (this.getCartas[i].id == id){
+            for (let i=0; i<this.getCartas().length; i++){
+                if (this.getCartas()[i].id == id){
                     return i;
                 }
             }
@@ -60,8 +60,8 @@ export default class Usuario{
     //borra la carta del usuario, devuelve true si es exitoso, false si no esta la carta
     removeCard(id){
         if (this.getCarta(id)!=null){
-            let index = getIndexCarta(id);
-            this.getCartas.splice(index, 1);
+            let index = this.getIndexCarta(id);
+            this.getCartas().splice(index, 1);
             return true;
         }
         else{
