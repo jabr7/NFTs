@@ -63,9 +63,36 @@ function mostrarCarta(carta,nombre_lista,modo){
     divFullBleed.data=carta.getId();
     divCardActions.appendChild(divFullBleed);
     
-    divFullBleed.onclick=function(){
-        //CODIGO PARA DAR LIKE
+    divFullBleed.onclick=function()
+    {
+        if(modo==0){
+              //CODIGO PARA DAR LIKE
+            sistema.getCurrentUser().addFavorita(divFullBleed.data);
+            alert("Agregado correctamente")
+
+            let listaInterna = document.getElementById("NFT_lista_interna");
+            listaInterna.innerHTML='';
+            cartas.forEach(element => {
+                  mostrarCarta(element,"NFT_lista_interna",0);
+             });
+        
+        }else if(modo==1){
+             //CODIGO PARA DAR LIKE
+             sistema.getCurrentUser().addFavorita(divFullBleed.data);
+             alert("Agregado correctamente")
+ 
+             let listaInterna = document.getElementById("NFT_lista_interna");
+             listaInterna.innerHTML='';
+             cartas.forEach(element => {
+                   mostrarCarta(element,"NFT_lista_interna",1);
+              });
+
+        }        
     }
+
+
+
+
 
     var link_button = document.createElement("a");
     link_button.className="mdc-button mdc-card__action mdc-card__action--button";
@@ -119,6 +146,7 @@ function mostrarCarta(carta,nombre_lista,modo){
 
     button_comprar2.onclick=function(){
         if(modo==0){
+            
             //Codigo de la compra
             if (sistema.compraCarta(button_comprar2.data,sistema.getCurrentUser())){
                 let listaInterna = document.getElementById("NFT_lista_interna");
@@ -148,12 +176,17 @@ function mostrarCarta(carta,nombre_lista,modo){
 
         }        
     }
- 
-
-    var button_label3 = document.createElement("span");
-    button_label3.className="mdc-button__label"
-    button_label3.innerHTML=carta.getPrecio()+"$";
-    button_comprar2.appendChild(button_label3);
+    if(modo==0){
+        var button_label3 = document.createElement("span");
+        button_label3.className="mdc-button__label"
+        button_label3.innerHTML="Buy: "+carta.getPrecio()+"$";
+        button_comprar2.appendChild(button_label3);
+    }else if(modo==1){
+        var button_label3 = document.createElement("span");
+        button_label3.className="mdc-button__label"
+        button_label3.innerHTML="Sell: "+carta.getPrecio()+"$";
+        button_comprar2.appendChild(button_label3);
+    }
 }
 
  
@@ -393,7 +426,10 @@ const tabBar = new MDCTabBar(document.getElementById('tab_perfil'));
 
 tabBar.listen('MDCTabBar:activated', ()=> {
     //Dependiendo de cual este activo, despliegara el contenido correspondiente
+    
     if(tab0.ariaSelected == "true"){
+
+        //Ventana mis NFTs
         document.querySelectorAll(".content").forEach((element, index) => {
             element.classList.add("sample-content--hidden");
           });
@@ -409,7 +445,27 @@ tabBar.listen('MDCTabBar:activated', ()=> {
             mostrarCarta(element,"NFT_Lib_interna",1);
         });
     } else if(tab1.ariaSelected  == "true"){
-        alert("xd")
+        
+    // Ventana Favoritos
+    document.querySelectorAll(".content").forEach((element, index) => {
+        element.classList.add("sample-content--hidden");
+      });
+
+    document.querySelectorAll(".favoritos").forEach((element, index) => {
+         element.classList.remove("sample-content--hidden");
+    });
+    document.getElementById('contenido_favoritos').prepend(document.getElementById('tab_perfil'));
+    document.getElementById('caja_favoritos').prepend(document.getElementById('banner-principal'));
+
+    //Re carga
+    let listaInterna = document.getElementById("NFT_Favoritos_interna");
+    listaInterna.innerHTML='';
+    sistema.getCurrentUser().getCartasFavoritas().forEach(element => {
+          mostrarCarta(element,"NFT_Favoritos_interna",0);
+    });
+
+    
+
     } else if(tab2.ariaSelected  == "true"){
         ventanaWallet();
     } else {
@@ -436,6 +492,9 @@ textSaldoPerfil.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
 
 
 
+
+
+
 function ventanaWallet(){
     document.querySelectorAll(".content").forEach((element, index) => {
         element.classList.add("sample-content--hidden");
@@ -454,9 +513,10 @@ const monto = new MDCRipple(document.getElementById('monto_button'))
 
 monto.listen('click', () => {
     if(!(isNaN(cant.value)) && cant.value != ""){
-        sistema.getCurrentUser().agregarSaldo(cant.value);
+        sistema.getCurrentUser().agregarSaldo(parseInt(cant.value));
         alert("Monto ingresado");
         textSaldoPerfil.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
+        cant.value="";
     } else {
         alert("El monto ingresado no es un número")
     }
