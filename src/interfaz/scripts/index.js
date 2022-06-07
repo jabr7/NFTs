@@ -341,6 +341,11 @@ const topAppBarElement = document.querySelector('.mdc-top-app-bar');
 const marketplace = new MDCRipple(document.getElementById('marketplace_button'));
 const perfil = new MDCRipple(document.getElementById('profile_button'));
 
+const tab0 = document.getElementById('lib_btn');
+const tab1 = document.getElementById('fav_btn');
+const tab2 = document.getElementById('wallet_btn');
+const tab3 = document.getElementById('info_btn');
+
 perfil.listen('click', () => {
     let listaInterna = document.getElementById("NFT_Lib_interna");
         listaInterna.innerHTML='';
@@ -354,10 +359,10 @@ perfil.listen('click', () => {
           document.querySelectorAll(".perfilPrinc").forEach((element, index) => {
             element.classList.remove("sample-content--hidden");
        });
+       document.getElementById('contenido_perfilPrinc').prepend(document.getElementById('tab_perfil'));
        document.getElementById('caja-perfilPrinc').prepend(document.getElementById('banner-principal'));
+       tabBar.activateTab(0);
 
-    user.value="";
-    password.value="";
 })
 
 //Boton marketplace abre marketplace
@@ -387,26 +392,28 @@ const tabBar = new MDCTabBar(document.getElementById('tab_perfil'));
 
 
 tabBar.listen('MDCTabBar:activated', ()=> {
-    let tab0 = document.getElementById('lib_btn');
-    let tab1 = document.getElementById('fav_btn');
-    let tab2 = document.getElementById('wallet_btn');
-    let tab3 = document.getElementById('info_btn');
-    let tab4 = document.getElementById('vender_btn');
-    
+    //Dependiendo de cual este activo, despliegara el contenido correspondiente
     if(tab0.ariaSelected == "true"){
+        document.querySelectorAll(".content").forEach((element, index) => {
+            element.classList.add("sample-content--hidden");
+          });
+    
+        document.querySelectorAll(".perfilPrinc").forEach((element, index) => {
+             element.classList.remove("sample-content--hidden");
+        });
+        document.getElementById('contenido_perfilPrinc').prepend(document.getElementById('tab_perfil'));
+        document.getElementById('caja-perfilPrinc').prepend(document.getElementById('banner-principal'));
         let listaInterna = document.getElementById("NFT_Lib_interna");
         listaInterna.innerHTML='';
           sistema.getCurrentUser().getCartas().forEach(element => {
             mostrarCarta(element,"NFT_Lib_interna",1);
         });
     } else if(tab1.ariaSelected  == "true"){
-        
+        alert("xd")
     } else if(tab2.ariaSelected  == "true"){
         ventanaWallet();
-    } else if(tab3.ariaSelected  == "true"){
-        alert('entro 3');
     } else {
-        alert('entro 4');
+        //Botones para editar perfil
     }
 });
 
@@ -437,8 +444,21 @@ function ventanaWallet(){
     document.querySelectorAll(".wallet").forEach((element, index) => {
          element.classList.remove("sample-content--hidden");
     });
+    document.getElementById('contenido_wallet').prepend(document.getElementById('tab_perfil'));
     document.getElementById('caja-wallet').prepend(document.getElementById('banner-principal'));
-    document.getElementById('contenido_wallet').prepend(document.getElementById(document.getElementById('tab_perfil')));
 
 }
+
+const cant = new MDCTextField(document.getElementById('agg_monto'));
+const monto = new MDCRipple(document.getElementById('monto_button'))
+
+monto.listen('click', () => {
+    if(!(isNaN(cant.value)) && cant.value != ""){
+        sistema.getCurrentUser().agregarSaldo(cant.value);
+        alert("Monto ingresado");
+        textSaldoPerfil.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
+    } else {
+        alert("El monto ingresado no es un número")
+    }
+})
 
