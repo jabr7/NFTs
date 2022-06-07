@@ -116,6 +116,12 @@ function mostrarCarta(carta){
 
     button_comprar2.onclick=function(){
         sistema.compraCarta(button_comprar2.data,sistema.getCurrentUser());
+        let listaInterna = document.getElementById("NFT_lista_interna");
+        listaInterna.innerHTML='';
+        cartas.forEach(element => {
+            mostrarCarta(element);
+        });
+        
     }
  
 
