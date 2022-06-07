@@ -64,7 +64,7 @@ function mostrarCarta(carta,nombre_lista,modo){
     divCardActions.appendChild(divFullBleed);
     
     divFullBleed.onclick=function(){
-        
+        //CODIGO PARA DAR LIKE
     }
 
     var link_button = document.createElement("a");
@@ -119,6 +119,7 @@ function mostrarCarta(carta,nombre_lista,modo){
 
     button_comprar2.onclick=function(){
         if(modo==0){
+            //Codigo de la compra
             if (sistema.compraCarta(button_comprar2.data,sistema.getCurrentUser())){
                 let listaInterna = document.getElementById("NFT_lista_interna");
                 listaInterna.innerHTML='';
@@ -126,18 +127,25 @@ function mostrarCarta(carta,nombre_lista,modo){
                     mostrarCarta(element,"NFT_lista_interna",0);
                 });
                 alert("Se ha realizado la compra exitosamente!")
+                textSaldo.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
+                textSaldoPerfil.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
+
             }else{
                 alert("Saldo insuficiente")
             }
         }else if(modo==1){
+            //Codigo de la venta
             sistema.venderCarta(button_comprar2.data,sistema.getCurrentUser())
-            let listaInterna = document.getElementById("NFT_lista_interna");
+            let listaInterna = document.getElementById("NFT_Lib_interna");
                 listaInterna.innerHTML='';
-                cartas.forEach(element => {
-                    mostrarCarta(element,"NFT_lista_interna",0);
+                sistema.getCurrentUser().getCartas().forEach(element => {
+                    mostrarCarta(element,"NFT_Lib_interna",1);
                 });
 
             alert('Se ha realizado la venta correctamente')
+            textSaldo.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
+            textSaldoPerfil.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
+
         }        
     }
  
@@ -158,10 +166,13 @@ cartas.forEach(element => {
 });
 
 
-//Filtros y buscador de marketplace
+//Filtros, buscador y saldo de marketplace
 const search = new MDCTextField(document.getElementById('search'));
 const select = new MDCSelect(document.querySelector('.mdc-select'));
 const botonBuscar = new MDCRipple(document.getElementById('aplicar_filtros'));
+const textSaldo = document.getElementById("saldo_marketplace");
+
+textSaldo.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
 
 botonBuscar.listen('click', () =>{
     if(!search.value==""){
@@ -322,20 +333,6 @@ const logout = new MDCRipple(document.getElementById('logout_button'))
 const tabBar = new MDCTabBar(document.getElementById('tab_perfil'));
 
 
-logout.listen('click', () => {
-    document.querySelectorAll(".content").forEach((element, index) => {
-        element.classList.add("sample-content--hidden");
-      });
-
-      sistema.logOut();
-
-    document.querySelectorAll(".login").forEach((element, index) => {
-         element.classList.remove("sample-content--hidden");
-    });
-})
-
-
-
 tabBar.listen('MDCTabBar:activated', ()=> {
     let tab0 = document.getElementById('lib_btn');
     let tab1 = document.getElementById('fav_btn');
@@ -359,6 +356,25 @@ tabBar.listen('MDCTabBar:activated', ()=> {
         alert('entro 4');
     }
 });
+
+
+logout.listen('click', () => {
+    document.querySelectorAll(".content").forEach((element, index) => {
+        element.classList.add("sample-content--hidden");
+      });
+
+      sistema.logOut();
+
+    document.querySelectorAll(".login").forEach((element, index) => {
+         element.classList.remove("sample-content--hidden");
+    });
+})
+
+const textSaldoPerfil = document.getElementById("saldo_perfil");
+
+textSaldoPerfil.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
+
+
 
 function ventanaWallet(){
     document.querySelectorAll(".content").forEach((element, index) => {
