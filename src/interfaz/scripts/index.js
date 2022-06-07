@@ -315,6 +315,10 @@ boton_forgotten.listen('click', () => {
             usuario.setPassword(forgotten_password.value);
 
             alert("Contraseña actualizada exitosamente");
+            
+            forgotten_user.value="";
+            forgotten_password.value="";
+            forgotten_verificar_password.value="";
             document.querySelectorAll(".content").forEach((element, index) => {
                 element.classList.add("sample-content--hidden");
               });
