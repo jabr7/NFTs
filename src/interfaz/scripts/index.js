@@ -8,7 +8,7 @@ import Usuario from '../../dominio/userClass.mjs';
 
 var sistema = init();
 
-
+console.log(sistema.getCartas())
 sistema.logIn("admin","admin")
 
 //Marketplace
@@ -299,6 +299,16 @@ login.listen('click', () => {
 })
 
 //Register Box
+const volver = new MDCRipple(document.getElementById('arrow_registro_img'));
+volver.listen('click', () => {
+    document.querySelectorAll(".content").forEach((element, index) => {
+        element.classList.add("sample-content--hidden");
+      });
+
+    document.querySelectorAll(".login").forEach((element, index) => {
+         element.classList.remove("sample-content--hidden");
+    });
+})
 document.getElementById("registro").addEventListener("click", abrirRegistro);
 function abrirRegistro(){
     document.querySelectorAll(".content").forEach((element, index) => {
@@ -319,7 +329,6 @@ function abrirRegistro(){
 const registro_user = new MDCTextField(document.getElementById('registro_user'));
 const registro_password = new MDCTextField(document.getElementById('registro_password'));
 const registro_verificar_password = new MDCTextField(document.getElementById('verificar_password'));
-const registro_email = new MDCTextField(document.getElementById('registro_email'));
 
 
 let boton_registro=new MDCRipple(document.getElementById("register_button"));
@@ -348,6 +357,17 @@ boton_registro.listen('click', () => {
 });
 
 //Forgotten Password
+const volverForgotten = new MDCRipple(document.getElementById('arrow_registro_img'));
+volver.listen('click', () => {
+    document.querySelectorAll(".content").forEach((element, index) => {
+        element.classList.add("sample-content--hidden");
+      });
+
+    document.querySelectorAll(".login").forEach((element, index) => {
+         element.classList.remove("sample-content--hidden");
+    });
+})
+
 document.getElementById("olvide").addEventListener("click", abrirForgotten);
 function abrirForgotten(){
     document.querySelectorAll(".content").forEach((element, index) => {
@@ -436,6 +456,7 @@ marketplace.listen('click', () => {
         document.querySelectorAll(".marketplace").forEach((element, index) => {
             element.classList.remove("sample-content--hidden");
         });
+        document.getElementById('caja-marketplace').prepend(document.getElementById('banner-principal'));
     }
 })
 
@@ -443,8 +464,6 @@ marketplace.listen('click', () => {
 
 //Pestaña Principal Perfil
 
-const searchP = new MDCTextField(document.getElementById('search_P'));
-const selectP = new MDCSelect(document.getElementById('filtro_lib'));
 const logout = new MDCRipple(document.getElementById('logout_button'))
 const tabBar = new MDCTabBar(document.getElementById('tab_perfil'));
 
