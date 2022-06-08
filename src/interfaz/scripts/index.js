@@ -66,31 +66,39 @@ function mostrarCarta(carta,nombre_lista,modo){
     divFullBleed.onclick=function()
     {
         if(modo==0){
-              //CODIGO PARA DAR LIKE
-            sistema.getCurrentUser().addFavorita(divFullBleed.data);
-            alert("Agregado correctamente")
+            //CODIGO PARA DAR LIKE
+            if(!sistema.getCurrentUser().getIdFavoritas().includes(carta.getId())){
 
-            let listaInterna = document.getElementById("NFT_lista_interna");
-            listaInterna.innerHTML='';
-            cartas.forEach(element => {
-                  mostrarCarta(element,"NFT_lista_interna",0);
-             });
+              
+                sistema.getCurrentUser().addFavorita(divFullBleed.data);
+                alert("Agregado a favoritos correctamente")
+
+                carta.likeCard();
+
+                let listaInterna = document.getElementById("NFT_lista_interna");
+                listaInterna.innerHTML='';
+                cartas.forEach(element => {
+                    mostrarCarta(element,"NFT_lista_interna",0);
+                });
+            }else{
+                alert("Este NFT ya tiene tu like!")
+            }
         
-        }else if(modo==1){
-             //CODIGO PARA DAR LIKE
+        }else if(modo==2){
+             //CODIGO PARA QUITAR LIKE
              sistema.getCurrentUser().addFavorita(divFullBleed.data);
-             alert("Agregado correctamente")
+
+
+             alert("Quitado de favoritos correctamente")
  
-             let listaInterna = document.getElementById("NFT_lista_interna");
+             let listaInterna = document.getElementById("NFT_Favoritos_interna");
              listaInterna.innerHTML='';
-             cartas.forEach(element => {
-                   mostrarCarta(element,"NFT_lista_interna",1);
+             sistema.getCurrentUser().getCartasFavoritas().forEach(element => {
+                   mostrarCarta(element,"NFT_Favoritos_interna",1);
               });
 
         }        
     }
-
-
 
 
 
@@ -113,7 +121,11 @@ function mostrarCarta(carta,nombre_lista,modo){
     arrowIcon.ariaHidden=true;
     
     //Icono corazon
-    arrowIcon.innerHTML="favorite_border";
+    if(sistema.getCurrentUser().getIdFavoritas().includes(carta.getId())){
+        arrowIcon.innerHTML="favorite";
+    }else{
+        arrowIcon.innerHTML="favorite_border";
+    }
     link_button.appendChild(arrowIcon);
 
 
@@ -139,11 +151,12 @@ function mostrarCarta(carta,nombre_lista,modo){
     button_label2.className="mdc-button__label"
     link_button2.appendChild(button_label2);
     
-    var button_comprar2=document.createElement("button");
-    button_comprar2.className="mdc-button mdc-button--raised comprar_NFT";
-    button_comprar2.data=carta.getId();
-    button_label2.appendChild(button_comprar2);
-
+    if(modo!=2){
+        var button_comprar2=document.createElement("button");
+        button_comprar2.className="mdc-button mdc-button--raised comprar_NFT";
+        button_comprar2.data=carta.getId();
+        button_label2.appendChild(button_comprar2);
+    }
     button_comprar2.onclick=function(){
         if(modo==0){
             
@@ -255,6 +268,11 @@ const login = new MDCRipple(document.getElementById('login_button'));
 
 login.listen('click', () => {
     if(sistema.logIn(user.value, password.value)){
+        let listaInterna = document.getElementById("NFT_lista_interna");
+        listaInterna.innerHTML='';
+        cartas.forEach(element => {
+              mostrarCarta(element,"NFT_lista_interna",0);
+         });
         document.querySelectorAll(".content").forEach((element, index) => {
             element.classList.add("sample-content--hidden");
           });
@@ -461,7 +479,7 @@ tabBar.listen('MDCTabBar:activated', ()=> {
     let listaInterna = document.getElementById("NFT_Favoritos_interna");
     listaInterna.innerHTML='';
     sistema.getCurrentUser().getCartasFavoritas(sistema.getCartas()).forEach(element => {
-          mostrarCarta(element,"NFT_Favoritos_interna",0);
+          mostrarCarta(element,"NFT_Favoritos_interna",2);
     });
 
     
@@ -490,10 +508,17 @@ tabBar.listen('MDCTabBar:activated', ()=> {
         boton_actualizar_info.listen('click', () => {
             if(nombre.value==sistema.getCurrentUser().getNombre()){
                 alert("El nombre ingresado a actualizar ya es el original");
-                nombre.value="";
+                nombre.value=sistema.getCurrentUser().getNombre()
             }else if(nombre.value!=""){
-                sistema.getCurrentUser().setNombre(nombre.value);
-                alert("Nombre cambiado correctamente")
+
+                let usuario = sistema.findUser(nombre.value);
+                if(!usuario){ 
+                    sistema.getCurrentUser().setNombre(nombre.value);
+                    alert("Nombre cambiado correctamente")
+                }else{
+                    alert("Ya existe un usuario con ese nombre!")
+                    nombre.value=sistema.getCurrentUser().getNombre()
+                }
             }
             if(password.value==sistema.getCurrentUser().getPassword()){
                 alert("La password ingresada a actualizar ya es la original");
@@ -502,7 +527,6 @@ tabBar.listen('MDCTabBar:activated', ()=> {
                 sistema.getCurrentUser().setPassword(password.value);
                 alert("Contraseña cambiada correctamente")
             }
-            console.log(sistema.getCurrentUser())
         })
     }
 });
