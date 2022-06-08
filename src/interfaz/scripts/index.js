@@ -140,72 +140,74 @@ function mostrarCarta(carta,nombre_lista,modo){
     link_button.appendChild(numberOfLikes);
     
     //
-    var divFullBleed2 = document.createElement("div");
-    divFullBleed2.className="mdc-card__actions mdc-card__actions--full-bleed";
-    divCardActions.appendChild(divFullBleed2);
-    
-
-    var link_button2 = document.createElement("a");
-    link_button2.className="mdc-button mdc-card__action mdc-card__action--button";
-    divFullBleed2.appendChild(link_button2);
-    
-    var divButtonRiple2 = document.createElement("div");
-    divButtonRiple2.className="mdc-button__ripple";
-    link_button2.appendChild(divButtonRiple2);
-    
-    var button_label2 = document.createElement("span");
-    button_label2.className="mdc-button__label"
-    link_button2.appendChild(button_label2);
-    
     if(modo!=2){
-        var button_comprar2=document.createElement("button");
-        button_comprar2.className="mdc-button mdc-button--raised comprar_NFT";
-        button_comprar2.data=carta.getId();
-        button_label2.appendChild(button_comprar2);
-    
-    button_comprar2.onclick=function(){
-        if(modo==0){  
-                //Codigo de la compra
-                if (sistema.compraCarta(button_comprar2.data,sistema.getCurrentUser())){
-                    let listaInterna = document.getElementById("NFT_lista_interna");
-                    listaInterna.innerHTML='';
-                    cartas.forEach(element => {
-                        mostrarCarta(element,"NFT_lista_interna",0);
-                    });
-                    alert("Se ha realizado la compra exitosamente!")
+        var divFullBleed2 = document.createElement("div");
+        divFullBleed2.className="mdc-card__actions mdc-card__actions--full-bleed";
+        divCardActions.appendChild(divFullBleed2);
+        
+
+        var link_button2 = document.createElement("a");
+        link_button2.className="mdc-button mdc-card__action mdc-card__action--button";
+        divFullBleed2.appendChild(link_button2);
+        
+        var divButtonRiple2 = document.createElement("div");
+        divButtonRiple2.className="mdc-button__ripple";
+        link_button2.appendChild(divButtonRiple2);
+        
+        var button_label2 = document.createElement("span");
+        button_label2.className="mdc-button__label"
+        link_button2.appendChild(button_label2);
+        
+        if(modo!=2){
+            var button_comprar2=document.createElement("button");
+            button_comprar2.className="mdc-button mdc-button--raised comprar_NFT";
+            button_comprar2.data=carta.getId();
+            button_label2.appendChild(button_comprar2);
+        
+        button_comprar2.onclick=function(){
+            if(modo==0){  
+                    //Codigo de la compra
+                    if (sistema.compraCarta(button_comprar2.data,sistema.getCurrentUser())){
+                        let listaInterna = document.getElementById("NFT_lista_interna");
+                        listaInterna.innerHTML='';
+                        cartas.forEach(element => {
+                            mostrarCarta(element,"NFT_lista_interna",0);
+                        });
+                        alert("Se ha realizado la compra exitosamente!")
+                        textSaldo.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
+                        textSaldoPerfil.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
+
+                    }else{
+                        alert("Saldo insuficiente")
+                    }
+                }else if(modo==1){
+                    //Codigo de la venta
+                    sistema.venderCarta(button_comprar2.data,sistema.getCurrentUser())
+                    let listaInterna = document.getElementById("NFT_Lib_interna");
+                        listaInterna.innerHTML='';
+                        sistema.getCurrentUser().getCartas().forEach(element => {
+                            mostrarCarta(element,"NFT_Lib_interna",1);
+                        });
+
+                    alert('Se ha realizado la venta correctamente')
                     textSaldo.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
                     textSaldoPerfil.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
 
-                }else{
-                    alert("Saldo insuficiente")
-                }
-            }else if(modo==1){
-                //Codigo de la venta
-                sistema.venderCarta(button_comprar2.data,sistema.getCurrentUser())
-                let listaInterna = document.getElementById("NFT_Lib_interna");
-                    listaInterna.innerHTML='';
-                    sistema.getCurrentUser().getCartas().forEach(element => {
-                        mostrarCarta(element,"NFT_Lib_interna",1);
-                    });
-
-                alert('Se ha realizado la venta correctamente')
-                textSaldo.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
-                textSaldoPerfil.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
-
-            }        
+                }        
+            }
         }
-    }
 
-    if(modo==0){
-        var button_label3 = document.createElement("span");
-        button_label3.className="mdc-button__label"
-        button_label3.innerHTML="Buy: "+carta.getPrecio()+"$";
-        button_comprar2.appendChild(button_label3);
-    }else if(modo==1){
-        var button_label3 = document.createElement("span");
-        button_label3.className="mdc-button__label"
-        button_label3.innerHTML="Sell: "+carta.getPrecio()+"$";
-        button_comprar2.appendChild(button_label3);
+        if(modo==0){
+            var button_label3 = document.createElement("span");
+            button_label3.className="mdc-button__label"
+            button_label3.innerHTML="Buy: "+carta.getPrecio()+"$";
+            button_comprar2.appendChild(button_label3);
+        }else if(modo==1){
+            var button_label3 = document.createElement("span");
+            button_label3.className="mdc-button__label"
+            button_label3.innerHTML="Sell: "+carta.getPrecio()+"$";
+            button_comprar2.appendChild(button_label3);
+        }
     }
 }
 
@@ -422,7 +424,6 @@ const perfil = new MDCRipple(document.getElementById('profile_button'));
 const tab0 = document.getElementById('lib_btn');
 const tab1 = document.getElementById('fav_btn');
 const tab2 = document.getElementById('wallet_btn');
-const tab3 = document.getElementById('info_btn');
 
 perfil.listen('click', () => {
     let listaInterna = document.getElementById("NFT_Lib_interna");
@@ -488,6 +489,94 @@ tabBar.listen('MDCTabBar:activated', ()=> {
           sistema.getCurrentUser().getCartas().forEach(element => {
             mostrarCarta(element,"NFT_Lib_interna",1);
         });
+
+
+
+
+
+
+
+
+
+        const searchP = new MDCTextField(document.getElementById('search_perfil'));
+        const selectP = new MDCSelect(document.getElementById('combobox_perfil'));
+        const botonBuscarP = new MDCRipple(document.getElementById('aplicar_filtros'));
+        const textSaldoP = document.getElementById("saldo_marketplace");
+        
+        textSaldo.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
+        
+        botonBuscar.listen('click', () =>{
+            if(!search.value==""){
+                    let array = sistema.buscarPorNombre(search.value.toLowerCase());
+                    let listaInterna = document.getElementById("NFT_lista_interna");
+                    listaInterna.innerHTML='';
+                    array.forEach(element => {
+                        mostrarCarta(element,"NFT_lista_interna",0);
+                    });
+            }else{
+                cartas.forEach(element => {
+                    mostrarCarta(element,"NFT_lista_interna",0);
+                });
+            }
+        });
+        
+        
+        select.listen('MDCSelect:change', () => {
+            let listaInterna = document.getElementById("NFT_lista_interna");
+            listaInterna.innerHTML='';
+           if(select.selectedIndex==1){
+                sistema.orderByLike();
+           }
+           
+            if(select.selectedIndex==2){
+                sistema.orderByPrecioMayor();
+                }
+            if(select.selectedIndex==3){
+                sistema.orderByPrecioMenor();
+            }   
+            if(select.selectedIndex==4){
+                sistema.orderByFecha();
+            }
+        
+           sistema.getCartas().forEach(element => {
+                mostrarCarta(element,"NFT_lista_interna",0);
+            });
+        
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     } else if(tab1.ariaSelected  == "true"){
         
     // Ventana Favoritos
