@@ -102,6 +102,16 @@ export default class Usuario{
     addFavorita(id){
         this.favoritas.push(id);
     }
+    removeFavorita(id){
+        let index;
+        let favoritas = this.getIdFavoritas();
+         for (let i=0; i<favoritas.length;i++){
+            if (elem == id){
+                index = i;
+            }
+         }
+         favoritas.splice(index,1);
+    }
     //devuelve un array con las cartas favoritas
     getCartasFavoritas(cartasSystem){
         let idFavoritas = this.getIdFavoritas();
