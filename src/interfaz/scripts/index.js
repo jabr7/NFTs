@@ -86,16 +86,22 @@ function mostrarCarta(carta,nombre_lista,modo){
         
         }else if(modo==2){
              //CODIGO PARA QUITAR LIKE
-             sistema.getCurrentUser().addFavorita(divFullBleed.data);
+             sistema.getCurrentUser().removeFavorita(divFullBleed.data);
 
-
+            carta.unlikeCard()
+            
              alert("Quitado de favoritos correctamente")
  
              let listaInterna = document.getElementById("NFT_Favoritos_interna");
              listaInterna.innerHTML='';
-             sistema.getCurrentUser().getCartasFavoritas().forEach(element => {
+             sistema.getCurrentUser().getCartasFavoritas(sistema.getCartas()).forEach(element => {
                    mostrarCarta(element,"NFT_Favoritos_interna",1);
               });
+              let listaInterna2 = document.getElementById("NFT_lista_interna");
+                listaInterna2.innerHTML='';
+                cartas.forEach(element => {
+                    mostrarCarta(element,"NFT_lista_interna",0);
+                });
 
         }        
     }
@@ -156,39 +162,40 @@ function mostrarCarta(carta,nombre_lista,modo){
         button_comprar2.className="mdc-button mdc-button--raised comprar_NFT";
         button_comprar2.data=carta.getId();
         button_label2.appendChild(button_comprar2);
-    }
+    
     button_comprar2.onclick=function(){
-        if(modo==0){
-            
-            //Codigo de la compra
-            if (sistema.compraCarta(button_comprar2.data,sistema.getCurrentUser())){
-                let listaInterna = document.getElementById("NFT_lista_interna");
-                listaInterna.innerHTML='';
-                cartas.forEach(element => {
-                    mostrarCarta(element,"NFT_lista_interna",0);
-                });
-                alert("Se ha realizado la compra exitosamente!")
+        if(modo==0){  
+                //Codigo de la compra
+                if (sistema.compraCarta(button_comprar2.data,sistema.getCurrentUser())){
+                    let listaInterna = document.getElementById("NFT_lista_interna");
+                    listaInterna.innerHTML='';
+                    cartas.forEach(element => {
+                        mostrarCarta(element,"NFT_lista_interna",0);
+                    });
+                    alert("Se ha realizado la compra exitosamente!")
+                    textSaldo.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
+                    textSaldoPerfil.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
+
+                }else{
+                    alert("Saldo insuficiente")
+                }
+            }else if(modo==1){
+                //Codigo de la venta
+                sistema.venderCarta(button_comprar2.data,sistema.getCurrentUser())
+                let listaInterna = document.getElementById("NFT_Lib_interna");
+                    listaInterna.innerHTML='';
+                    sistema.getCurrentUser().getCartas().forEach(element => {
+                        mostrarCarta(element,"NFT_Lib_interna",1);
+                    });
+
+                alert('Se ha realizado la venta correctamente')
                 textSaldo.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
                 textSaldoPerfil.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
 
-            }else{
-                alert("Saldo insuficiente")
-            }
-        }else if(modo==1){
-            //Codigo de la venta
-            sistema.venderCarta(button_comprar2.data,sistema.getCurrentUser())
-            let listaInterna = document.getElementById("NFT_Lib_interna");
-                listaInterna.innerHTML='';
-                sistema.getCurrentUser().getCartas().forEach(element => {
-                    mostrarCarta(element,"NFT_Lib_interna",1);
-                });
-
-            alert('Se ha realizado la venta correctamente')
-            textSaldo.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
-            textSaldoPerfil.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
-
-        }        
+            }        
+        }
     }
+
     if(modo==0){
         var button_label3 = document.createElement("span");
         button_label3.className="mdc-button__label"

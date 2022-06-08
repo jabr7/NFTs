@@ -106,7 +106,7 @@ export default class Usuario{
         let index;
         let favoritas = this.getIdFavoritas();
          for (let i=0; i<favoritas.length;i++){
-            if (elem == id){
+            if (favoritas[i] == id){
                 index = i;
             }
          }
