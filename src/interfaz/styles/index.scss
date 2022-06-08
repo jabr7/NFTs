@@ -419,7 +419,7 @@ Olvide contraseña
 
 
 //Caja Wallet
-#caja-wallet{
+#contenido_wallet{
   margin-top: 3em;
 }
 
@@ -437,10 +437,34 @@ Olvide contraseña
 
 
 //Caja Favoritos
+#contenido_favoritos{
+  margin-top: 3em;
+}
+
+
 #caja_favoritos{
   margin-top: 3em;
 }
 
+//Caja informacion
+#contenido_informacion{
+  margin-top: 3em;
+}
+
+#pfr_img_informacion {
+  font-size: 100px;
+  margin-left: 48%;
+}
+
+#caja_informacion_interna{
+  margin-left: 42%;
+  margin-right: 40%;
+  min-width: 25rem;
+  max-width: 40rem;
+}
+#actualizar_button{
+  margin-left: 25%;
+}
 
 //Utilizado para desaparecer o aparecer las pantallas
 

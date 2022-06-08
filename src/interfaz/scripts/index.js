@@ -469,7 +469,41 @@ tabBar.listen('MDCTabBar:activated', ()=> {
     } else if(tab2.ariaSelected  == "true"){
         ventanaWallet();
     } else {
-        //Botones para editar perfil
+        //Ventana Informacion del usuario
+        document.querySelectorAll(".content").forEach((element, index) => {
+            element.classList.add("sample-content--hidden");
+          });
+    
+        document.querySelectorAll(".informacion").forEach((element, index) => {
+             element.classList.remove("sample-content--hidden");
+        });
+
+        document.getElementById('contenido_informacion').prepend(document.getElementById('tab_perfil'));
+        document.getElementById('caja_informacion').prepend(document.getElementById('banner-principal'));
+
+        const nombre = new MDCTextField(document.getElementById('modificar_user'));
+        const password = new MDCTextField(document.getElementById('modificar_password'));
+        const boton_actualizar_info = new MDCRipple(document.getElementById('actualizar_button'))
+        
+        nombre.value=sistema.getCurrentUser().getNombre();
+
+        boton_actualizar_info.listen('click', () => {
+            if(nombre.value==sistema.getCurrentUser().getNombre()){
+                alert("El nombre ingresado a actualizar ya es el original");
+                nombre.value="";
+            }else if(nombre.value!=""){
+                sistema.getCurrentUser().setNombre(nombre.value);
+                alert("Nombre cambiado correctamente")
+            }
+            if(password.value==sistema.getCurrentUser().getPassword()){
+                alert("La password ingresada a actualizar ya es la original");
+                password.value="";
+            }else if(password.value!=""){
+                sistema.getCurrentUser().setPassword(password.value);
+                alert("Contraseña cambiada correctamente")
+            }
+            console.log(sistema.getCurrentUser())
+        })
     }
 });
 
