@@ -103,13 +103,18 @@ export default class Usuario{
         this.favoritas.push(id);
     }
     //devuelve un array con las cartas favoritas
-    getCartasFavoritas(){
+    getCartasFavoritas(cartasSystem){
         let idFavoritas = this.getIdFavoritas();
         let ret = [];
         for (let carta of this.getCartas()){
             if (idFavoritas.includes(carta.getId())){
                 ret.push(carta);
             }            
+        }
+        for (let carta of cartasSystem){
+            if (idFavoritas.includes(carta.getId())){
+                ret.push(carta);
+            }             
         }
         return ret;
     }
