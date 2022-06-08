@@ -16,10 +16,10 @@ export default class Carta{
     }
 
     likeCard(){
-        this.likes = this.getLikes+1;
+        this.likes = this.getLikes()+1;
     }
     unlikeCard(){
-        this.likes = this.getLikes-1;
+        this.likes = this.getLikes()-1;
 
     }
 
