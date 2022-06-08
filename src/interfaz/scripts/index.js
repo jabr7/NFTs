@@ -460,7 +460,7 @@ tabBar.listen('MDCTabBar:activated', ()=> {
     //Re carga
     let listaInterna = document.getElementById("NFT_Favoritos_interna");
     listaInterna.innerHTML='';
-    sistema.getCurrentUser().getCartasFavoritas().forEach(element => {
+    sistema.getCurrentUser().getCartasFavoritas(sistema.getCartas()).forEach(element => {
           mostrarCarta(element,"NFT_Favoritos_interna",0);
     });
 
