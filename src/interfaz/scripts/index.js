@@ -580,6 +580,11 @@ textSaldoPerfil.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
 
 
 function ventanaWallet(){
+
+    const textSaldo = document.getElementById("saldo_wallet");
+
+    textSaldo.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
+
     document.querySelectorAll(".content").forEach((element, index) => {
         element.classList.add("sample-content--hidden");
       });
@@ -598,7 +603,14 @@ const monto = new MDCRipple(document.getElementById('monto_button'))
 monto.listen('click', () => {
     if(!(isNaN(cant.value)) && cant.value != ""){
         sistema.getCurrentUser().agregarSaldo(parseInt(cant.value));
-        alert("Monto ingresado");
+
+        //Recarga texto saldo de wallet
+        const textSaldo = document.getElementById("saldo_wallet");
+        textSaldo.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
+
+        alert("El monto: "+cant.value+" ah sido agregado correctamente a su wallet");
+
+        //Recarga texto saldo de mi libreria
         textSaldoPerfil.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
         cant.value="";
     } else {
