@@ -14,6 +14,11 @@ export default class Usuario{
     getPassword(){
         return this.password;
     }
+
+    setNombre(nombre){
+        this.nombre = nombre;
+    }
+
     setPassword(password){
         this.password = password;
     }
