@@ -88,7 +88,7 @@ export default class Sistema{
     }
 
     //ordena el array de cartas por precio menor a mayor
-    orderByPrecioMenor(){
+    orderByPrecioMenor(array){
         array.sort(function(a,b){
 
             return a.precio - b.precio;
