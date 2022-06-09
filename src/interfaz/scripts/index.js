@@ -64,7 +64,9 @@ function mostrarCarta(carta,nombre_lista,modo){
     divCardActions.appendChild(divFullBleed);
     
     divFullBleed.onclick=function()
-    {
+    {   
+        //Descomentar siguiente linea para provocar error #94
+        //if(modo!=2)
         if(modo==0){
             //CODIGO PARA DAR LIKE
             if(!sistema.getCurrentUser().getIdFavoritas().includes(carta.getId())){
@@ -75,15 +77,24 @@ function mostrarCarta(carta,nombre_lista,modo){
 
                 carta.likeCard();
 
+
+                //Debo actualizar ambas listas (market y perfil) por que no se de donde puede venir
+                //el like o dislike
                 let listaInterna = document.getElementById("NFT_lista_interna");
                 listaInterna.innerHTML='';
                 cartas.forEach(element => {
                     mostrarCarta(element,"NFT_lista_interna",0);
                 });
+
+                let listaInternaPerfil = document.getElementById("NFT_Lib_interna");
+                listaInternaPerfil.innerHTML='';
+                sistema.getCurrentUser().getCartasFavoritas(sistema.getCartas()).forEach(element => {
+                    mostrarCarta(element,"NFT_Lib_interna",1);
+                });
             }else{
                 alert("Este NFT ya tiene tu like!")
             }
-        
+        //Quitar clausula de el if debajo para reproducir error #64
         }else if(modo==2){
              //CODIGO PARA QUITAR LIKE
              sistema.getCurrentUser().removeFavorita(divFullBleed.data);
@@ -469,6 +480,56 @@ const logout = new MDCRipple(document.getElementById('logout_button'))
 const tabBar = new MDCTabBar(document.getElementById('tab_perfil'));
 
 
+const searchP = new MDCTextField(document.getElementById('search_perfil'));
+const selectP = new MDCSelect(document.getElementById('combobox_perfil'));
+const botonBuscarP = new MDCRipple(document.getElementById('aplicar_filtros_perfil'));
+
+textSaldo.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
+
+
+
+botonBuscarP.listen('click', () =>{
+    if(!searchP.value==""){
+        //FALTA CAMBIAR QUE BUSQUE EN EL ARRAY DE COMPRADOS POR EL USUARIO Y NO DEL GENERAL
+            let array = sistema.buscarPorNombre(searchP.value.toLowerCase());
+            let listaInterna = document.getElementById("NFT_Lib_interna");
+            listaInterna.innerHTML='';
+            array.forEach(element => {
+                mostrarCarta(element,"NFT_Lib_interna",1);
+            });
+    }else{
+        cartas.forEach(element => {
+            mostrarCarta(element,"NFT_Lib_interna",1);
+        });
+    }
+});
+
+
+selectP.listen('MDCSelect:change', () => {
+    let listaInterna = document.getElementById("NFT_Lib_interna");
+    listaInterna.innerHTML='';
+   if(selectP.selectedIndex==1){
+        sistema.orderByLike();
+   }
+   
+    if(selectP.selectedIndex==2){
+        sistema.orderByPrecioMayor();
+        }
+    if(selectP.selectedIndex==3){
+        sistema.orderByPrecioMenor();
+    }   
+    if(selectP.selectedIndex==4){
+        sistema.orderByFecha();
+    }
+
+   sistema.getCartas().forEach(element => {
+        mostrarCarta(element,"NFT_Lib_interna",1);
+    });
+
+});
+
+
+
 tabBar.listen('MDCTabBar:activated', ()=> {
     //Dependiendo de cual este activo, despliegara el contenido correspondiente
     
@@ -489,92 +550,6 @@ tabBar.listen('MDCTabBar:activated', ()=> {
           sistema.getCurrentUser().getCartas().forEach(element => {
             mostrarCarta(element,"NFT_Lib_interna",1);
         });
-
-
-
-
-
-
-
-
-
-        const searchP = new MDCTextField(document.getElementById('search_perfil'));
-        const selectP = new MDCSelect(document.getElementById('combobox_perfil'));
-        const botonBuscarP = new MDCRipple(document.getElementById('aplicar_filtros'));
-        const textSaldoP = document.getElementById("saldo_marketplace");
-        
-        textSaldo.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
-        
-        botonBuscar.listen('click', () =>{
-            if(!search.value==""){
-                    let array = sistema.buscarPorNombre(search.value.toLowerCase());
-                    let listaInterna = document.getElementById("NFT_lista_interna");
-                    listaInterna.innerHTML='';
-                    array.forEach(element => {
-                        mostrarCarta(element,"NFT_lista_interna",0);
-                    });
-            }else{
-                cartas.forEach(element => {
-                    mostrarCarta(element,"NFT_lista_interna",0);
-                });
-            }
-        });
-        
-        
-        select.listen('MDCSelect:change', () => {
-            let listaInterna = document.getElementById("NFT_lista_interna");
-            listaInterna.innerHTML='';
-           if(select.selectedIndex==1){
-                sistema.orderByLike();
-           }
-           
-            if(select.selectedIndex==2){
-                sistema.orderByPrecioMayor();
-                }
-            if(select.selectedIndex==3){
-                sistema.orderByPrecioMenor();
-            }   
-            if(select.selectedIndex==4){
-                sistema.orderByFecha();
-            }
-        
-           sistema.getCartas().forEach(element => {
-                mostrarCarta(element,"NFT_lista_interna",0);
-            });
-        
-        });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     } else if(tab1.ariaSelected  == "true"){
