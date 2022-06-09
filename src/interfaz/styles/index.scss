@@ -155,6 +155,10 @@ Registro
   margin-bottom: 20px;
 }
 
+#arrow_registro_img{
+  cursor: pointer;
+}
+
 /*
 Olvide contraseña
 */
@@ -221,7 +225,7 @@ Olvide contraseña
     rotateX(51deg)
     rotateZ(43deg);
   transform-style: preserve-3d;
-  border-radius: 32px;
+  border-radius:35px;
   box-shadow:
     1px 1px 0 1px #f9f9fb,
     -1px 0 28px 0 rgba(34, 33, 81, 0.01),
@@ -371,14 +375,24 @@ Olvide contraseña
   float: left;
   margin-right: 5%;
 }
-#search_P{
+#search_perfil{
   margin-left: 12.3%;
   margin-top: 5%;
+}
+#combobox_perfil{
+  margin-left: 12.3%;
+}
+
+#aplicar_filtros_perfil{
+  margin-left: 35%;
+  margin-bottom: 17%;
 }
 
 #almacen-banner{
   display: none;
 }
+
+
 
 
 //Sistema Listado de NFTs
@@ -414,23 +428,57 @@ Olvide contraseña
 }
 
 .comprar_NFT{
-  margin-left: 54px;
+  margin-left: 37px;
 }
-//Caja Wallet
 
-#caja-wallet{
+
+//Caja Wallet
+#contenido_wallet{
   margin-top: 3em;
 }
 
 #form_wallet{
   margin-right: 40%;
-  margin-left: 40%;
+  margin-left: 42%;
   min-width: 25rem;
   max-width: 40rem;
 }
 
 #monto_button{
-  margin-left: 3rem;
+  margin-left: 25%;
+}
+
+
+
+//Caja Favoritos
+#contenido_favoritos{
+  margin-top: 3em;
+}
+
+
+#caja_favoritos{
+  margin-top: 3em;
+}
+
+//Caja informacion
+#contenido_informacion{
+  margin-top: 3em;
+}
+
+#pfr_img_informacion {
+  font-size: 100px;
+  margin-left: 48%;
+}
+
+#caja_informacion_interna{
+  margin-left: 42%;
+  margin-right: 40%;
+  min-width: 25rem;
+  max-width: 40rem;
+}
+#actualizar_button{
+  margin-left: 25%;
+  margin-bottom: 11em;
 }
 
 //Utilizado para desaparecer o aparecer las pantallas

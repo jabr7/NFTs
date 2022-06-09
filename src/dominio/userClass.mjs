@@ -5,6 +5,8 @@ export default class Usuario{
         this.saldo = saldo,
         this.admin = admin;
         this.cartas = [];
+        this.favoritas = [];
+
     }
     getNombre(){
         return this.nombre;
@@ -12,6 +14,11 @@ export default class Usuario{
     getPassword(){
         return this.password;
     }
+
+    setNombre(nombre){
+        this.nombre = nombre;
+    }
+
     setPassword(password){
         this.password = password;
     }
@@ -87,6 +94,41 @@ export default class Usuario{
 
         return "Nombre: " + this.getNombre() + ", Password: " + this.getPassword() + ", Saldo: " + this.getSaldo() + " is Admin: " + this.isAdmin() + ", Cant Cartas: " + this.getCartas().length;
     }
+    //devuelve el array con id de las cartas favoritas
+    getIdFavoritas(){
+        return this.favoritas;
+    }
+    //agrega el id de carta a favoritas
+    addFavorita(id){
+        this.favoritas.push(id);
+    }
+    removeFavorita(id){
+        let index;
+        let favoritas = this.getIdFavoritas();
+         for (let i=0; i<favoritas.length;i++){
+            if (favoritas[i] == id){
+                index = i;
+            }
+         }
+         favoritas.splice(index,1);
+    }
+    //devuelve un array con las cartas favoritas
+    getCartasFavoritas(cartasSystem){
+        let idFavoritas = this.getIdFavoritas();
+        let ret = [];
+        for (let carta of this.getCartas()){
+            if (idFavoritas.includes(carta.getId())){
+                ret.push(carta);
+            }            
+        }
+        for (let carta of cartasSystem){
+            if (idFavoritas.includes(carta.getId())){
+                ret.push(carta);
+            }             
+        }
+        return ret;
+    }
+
 
 }
 

@@ -4,6 +4,7 @@
 <head>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="bundle.css">
+  <title>NFT's</title>
   <script src="./scripts/index.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,10 +17,10 @@
     <div id="div_imagen_banner"><img id="imagen_banner" src="./imagenes/logo.png"/></div> 
     <div id="animated">
       <div id="hover_text2">Hover over one!</div> 
-      <div class="float-area" ><img id="NFT1" src=".\imagenes\Cards\Skellige\45 - yPfYDeQ.gif" class="floating-img" alt="my floating image"></div> 
-      <div class="float-area" ><img id="NFT2" src="./imagenes/2 - f1LkIrz.gif" class="floating-img" alt="my floating image"></div>
-      <div class="float-area" ><img id="NFT3" src="./imagenes/2 - Iq7UBSd.gif" class="floating-img" alt="my floating image"></div>
-      <div class="float-area" ><img id="NFT4" src="./imagenes/21 - qCLhzY5.gif" class="floating-img" alt="my floating image"></div>
+      <div class="float-area" ><img id="NFT1" class="floating-img" alt="my floating image"></div> 
+      <div class="float-area" ><img id="NFT2" class="floating-img" alt="my floating image"></div>
+      <div class="float-area" ><img id="NFT3" class="floating-img" alt="my floating image"></div>
+      <div class="float-area" ><img id="NFT4" class="floating-img" alt="my floating image"></div>
     </div>
   </div>
   <div class="mdc-tab-bar" role="tablist" id="tab_perfil">
@@ -77,15 +78,9 @@
     <div class="mdc-top-app-bar__row">
       <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
         
-
-
-
         <div id="div_imagen_login_topbar">
-          <a href="https://www.google.com.uy">
-            <img id="imagen_login_topbar" src="./imagenes/logo.png"/>
-          </a>
+            <img id="imagen_login_topbar" src="./imagenes/logo.png"/>          
         </div> 
-
 
         <button class="mdc-button mdc-button--raised" id="marketplace_button">
           <span class="mdc-button__label">Marketplace</span>
@@ -149,7 +144,12 @@
 
       <!--CAJA REGISTRO-->
       <div id="caja-login" class="content registro sample-content--hidden"> 
-        <h1 style="color:#118EBF;">Registro de Usuario</h1>
+        
+        <h1 style="color:#118EBF;">
+          <a>
+            <span class="material-icons" id="arrow_registro_img" style="color: #118EBF;">arrow_back_ios</span>
+          </a>Registro de Usuario
+        </h1>
   
         <label class="mdc-text-field mdc-text-field--filled" id="registro_user">
           <span class="mdc-text-field__ripple"></span>
@@ -171,13 +171,6 @@
           <input class="mdc-text-field__input" type="password" aria-labelledby="my-label-id">
           <span class="mdc-line-ripple"></span>
         </label>
-
-        <label class="mdc-text-field mdc-text-field--filled" id="registro_email">
-          <span class="mdc-text-field__ripple"></span>
-          <span class="mdc-floating-label" id="my-label-id">Email</span>
-          <input class="mdc-text-field__input" type="email" aria-labelledby="my-label-id">
-          <span class="mdc-line-ripple"></span>
-        </label>
   
         <button class="mdc-button mdc-button--raised" id="register_button">
           <span class="mdc-button__label">Registrarse</span>
@@ -188,7 +181,10 @@
 
       <!--CAJA FORGOTTEN PASSWORD-->
       <div id="caja-login" class="content forgotten sample-content--hidden"> 
-        <h1 style="color:#118EBF;">Olvide mi contraseña</h1>
+        <h1 style="color:#118EBF;">
+          <span class="material-icons" id="arrow_forgotten_img" style="color: #118EBF; cursor: pointer;">arrow_back_ios</span>
+          Olvide mi contraseña
+        </h1>
 
         <label class="mdc-text-field mdc-text-field--filled" id="forgotten_user">
           <span class="mdc-text-field__ripple"></span>
@@ -331,95 +327,19 @@
         
 
         <div id="NFT_List">
-        <ul class="mdc-image-list my-image-list" id="NFT_lista_interna">
-            <div class="mdc-card">
-              <div class="mdc-card__primary-action">
-                <div class="my-card__media mdc-card__media mdc-card__media--16-9 ">
-                  <a href=""><img class="mdc-image-list__image" src="./imagenes/2 - f1LkIrz.gif"></a>
-                </div>
-                <div class="mdc-card__ripple"></div>
-              </div>
-              <div class="mdc-card__actions">
-
-
-                <div class="mdc-card__actions">
-                  <a class="mdc-button mdc-card__action mdc-card__action--button" href="#">
-                    <div class="mdc-button__ripple"></div>
-                    <span class="mdc-button__label">Nombre del NFT</span>
-                    <i class="material-icons mdc-button__icon" aria-hidden="true">favorite_border</i>
-                    <span>1</span>
-                  </a>
-                </div>
-    
-                
-
-
-                <div class="mdc-card__actions">
-                  <a class="mdc-button mdc-card__action mdc-card__action--button" href="#">
-                    <div class="mdc-button__ripple"></div>
-                    <span class="mdc-button__label">
-                      <button class="mdc-button mdc-button--raised comprar_NFT">
-                      <span class="mdc-button__label">Login</span>
-                      </button>
-                    </span>
-                  </a>
-                </div>
-              </div>
-
-
-
-
-          </div>
-
-         
+          <ul class="mdc-image-list my-image-list" id="NFT_lista_interna"> 
 
         <!--Cargado dinamicamente desde JS--> 
-    <!--Ejemplo de NFT cargado
-/*
-  <div class="mdc-card">
-            <div class="mdc-card__primary-action">
-              <div class="my-card__media mdc-card__media mdc-card__media--16-9 ">
-                <a href="https://www.google.com/m?client=ms-android-samsung-gs-rev1&source=android-home"><img class="mdc-image-list__image" src="./imagenes/2 - f1LkIrz.gif"></a>
-              </div>
-              <div class="mdc-card__ripple"></div>
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__actions mdc-card__actions--full-bleed">
-                <a class="mdc-button mdc-card__action mdc-card__action--button" href="#">
-                  <div class="mdc-button__ripple"></div>
-                  <span class="mdc-button__label">Nombre del NFT</span>
-                  <i class="material-icons mdc-button__icon" aria-hidden="true">arrow_forward</i>
-                </a>
-              </div>
-            </div>
-          </div>
-*/ 
-
-
-
-
-
-
-
-  
--->
-      
-
-
-        </ul>
+    
+         </ul>
         </div>
 
-  
-      
 
       </div>
 
 
-      
 
-    
-
-</div>
+  </div>
  <!--PestañaPrincipalPerfil-->
  <div id="caja-perfilPrinc" class="content perfilPrinc sample-content--hidden"> 
   <div id="contenido_perfilPrinc">         
@@ -437,133 +357,207 @@
         <!--info y cerrar sesion-->
         <a>
           <span class="material-icons" id="pfr_img" >account_circle</span>
-        </a>
-        <a id="nombre_perfil">Nombre de Usuario</a>
+          <a id="nombre_perfil"></a>
+
+          <!--Boton cerrar sesion-->
         <button class="mdc-button mdc-button--raised" id="logout_button">
           <span class="mdc-button__label">Cerrar sesión</span>
         </button>
-          <!--Searcher-->
-        <label class="mdc-text-field mdc-text-field--filled" id="search_P">
-          <span class="mdc-text-field__ripple"></span>
-          <span class="mdc-floating-label" id="my-label-id">Busqueda</span>
-          <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id">
-          <span class="mdc-line-ripple"></span>
-        </label>
-
-        <!--ComboBox-->
-        <div class="mdc-select mdc-select--filled demo-width-class" id = "filtro_lib">
-          <div class="mdc-select__anchor"
-               role="button"
-               aria-haspopup="listbox"
-               aria-expanded="false"
-               aria-labelledby="demo-label demo-selected-text" id="combobox">
-            <span class="mdc-select__ripple"></span>
-            <span id="demo-label" class="mdc-floating-label">Elija un Filtro</span>
-            <span class="mdc-select__selected-text-container">
-              <span id="demo-selected-text" class="mdc-select__selected-text"></span>
-            </span>
-            <span class="mdc-select__dropdown-icon">
-              <svg
-                  class="mdc-select__dropdown-icon-graphic"
-                  viewBox="7 10 10 5" focusable="false">
-                <polygon
-                    class="mdc-select__dropdown-icon-inactive"
-                    stroke="none"
-                    fill-rule="evenodd"
-                    points="7 10 12 15 17 10">
-                </polygon>
-                <polygon
-                    class="mdc-select__dropdown-icon-active"
-                    stroke="none"
-                    fill-rule="evenodd"
-                    points="7 15 12 10 17 15">
-                </polygon>
-              </svg>
-            </span>
-            <span class="mdc-line-ripple"></span>
-          </div>
-          
         
-          <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth">
-            <ul class="mdc-list" role="listbox" aria-label="Food picker listbox">
-              <li class="mdc-list-item mdc-list-item--selected" aria-selected="true" data-value="" role="option">
-                <span class="mdc-list-item__ripple"></span>
-              </li>
-              <li class="mdc-list-item" aria-selected="false" data-value="Los mas gustados" role="option">
-                <span class="mdc-list-item__ripple"></span>
-                <span class="mdc-list-item__text">
-                  Los mas gustados
-                </span>
-              </li>
-              <li class="mdc-list-item" aria-selected="false" data-value="Disponibilidad" role="option">
-                <span class="mdc-list-item__ripple"></span>
-                <span class="mdc-list-item__text">
-                  Disponibilidad
-                </span>
-              </li>
-              <li class="mdc-list-item" aria-selected="false" data-value="Precio: Alto-Bajo" role="option">
-                <span class="mdc-list-item__ripple"></span>
-                <span class="mdc-list-item__text">
-                  Precio: Alto-Bajo
-                </span>
-              </li>
-              <li class="mdc-list-item" aria-selected="false" data-value="Precio: Bajo-Alto" role="option">
-                <span class="mdc-list-item__ripple"></span>
-                <span class="mdc-list-item__text">
-                  Precio: Bajo-Alto
-                </span>
-              </li>
-              <li class="mdc-list-item" aria-selected="false" data-value="Fecha" role="option">
-                <span class="mdc-list-item__ripple"></span>
-                <span class="mdc-list-item__text">
-                  Fecha
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
+        
         
         <h2 style="color:#118EBF; margin-left: 15%; " id="saldo_perfil"></h2>
 
+        <!--Filtros perfil-->
+        <h2 style="color:#118EBF; margin-left: 40%;">Filtros</h2>
+        <!--Searcher Perfil-->
+      <label class="mdc-text-field mdc-text-field--filled" id="search_perfil">
+        <span class="mdc-text-field__ripple"></span>
+        <span class="mdc-floating-label" id="my-label-id">Busqueda</span>
+        <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id">
+        <span class="mdc-line-ripple"></span>
+      </label>
+
+
+      <!--Boton Buscar Perfil-->
+      <button class="mdc-button mdc-button--raised" id="aplicar_filtros_perfil">
+        <span class="mdc-button__label">Buscar</span>
+      </button>
+
+      <!--ComboBox Perfil-->
+      <div class="mdc-select mdc-select--filled demo-width-class" id="combobox_perfil">
+        <div class="mdc-select__anchor"
+             role="button"
+             aria-haspopup="listbox"
+             aria-expanded="false"
+             aria-labelledby="demo-label demo-selected-text">
+          <span class="mdc-select__ripple"></span>
+          <span id="demo-label" class="mdc-floating-label">Elija un Filtro</span>
+          <span class="mdc-select__selected-text-container">
+            <span id="demo-selected-text" class="mdc-select__selected-text"></span>
+          </span>
+          <span class="mdc-select__dropdown-icon">
+            <svg
+                class="mdc-select__dropdown-icon-graphic"
+                viewBox="7 10 10 5" focusable="false">
+              <polygon
+                  class="mdc-select__dropdown-icon-inactive"
+                  stroke="none"
+                  fill-rule="evenodd"
+                  points="7 10 12 15 17 10">
+              </polygon>
+              <polygon
+                  class="mdc-select__dropdown-icon-active"
+                  stroke="none"
+                  fill-rule="evenodd"
+                  points="7 15 12 10 17 15">
+              </polygon>
+            </svg>
+          </span>
+          <span class="mdc-line-ripple"></span>
+        </div>
+    
+        <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth">
+          <ul class="mdc-list" role="listbox" aria-label="Food picker listbox">
+            <li class="mdc-list-item mdc-list-item--selected" aria-selected="true" data-value="" role="option">
+              <span class="mdc-list-item__ripple"></span>
+            </li>
+            <li class="mdc-list-item" aria-selected="false" data-value="Los mas gustados" role="option">
+              <span class="mdc-list-item__ripple"></span>
+              <span class="mdc-list-item__text">
+                Los mas gustados
+              </span>
+            </li>
+            <li class="mdc-list-item" aria-selected="false" data-value="Precio: Alto-Bajo" role="option">
+              <span class="mdc-list-item__ripple"></span>
+              <span class="mdc-list-item__text">
+                Precio: Alto-Bajo
+              </span>
+            </li>
+            <li class="mdc-list-item" aria-selected="false" data-value="Precio: Bajo-Alto" role="option">
+              <span class="mdc-list-item__ripple"></span>
+              <span class="mdc-list-item__text">
+                Precio: Bajo-Alto
+              </span>
+            </li>
+            <li class="mdc-list-item" aria-selected="false" data-value="Fecha" role="option">
+              <span class="mdc-list-item__ripple"></span>
+              <span class="mdc-list-item__text">
+                Fecha
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!--Texto Saldo-->
+      <h2 style="color:#118EBF; margin-left: 15%; " id="saldo_perfil"></h2>
 
         
       </aside>
       
 
-      <div id="NFT_Lib">
-        <ul class="mdc-image-list my-image-list" id="NFT_Lib_interna">
+        <div id="NFT_Lib">
+          <ul class="mdc-image-list my-image-list" id="NFT_Lib_interna">
+            
+            
+          </ul>
+        </div>
+      </div>
+  </div>
+
+
+    <!--Caja Wallet-->
+   <div id="caja-wallet" class="content wallet sample-content--hidden">
+      <div id="contenido_wallet"> 
+       <div class="container">
+         <div class="row">
+            <div class="col-md-12 text-center">
+             <h3 class="animate-charcter">Wallet</h3>
+            </div>
+          </div>
+       </div>
+
+       <div id="form_wallet">
+        <h2 style="color:#118EBF; margin-left: 15%; " id="saldo_wallet"></h2>
+
+       <label class="mdc-text-field mdc-text-field--filled" id="agg_monto">
+          <span class="mdc-text-field__ripple"></span>
+         <span class="mdc-floating-label" id="my-label-id">Monto a ingresar</span>
+         <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id">
+          <span class="mdc-line-ripple"></span>
+        </label>
+       <br>
+       <button class="mdc-button mdc-button--raised" id="monto_button">
+          <span class="mdc-button__label">Agregar</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+ <!--Caja Favoritos-->
+ <div id="caja_favoritos" class="content favoritos sample-content--hidden">
+  <div id="contenido_favoritos"> 
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h3 class="animate-charcter">Mis Favoritos</h3>
+        </div>
+      </div>
+    </div>
+   
+      <div id="NFT_Favoritos">
+        <ul class="mdc-image-list my-image-list" id="NFT_Favoritos_interna">
           
           
         </ul>
-        </div>
       </div>
-  </div>
 
-
-  <!--Caja Wallet-->
-  <div id="caja-wallet" class="content wallet sample-content--hidden">
-    <div id="contenido_wallet"> 
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <h3 class="animate-charcter">Wallet</h3>
-          </div>
-        </div>
-      </div>
-      <div id="form_wallet">
-      <label class="mdc-text-field mdc-text-field--filled" id="agg_monto">
-        <span class="mdc-text-field__ripple"></span>
-        <span class="mdc-floating-label" id="my-label-id">Monto a ingresar</span>
-        <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id">
-        <span class="mdc-line-ripple"></span>
-      </label>
-      <br>
-      <button class="mdc-button mdc-button--raised" id="monto_button">
-        <span class="mdc-button__label">Ingresar</span>
-      </button>
     </div>
+ </div>
+
+<!--Caja Informacion-->
+<div id="caja_informacion" class="content informacion sample-content--hidden">
+ 
+  <div id="contenido_informacion"> 
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h3 class="animate-charcter">Perfil</h3>
+        </div>
+      </div>
+    </div>
+    <a>
+      <span class="material-icons" id="pfr_img_informacion" >account_circle</span>
+    </a>
+  <div id="caja_informacion_interna">
+    <label class="mdc-text-field mdc-text-field--filled" id="modificar_user">
+      <span class="mdc-text-field__ripple"></span>
+      <span class="mdc-floating-label" id="my-label-id">Usuario</span>
+      <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id">
+      <span class="mdc-line-ripple"></span>
+    </label>
+
+    <label class="mdc-text-field mdc-text-field--filled" id="modificar_password">
+      <span class="mdc-text-field__ripple"></span>
+      <span class="mdc-floating-label" id="my-label-id">Contraseña</span>
+      <input class="mdc-text-field__input" type="password" aria-labelledby="my-label-id">
+      <span class="mdc-line-ripple"></span>
+    </label>
+
+    <button class="mdc-button mdc-button--raised" id="actualizar_button">
+      <span class="mdc-button__label">Actualizar</span>
+    </button>
   </div>
+
+  </div>
+</div>
+
+
+
 </body>
 <script src="bundle.js" async></script>
 
