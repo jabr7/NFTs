@@ -375,14 +375,24 @@ Olvide contraseña
   float: left;
   margin-right: 5%;
 }
-#search_P{
+#search_perfil{
   margin-left: 12.3%;
   margin-top: 5%;
+}
+#combobox_perfil{
+  margin-left: 12.3%;
+}
+
+#aplicar_filtros_perfil{
+  margin-left: 35%;
+  margin-bottom: 17%;
 }
 
 #almacen-banner{
   display: none;
 }
+
+
 
 
 //Sistema Listado de NFTs
@@ -468,6 +478,7 @@ Olvide contraseña
 }
 #actualizar_button{
   margin-left: 25%;
+  margin-bottom: 11em;
 }
 
 //Utilizado para desaparecer o aparecer las pantallas
