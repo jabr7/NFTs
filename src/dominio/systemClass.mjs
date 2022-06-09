@@ -89,28 +89,28 @@ export default class Sistema{
 
     //ordena el array de cartas por precio menor a mayor
     orderByPrecioMenor(){
-        this.cartas.sort(function(a,b){
+        array.sort(function(a,b){
 
             return a.precio - b.precio;
         })
    
     }
      //ordena el array de cartas por mayor a menor  
-    orderByPrecioMayor(){
-        this.cartas.sort(function(a,b){
+    orderByPrecioMayor(array){
+        array.sort(function(a,b){
 
             return b.precio - a.precio;
         })
     }
     //ordena el array de cartas por fecha, segun el bool que le demos es en orden (mas vieja a mas nueva o viceversa)
-    orderByFecha(orden){
-        this.cartas.sort(function(a,b){
+    orderByFecha(array){
+        array.sort(function(a,b){
             return a.fecha - b.fecha;
         })
     }
     //Ordena el array de cartas por cantidad de likes en las mismas (mayor a menor)
-    orderByLike(){
-        this.cartas.sort(function(a,b){
+    orderByLike(array){
+        array.sort(function(a,b){
 
             return b.precio - a.precio;
         })
@@ -140,9 +140,9 @@ export default class Sistema{
         user.agregarSaldo(carta.precio);
     }
     //Busca por nombre, si el nombre incluye el substring devuelve el array de las cartas que lo cumplan
-    buscarPorNombre(texto){
+    buscarPorNombre(texto, array){
         let ret = [];
-        for (let carta of this.getCartas()){
+        for (let carta of array){
             if (carta.getNombre().toLowerCase().includes(texto)){
                 ret.push(carta);
             }
