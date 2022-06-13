@@ -199,6 +199,12 @@ function mostrarCarta(carta,nombre_lista,modo){
                             mostrarCarta(element,"NFT_Lib_interna",1);
                         });
 
+                    let listaInterna2= document.getElementById("NFT_lista_interna");
+                        listaInterna2.innerHTML=''; 
+                        cartas.forEach(element => {
+                            mostrarCarta(element,"NFT_lista_interna",0);
+                        });
+
                     alert('Se ha realizado la venta correctamente')
                     textSaldo.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
                     textSaldoPerfil.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
@@ -241,7 +247,7 @@ textSaldo.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
 
 botonBuscar.listen('click', () =>{
     if(!search.value==""){
-            let array = sistema.buscarPorNombre(search.value.toLowerCase());
+            let array = sistema.buscarPorNombre(search.value.toLowerCase(),sistema.getCartas());
             let listaInterna = document.getElementById("NFT_lista_interna");
             listaInterna.innerHTML='';
             array.forEach(element => {
