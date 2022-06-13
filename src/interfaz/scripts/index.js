@@ -8,7 +8,7 @@ import Usuario from '../../dominio/userClass.mjs';
 
 var sistema = init();
 
-sistema.logIn("admin","admin")
+sistema.logIn("dummy","dummy")
 
 //Marketplace
 let cartas = sistema.getCartas();
@@ -305,6 +305,9 @@ login.listen('click', () => {
           document.querySelectorAll(".marketplace").forEach((element, index) => {
             element.classList.remove("sample-content--hidden");
        });
+
+       textSaldo.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
+       textSaldoPerfil.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
        document.getElementById('caja-marketplace').prepend(document.getElementById('banner-principal'));
 
 
