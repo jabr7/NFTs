@@ -8,7 +8,7 @@ import Usuario from '../../dominio/userClass.mjs';
 
 var sistema = init();
 
-
+sistema.logIn("admin","admin")
 
 //Marketplace
 let cartas = sistema.getCartas();
@@ -66,56 +66,54 @@ function mostrarCarta(carta,nombre_lista,modo){
     {   
         //Descomentar siguiente linea para provocar error #94
         //if(modo!=2)
-        if(sistema.getCurrentUser()!=undefined){
-            if(modo==0){
-                //CODIGO PARA DAR LIKE
-                if(!sistema.getCurrentUser().getIdFavoritas().includes(carta.getId())){
+        if(modo==0){
+            //CODIGO PARA DAR LIKE
+            if(!sistema.getCurrentUser().getIdFavoritas().includes(carta.getId())){
 
-                
-                    sistema.getCurrentUser().addFavorita(divFullBleed.data);
-                    alert("Agregado a favoritos correctamente")
+              
+                sistema.getCurrentUser().addFavorita(divFullBleed.data);
+                alert("Agregado a favoritos correctamente")
 
-                    carta.likeCard();
+                carta.likeCard();
 
 
-                    //Debo actualizar ambas listas (market y perfil) por que no se de donde puede venir
-                    //el like o dislike
-                    let listaInterna = document.getElementById("NFT_lista_interna");
-                    listaInterna.innerHTML='';
-                    cartas.forEach(element => {
-                        mostrarCarta(element,"NFT_lista_interna",0);
-                    });
-
-                    let listaInternaPerfil = document.getElementById("NFT_Lib_interna");
-                    listaInternaPerfil.innerHTML='';
-                    sistema.getCurrentUser().getCartasFavoritas(sistema.getCartas()).forEach(element => {
-                        mostrarCarta(element,"NFT_Lib_interna",1);
-                    });
-                }else{
-                    alert("Este NFT ya tiene tu like!")
-                }
-            //Quitar clausula de el if debajo para reproducir error #64
-            }else if(modo==2){
-                //CODIGO PARA QUITAR LIKE
-                sistema.getCurrentUser().removeFavorita(divFullBleed.data);
-
-                carta.unlikeCard()
-                
-                alert("Quitado de favoritos correctamente")
-    
-                let listaInterna = document.getElementById("NFT_Favoritos_interna");
+                //Debo actualizar ambas listas (market y perfil) por que no se de donde puede venir
+                //el like o dislike
+                let listaInterna = document.getElementById("NFT_lista_interna");
                 listaInterna.innerHTML='';
-                sistema.getCurrentUser().getCartasFavoritas(sistema.getCartas()).forEach(element => {
-                    mostrarCarta(element,"NFT_Favoritos_interna",1);
+                cartas.forEach(element => {
+                    mostrarCarta(element,"NFT_lista_interna",0);
                 });
-                let listaInterna2 = document.getElementById("NFT_lista_interna");
-                    listaInterna2.innerHTML='';
-                    cartas.forEach(element => {
-                        mostrarCarta(element,"NFT_lista_interna",0);
-                    });
 
-            }     
-        }   
+                let listaInternaPerfil = document.getElementById("NFT_Lib_interna");
+                listaInternaPerfil.innerHTML='';
+                sistema.getCurrentUser().getCartasFavoritas(sistema.getCartas()).forEach(element => {
+                    mostrarCarta(element,"NFT_Lib_interna",1);
+                });
+            }else{
+                alert("Este NFT ya tiene tu like!")
+            }
+        //Quitar clausula de el if debajo para reproducir error #64
+        }else if(modo==2){
+             //CODIGO PARA QUITAR LIKE
+             sistema.getCurrentUser().removeFavorita(divFullBleed.data);
+
+            carta.unlikeCard()
+            
+             alert("Quitado de favoritos correctamente")
+ 
+             let listaInterna = document.getElementById("NFT_Favoritos_interna");
+             listaInterna.innerHTML='';
+             sistema.getCurrentUser().getCartasFavoritas(sistema.getCartas()).forEach(element => {
+                   mostrarCarta(element,"NFT_Favoritos_interna",1);
+              });
+              let listaInterna2 = document.getElementById("NFT_lista_interna");
+                listaInterna2.innerHTML='';
+                cartas.forEach(element => {
+                    mostrarCarta(element,"NFT_lista_interna",0);
+                });
+
+        }        
     }
 
 
@@ -139,12 +137,10 @@ function mostrarCarta(carta,nombre_lista,modo){
     arrowIcon.ariaHidden=true;
     
     //Icono corazon
-    if(sistema.getCurrentUser()!=undefined){
-        if(sistema.getCurrentUser().getIdFavoritas().includes(carta.getId())){
-            arrowIcon.innerHTML="favorite";
-        }else{
-            arrowIcon.innerHTML="favorite_border";
-        }
+    if(sistema.getCurrentUser().getIdFavoritas().includes(carta.getId())){
+        arrowIcon.innerHTML="favorite";
+    }else{
+        arrowIcon.innerHTML="favorite_border";
     }
     link_button.appendChild(arrowIcon);
 
@@ -241,6 +237,7 @@ const select = new MDCSelect(document.querySelector('.mdc-select'));
 const botonBuscar = new MDCRipple(document.getElementById('aplicar_filtros'));
 const textSaldo = document.getElementById("saldo_marketplace");
 
+textSaldo.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
 
 botonBuscar.listen('click', () =>{
     if(!search.value==""){
@@ -302,13 +299,6 @@ login.listen('click', () => {
           document.querySelectorAll(".marketplace").forEach((element, index) => {
             element.classList.remove("sample-content--hidden");
        });
-
-       textSaldo.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
-       textSaldo.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
-       textSaldo.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
-       textSaldo.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
-       textSaldoPerfil.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
-
        document.getElementById('caja-marketplace').prepend(document.getElementById('banner-principal'));
 
 
@@ -493,6 +483,7 @@ const searchP = new MDCTextField(document.getElementById('search_perfil'));
 const selectP = new MDCSelect(document.getElementById('combobox_perfil'));
 const botonBuscarP = new MDCRipple(document.getElementById('aplicar_filtros_perfil'));
 
+textSaldo.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
 
 
 
@@ -647,6 +638,7 @@ logout.listen('click', () => {
 
 const textSaldoPerfil = document.getElementById("saldo_perfil");
 
+textSaldoPerfil.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
 
 
 
@@ -657,6 +649,7 @@ function ventanaWallet(){
 
     const textSaldo = document.getElementById("saldo_wallet");
 
+    textSaldo.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
 
     document.querySelectorAll(".content").forEach((element, index) => {
         element.classList.add("sample-content--hidden");
@@ -679,6 +672,7 @@ monto.listen('click', () => {
 
         //Recarga texto saldo de wallet
         const textSaldo = document.getElementById("saldo_wallet");
+        textSaldo.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
 
         alert("El monto: "+cant.value+" ah sido agregado correctamente a su wallet");
 
