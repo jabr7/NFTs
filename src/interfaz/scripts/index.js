@@ -8,8 +8,7 @@ import Usuario from '../../dominio/userClass.mjs';
 
 var sistema = init();
 
-console.log(sistema.getCartas())
-sistema.logIn("admin","admin")
+sistema.logIn("dummy","dummy")
 
 //Marketplace
 let cartas = sistema.getCartas();
@@ -200,6 +199,12 @@ function mostrarCarta(carta,nombre_lista,modo){
                             mostrarCarta(element,"NFT_Lib_interna",1);
                         });
 
+                    let listaInterna2= document.getElementById("NFT_lista_interna");
+                        listaInterna2.innerHTML=''; 
+                        cartas.forEach(element => {
+                            mostrarCarta(element,"NFT_lista_interna",0);
+                        });
+
                     alert('Se ha realizado la venta correctamente')
                     textSaldo.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
                     textSaldoPerfil.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
@@ -242,7 +247,7 @@ textSaldo.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
 
 botonBuscar.listen('click', () =>{
     if(!search.value==""){
-            let array = sistema.buscarPorNombre(search.value.toLowerCase());
+            let array = sistema.buscarPorNombre(search.value.toLowerCase(),sistema.getCartas());
             let listaInterna = document.getElementById("NFT_lista_interna");
             listaInterna.innerHTML='';
             array.forEach(element => {
@@ -260,17 +265,17 @@ select.listen('MDCSelect:change', () => {
     let listaInterna = document.getElementById("NFT_lista_interna");
     listaInterna.innerHTML='';
    if(select.selectedIndex==1){
-        sistema.orderByLike();
+        sistema.orderByLike(sistema.getCartas());
    }
    
     if(select.selectedIndex==2){
-        sistema.orderByPrecioMayor();
+        sistema.orderByPrecioMayor(sistema.getCartas());
         }
     if(select.selectedIndex==3){
-        sistema.orderByPrecioMenor();
+        sistema.orderByPrecioMenor(sistema.getCartas());
     }   
     if(select.selectedIndex==4){
-        sistema.orderByFecha();
+        sistema.orderByFecha(sistema.getCartas());
     }
 
    sistema.getCartas().forEach(element => {
@@ -300,6 +305,9 @@ login.listen('click', () => {
           document.querySelectorAll(".marketplace").forEach((element, index) => {
             element.classList.remove("sample-content--hidden");
        });
+
+       textSaldo.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
+       textSaldoPerfil.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
        document.getElementById('caja-marketplace').prepend(document.getElementById('banner-principal'));
 
 
@@ -491,14 +499,17 @@ textSaldo.innerHTML="Saldo: "+sistema.getCurrentUser().getSaldo()+"$";
 botonBuscarP.listen('click', () =>{
     if(!searchP.value==""){
         //FALTA CAMBIAR QUE BUSQUE EN EL ARRAY DE COMPRADOS POR EL USUARIO Y NO DEL GENERAL
-            let array = sistema.buscarPorNombre(searchP.value.toLowerCase());
+            let array = sistema.buscarPorNombre(searchP.value.toLowerCase(),sistema.getCurrentUser().getCartas( ));
             let listaInterna = document.getElementById("NFT_Lib_interna");
             listaInterna.innerHTML='';
             array.forEach(element => {
                 mostrarCarta(element,"NFT_Lib_interna",1);
             });
     }else{
-        cartas.forEach(element => {
+        let listaInterna = document.getElementById("NFT_Lib_interna");
+        listaInterna.innerHTML='';
+
+        sistema.getCurrentUser().getCartas().forEach(element => {
             mostrarCarta(element,"NFT_Lib_interna",1);
         });
     }
@@ -509,20 +520,20 @@ selectP.listen('MDCSelect:change', () => {
     let listaInterna = document.getElementById("NFT_Lib_interna");
     listaInterna.innerHTML='';
    if(selectP.selectedIndex==1){
-        sistema.orderByLike();
+        sistema.orderByLike(sistema.getCurrentUser().getCartas());
    }
    
     if(selectP.selectedIndex==2){
-        sistema.orderByPrecioMayor();
+        sistema.orderByPrecioMayor(sistema.getCurrentUser().getCartas());
         }
     if(selectP.selectedIndex==3){
-        sistema.orderByPrecioMenor();
+        sistema.orderByPrecioMenor(sistema.getCurrentUser().getCartas());
     }   
     if(selectP.selectedIndex==4){
-        sistema.orderByFecha();
+        sistema.orderByFecha(sistema.getCurrentUser().getCartas());
     }
 
-   sistema.getCartas().forEach(element => {
+   sistema.getCurrentUser().getCartas().forEach(element => {
         mostrarCarta(element,"NFT_Lib_interna",1);
     });
 
