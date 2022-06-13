@@ -112,7 +112,7 @@ export default class Sistema{
     orderByLike(array){
         array.sort(function(a,b){
 
-            return b.precio - a.precio;
+            return b.likes - a.likes;
         })
     }
     // se efectua la compra de una carta, la carta se remueve del sistema y se agrega al array de cartas del usuario
