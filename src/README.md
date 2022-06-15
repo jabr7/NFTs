@@ -37,11 +37,11 @@ En algunos casos de uso se modifico el walktrough por comodidad, y son las sigui
 ### Logout
 1. Cambia solo el paso 4, que es "Se despliega formulario de login"
 
-Configuración de plataforma tecnológica para desarrollo y producción:
+## Configuración de plataforma tecnológica para desarrollo y producción:
 
 Se utilizó un servidor de NodeJS con webpack 3 instalado, dependencias de material design y esLint a través de comandos npm install.
 
-Documentación del uso de librerías externas (package.json)
+## Documentación del uso de librerías externas (package.json)
 ### Dominio
 |  Nombre |Version   |Razon   |
 | ------------ | ------------ | ------------ |
@@ -78,10 +78,12 @@ Documentación del uso de librerías externas (package.json)
 ### Interfaz de usuario web / mobile (responsive)
 Todas las interfaces fueron hechas de forma responsive para dispositivos de 600px de ancho hacia arriba, ejemplos:
 Ejemplo 1 Login:
+
 ![plot](./imagenes/NFT%20Login.png)
 ![plot](./imagenes/NFT%20Login%20chico.png)
 
 Ejemplo 2 Marketplace:
+
 ![plot](./imagenes/NFT%20Marketplace.png)
 ![plot](./imagenes/NFT%20Marketplace%20chico.png)
 
@@ -91,10 +93,14 @@ Demostracion de como toda la pagina esta escrita en un solo html, css y js:
 ![plot](./imagenes/Pantallas.gif)
 
 ### Implementación: Material Design Web Components
+Como uno de los muchos ejemplos de la utilizacion de material:
+Lo marcado en rojo son objetos utilizados de material, como puede ser `Material ImageList` para toda la lista de NFT y luego `Material Cards` para la representacion de NFTs dentro de la lista, lo demas son `Material Buttons` como bottones, `Material Text Field` para los inputs de texto, `Material App Bar` para la top bar para mantener el logo, boton de marketplace y el icono de perfil siempre en el mismo lugar, este ultimo fue creado con `Material Icons`, finalmente utilizamos `Material Tabs` para las diferentes ventanas dentro de la ventana de perfil.
+
 ![plot](./imagenes/ejemplos%20material.png)
 Aplicar un sistema de diseño y principios de usabilidad
 
 ### Cumplimiento de estándar de accesibilidad WCAG
+cumpliendo con los estandares de accesibilidad minimos, todas las imagenes tienen su texto alternativo (incluyendo las imagenes de los NFTs con sus nombres) y el texto de toda la pagina se adapta a su tamaño.
 
 ### Seguir especificación de estilo
 Utilizamos el plugin eslint a partir de la especificacion de estilo de google para toda la interfaz y el dominio
