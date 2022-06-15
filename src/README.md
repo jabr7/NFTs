@@ -68,7 +68,7 @@ Documentación del uso de librerías externas (package.json)
 "postcss-loader"| "^5.2.0"| Utilizado por Webpack
 "sass"| "^1.32.11"| Utilizado por Webpack
 "sass-loader"| "^11.0.1"| Utilizado por Webpack
-"webpack"| "^5.36.0"| Utilizado por Webpack
+"webpack"| "^5.36.0"| Server Packaging
 "webpack-cli"| "^4.6.0"| Utilizado por Webpack
 "webpack-dev-server"| "^3.11.2"| Utilizado por Webpack
        
