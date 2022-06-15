@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 
 
 import Sistema from './systemClass.mjs';
@@ -8,6 +9,10 @@ import randomName from './names.mjs';
 import usuarios from './users.mjs';
 import gifFiles from './cartas.mjs';
 
+/**
+ *
+ * @return {Sisetma} un nuevo Sistema Configurado
+ */
 export default function init() {
   const system = new Sistema();
   // inicializar users
