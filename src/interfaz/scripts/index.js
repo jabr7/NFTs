@@ -284,7 +284,7 @@ const password = new MDCTextField(document.getElementById('password'));
 const login = new MDCRipple(document.getElementById('login_button'));
 
 login.listen('click', () => {
-  if (sistema.logIn(user.value, password.value)) {
+  if (user.value.toLowerCase()!='dummy'&& sistema.logIn(user.value, password.value)) {
     const listaInterna = document.getElementById('NFT_lista_interna');
     listaInterna.innerHTML='';
     cartas.forEach((element) => {
@@ -303,7 +303,7 @@ login.listen('click', () => {
     const cajaMarketplace = document.getElementById('caja-marketplace');
     cajaMarketplace.prepend(document.getElementById('banner-principal'));
   } else {
-    alert('Error');
+    alert('Error el usuario o contraseña estan incorrectos, o el usuario no existe');
   }
 
   user.value='';
