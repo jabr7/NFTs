@@ -128,7 +128,7 @@ function mostrarCarta(carta, nombreLista, modo) {
   const buttonLabel = document.createElement('span');
   buttonLabel.className='mdc-button__label';
   buttonLabel.innerHTML= carta.getNombre();
-  linkButton.appendChild(button_label);
+  linkButton.appendChild(buttonLabel);
 
   const arrowIcon = document.createElement('i');
   arrowIcon.className='material-icons mdc-button__icon link_carta';
@@ -167,7 +167,9 @@ function mostrarCarta(carta, nombreLista, modo) {
     linkButton2.appendChild(buttonLabel2);
 
     if (modo!=2) {
-      const buttonComprar2=document.createElement('button');
+      // El var es necesario por que es utilizado debajo
+      // eslint-disable-next-line no-var
+      var buttonComprar2=document.createElement('button');
       buttonComprar2.className='mdc-button mdc-button--raised comprar_NFT';
       buttonComprar2.data=carta.getId();
       buttonLabel2.appendChild(buttonComprar2);
