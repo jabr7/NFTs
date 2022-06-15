@@ -11,17 +11,27 @@ Documentación del uso de librerías externas (package.json)
 
 ## Interfaz de usuario
 
-Interfaz de usuario web / mobile (responsive)
+### Interfaz de usuario web / mobile (responsive)
+Todas las interfaces fueron hechas de forma responsive para dispositivos de 600px de ancho hacia arriba, ejemplos:
+Ejemplo 1 Login:
+![plot](./imagenes/NFT%20Login.png)
+![plot](./imagenes/NFT%20Login%20chico.png)
 
-Página única con navegación entre secciones
+Ejemplo 2 Marketplace:
+![plot](./imagenes/NFT%20Marketplace.png)
+![plot](./imagenes/NFT%20Marketplace%20chico.png)
 
-Implementación: Material Design Web Components
 
+### Página única con navegación entre secciones
+
+### Implementación: Material Design Web Components
+![plot](./imagenes/ejemplos%20material.png)
 Aplicar un sistema de diseño y principios de usabilidad
 
-Cumplimiento de estándar de accesibilidad WCAG
+### Cumplimiento de estándar de accesibilidad WCAG
 
-Seguir especificación de estilo
+### Seguir especificación de estilo
+Utilizamos el plugin eslint a partir de la especificacion de estilo de google para toda la interfaz y el dominio
 
 ## Codificación
 
