@@ -58,7 +58,7 @@ export default class Sistema{
     }
     //logout proceso
     logOut(){
-        this.currentUser = undefined;
+        this.currentUser = this.findUser("dummy");
     }
     //devuelve el array de cartas
     getCartas(){
