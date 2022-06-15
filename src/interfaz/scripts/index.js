@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable max-len */
 import {MDCTextField} from '@material/textfield';
 import {MDCRipple} from '@material/ripple';
