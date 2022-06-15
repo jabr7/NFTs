@@ -50,6 +50,7 @@ function mostrarCarta(carta, nombreLista, modo) {
   const img = document.createElement('img');
   img.className='mdc-image-list__image';
   img.src=carta.getPath();
+  img.alt='NFT '+carta.getNombre();
   link.appendChild(img);
 
   const divRipple = document.createElement('div');
