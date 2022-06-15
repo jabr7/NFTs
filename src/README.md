@@ -23,6 +23,8 @@ Ejemplo 2 Marketplace:
 
 
 ### Página única con navegación entre secciones
+Demostracion de como toda la pagina esta escrita en un solo html, css y js:
+![plot](./imagenes/Pantallas.gif)
 
 ### Implementación: Material Design Web Components
 ![plot](./imagenes/ejemplos%20material.png)
@@ -34,14 +36,11 @@ Aplicar un sistema de diseño y principios de usabilidad
 Utilizamos el plugin eslint a partir de la especificacion de estilo de google para toda la interfaz y el dominio
 
 ## Codificación
+Se utilizo el IDE Visual studio code para la codificacion de la pagina web.
 
-IDE Visual Studio Code: configuración común del equipo
+Se aplicaron los estandares de codificacion de google para javascript
 
-Estándares de codificación Google (HTML, CSS, JavaScript)
-
-Buenas prácticas de OOP: separación de lógica e interfaz
-
-Análisis estático de código: mostrar reducción de problemas
+Se utilizaron buenas practicas de OOP separando la logica (dominio) de la interfaz
 
 ## Test unitario
 
