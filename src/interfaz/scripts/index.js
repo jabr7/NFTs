@@ -445,22 +445,23 @@ const tab1 = document.getElementById('fav_btn');
 const tab2 = document.getElementById('wallet_btn');
 
 perfil.listen('click', () => {
-    let listaInterna = document.getElementById("NFT_Lib_interna");
-        listaInterna.innerHTML='';
-          sistema.getCurrentUser().getCartas().forEach(element => {
-            mostrarCarta(element,"NFT_Lib_interna",1);
+    if(sistema.getCurrentUser().getNombre()!="dummy"){
+        let listaInterna = document.getElementById("NFT_Lib_interna");
+            listaInterna.innerHTML='';
+            sistema.getCurrentUser().getCartas().forEach(element => {
+                mostrarCarta(element,"NFT_Lib_interna",1);
+            });
+            document.querySelectorAll(".content").forEach((element, index) => {
+                element.classList.add("sample-content--hidden");
+            });
+
+            document.querySelectorAll(".perfilPrinc").forEach((element, index) => {
+                element.classList.remove("sample-content--hidden");
         });
-        document.querySelectorAll(".content").forEach((element, index) => {
-            element.classList.add("sample-content--hidden");
-          });
-
-          document.querySelectorAll(".perfilPrinc").forEach((element, index) => {
-            element.classList.remove("sample-content--hidden");
-       });
-       document.getElementById('contenido_perfilPrinc').prepend(document.getElementById('tab_perfil'));
-       document.getElementById('caja-perfilPrinc').prepend(document.getElementById('banner-principal'));
-       tabBar.activateTab(0);
-
+        document.getElementById('contenido_perfilPrinc').prepend(document.getElementById('tab_perfil'));
+        document.getElementById('caja-perfilPrinc').prepend(document.getElementById('banner-principal'));
+        tabBar.activateTab(0);
+    }
 })
 
 //Boton marketplace abre marketplace
