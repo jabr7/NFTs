@@ -3,9 +3,43 @@ Fecha de entrega: 29-nov-2021
 
 ## Construcción
 
-Implementación de funciones principales (sin la necesidad de persistencia de datos)
+Implementación de funciones principales (sin la necesidad de persistencia de datos):
 
-Configuración de plataforma tecnológica para desarrollo y producción
+Algunas de las características o incluso algunas funcionalidades se vieron fuera del alcance o innecesarias para el proyecto, lo omitido es lo siguiente:
+
+### Funciones de perfil:
+1. Dar de baja un usuario.
+2. Editar banner (Directamente el usuario no tiene banner).
+
+### Requerimientos de mercado
+1. Mostrar NFT (Se omitio el mostrar informacion del NFT, ya que toda la información del NFT se puede ver desde la lista de NFTs, así como el comprar o vender).
+
+### Requerimientos no funcionales
+1. Seguridad y control de acceso (Omitida por ser innecesaria en este proyecto)
+
+En algunos casos de uso se modifico el walktrough por comodidad, y son las siguientes:
+
+### Agregar saldo
+1. Cambian los pasos 5, 6 y 8, quedando 5 "Se despliega el formulario", 6 "Usuario hace click en ingresar monto" y el 8 "reset del formulario".
+
+### Cambiar nombre y Cambiar contraseña
+1. Se unieron ambos en un solo caso.
+2. Se omite el paso 3 "Hacer click en modificar", al hacer click en Información ya despliega el formulario de actualización de datos.
+3. No se realiza el paso 6 de Contraseña "Confirmación de contraseña"
+
+### Comprar NFT
+1. Solo se realiza el paso 3 con los casos alternativos alegados.
+
+### Vender NFT
+1. Se omite el paso 3 y 4.
+2. Las ventas se realizan directamente en la libreria de NFTs comprados.
+
+### Logout
+1. Cambia solo el paso 4, que es "Se despliega formulario de login"
+
+Configuración de plataforma tecnológica para desarrollo y producción:
+
+Se utilizó un servidor de NodeJS con webpack 3 instalado, dependencias de material design y esLint a través de comandos npm install.
 
 Documentación del uso de librerías externas (package.json)
 ### Dominio
