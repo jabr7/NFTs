@@ -87,6 +87,8 @@ Ejemplo 2 Marketplace:
 ![plot](./imagenes/NFT%20Marketplace.png)
 ![plot](./imagenes/NFT%20Marketplace%20chico.png)
 
+GIF para mostrar la propiedad responsive del sistema:
+
 
 ### Página única con navegación entre secciones
 Demostracion de como toda la pagina esta escrita en un solo html, css y js:
