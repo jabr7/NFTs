@@ -1,3 +1,4 @@
+import { symlinkSync } from 'graceful-fs';
 import { not } from 'micromatch';
 import Carta from './cardClass.js';
 import init from './init.js';
@@ -91,7 +92,7 @@ describe("Prueba Get Current User", () => {
 
 describe("Agregar Carta", () => {
   test('Agregar una carta', () => {
-    let carta = new Carta('./test',"01/02/2022","cartaTest");
+    let carta = new Carta('./test',new Date(),"cartaTest");
     system.agregarCarta(carta);
     expect(system.getCarta(carta.id)).toBe(carta);
   }); 
@@ -100,13 +101,13 @@ describe("Agregar Carta", () => {
 
 describe("Get carta", () => {
   test('Carta no existe', () => {
-    let carta = new Carta('./test',"01/02/2022","cartaTest");
+    let carta = new Carta('./test',new Date(),"cartaTest");
     system.agregarCarta(carta);
     expect(system.getCarta("NoEsUnID")).toBe(undefined);
   }); 
 
   test('Carta existe', () => {
-    let carta = new Carta('./test',"01/02/2022","cartaTest");
+    let carta = new Carta('./test',new Date(),"cartaTest");
     system.agregarCarta(carta);
     expect(system.getCarta(carta.id)).toBe(carta);
   }); 
@@ -122,13 +123,13 @@ describe("Get Cartas", () => {
 
 describe("Get index carta", () => {
   test('Carta no existe', () => {
-    let carta = new Carta('./test',"01/02/2022","cartaTest");
+    let carta = new Carta('./test',new Date(),"cartaTest");
     system.agregarCarta(carta);
     expect(system.getIndexCarta("NoEsUnID")).toBe(-1);
   }); 
 
   test('Carta existe', () => {
-    let carta = new Carta('./test',"01/02/2022","cartaTest");
+    let carta = new Carta('./test',new Date(),"cartaTest");
     system.agregarCarta(carta);
     expect(system.getIndexCarta(carta.id)).not.toBe(-1);
   }); 
@@ -139,8 +140,8 @@ describe(" Ordenar por precio Menor", () => {
 
 
   test('Ordenar 1', () => {
-    let carta = new Carta('./test',"01/02/2022","cartaTest");
-    let carta2 = new Carta('./test',"01/02/2022","cartaTest");
+    let carta = new Carta('./test',new Date(),"cartaTest");
+    let carta2 = new Carta('./test',new Date(),"cartaTest");
     carta.precio = 100;
     carta2.precio = 1000;
     let cartas = [carta2,carta];
@@ -149,8 +150,8 @@ describe(" Ordenar por precio Menor", () => {
   }); 
  
   test('Ordenar 2', () => {
-    let carta = new Carta('./test',"01/02/2022","cartaTest");
-    let carta2 = new Carta('./test',"01/02/2022","cartaTest");
+    let carta = new Carta('./test',new Date(),"cartaTest");
+    let carta2 = new Carta('./test',new Date(),"cartaTest");
     carta.precio = 100;
     carta2.precio = 1000;
     let cartas = [carta,carta2];
@@ -163,8 +164,8 @@ describe(" Ordenar por precio Mayor", () => {
 
 
   test('Ordenar 1', () => {
-    let carta = new Carta('./test',"01/02/2022","cartaTest");
-    let carta2 = new Carta('./test',"01/02/2022","cartaTest");
+    let carta = new Carta('./test',new Date(),"cartaTest");
+    let carta2 = new Carta('./test',new Date(),"cartaTest");
     carta.precio = 100;
     carta2.precio = 1000;
     let cartas = [carta2,carta];
@@ -173,12 +174,115 @@ describe(" Ordenar por precio Mayor", () => {
   }); 
  
   test('Ordenar 2', () => {
-    let carta = new Carta('./test',"01/02/2022","cartaTest");
-    let carta2 = new Carta('./test',"01/02/2022","cartaTest");
+    let carta = new Carta('./test',new Date(),"cartaTest");
+    let carta2 = new Carta('./test',new Date(),"cartaTest");
     carta.precio = 100;
     carta2.precio = 1000;
     let cartas = [carta,carta2];
     system.orderByPrecioMayor(cartas);
     expect(cartas).toStrictEqual([carta2,carta]);
+  }); 
+});
+
+describe(" Ordenar por Like", () => {
+
+
+  test('Ordenar sin likes', () => {
+    system.orderByLike(system.getCartas());
+    expect(system.cartas).toStrictEqual(system.getCartas());
+  }); 
+ 
+  test('Ordenar con like', () => {
+    let carta = system.getRandomCard();
+    carta.likeCard();
+    system.orderByLike(system.getCartas());
+    expect(system.getCartas()[0]).toStrictEqual(carta);
+  }); 
+});
+
+
+describe(" Ordenar por Fecha", () => {
+
+ 
+  test('Ordenar por fecha 1', () => {
+    let date1 = new Date('1990-09-24');
+    let date2 = new Date('2022-09-24');
+    let carta = new Carta('./test1',date1,"cartaVieja");
+    let carta2 = new Carta('./test',date2,"cartaNueva");
+    let cartas = [carta,carta2];
+    system.orderByFecha(cartas);
+
+    expect(cartas).toStrictEqual([carta,carta2]);
+  }); 
+ 
+  test('Ordenar por fecha 2', () => {
+    let date1 = new Date('2022-09-24');
+    let date2 = new Date('1990-09-24');
+    let carta = new Carta('./test2',date1,"cartaNueva");
+    let carta2 = new Carta('./test2',date2,"cartaVieja");
+ 
+
+    let cartas = [carta,carta2];
+    system.orderByFecha(cartas);
+   
+    expect(cartas).toStrictEqual([carta2,carta]);
+  }); 
+});
+
+describe(" Buscar por nombre", () => {
+
+ 
+  test('Nombre existe', () => {
+    let carta = new Carta('./test',new Date(),"cartaTest");
+    let carta2 = new Carta('./test',new Date(),"lalal");
+    let cartas = [carta, carta2];
+    console.log(system.buscarPorNombre("cartaTest",cartas));
+    expect(system.buscarPorNombre("cartaTest".toLowerCase(),cartas)).toStrictEqual([carta]);
+  }); 
+
+  test('Nombre No existe', () => {
+    let carta = new Carta('./test',new Date(),"cartaTest");
+    let carta2 = new Carta('./test',new Date(),"lalal");
+    let cartas = [carta, carta2];
+    expect(system.buscarPorNombre("aowperiasd".toLowerCase(),cartas)).toStrictEqual([]);
+  });  
+
+});
+
+describe(" Comprar Carta", () => {
+
+ 
+  test('Compra con Saldo disponible', () => {
+    let carta = system.getRandomCard();
+    let usuario = system.getUsers()[0];
+
+    expect(system.compraCarta(carta.id, usuario)).toBe(true);
+  }); 
+
+  test('Compra Sin Saldo disponible', () => {
+    let carta = system.getRandomCard();
+    let usuario = system.getUsers()[0];
+    usuario.saldo = 0;
+    expect(system.compraCarta(carta.id, usuario)).toBe(false);
+  });  
+
+});
+
+describe("Venta carta", () => {
+
+ 
+  test('Venta 1', () => {
+    //compra carta
+    let carta = system.getRandomCard();
+    let usuario = system.getUsers()[0];
+    system.compraCarta(carta.id, usuario);
+
+    expect(usuario.getCartas()).toContain(carta);
+    expect(system.getCartas()).not.toContain(carta);
+    
+    //vender
+    system.venderCarta(carta.id, usuario);
+    expect(usuario.getCartas()).not.toContain(carta);
+    expect(system.getCartas()).toContain(carta);
   }); 
 });
