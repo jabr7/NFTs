@@ -116,7 +116,7 @@ Se utilizaron buenas practicas de OOP separando la logica (dominio) de la interf
 
 ## Test unitario
 
-Test unitarios en Jest
+Test unitarios con Jest en la clase sistema exitosos, por ende es implícito que el testing en las clases utilizadas en sistema es satisfactorio.
 
 100% cobertura en clases de dominio
 
