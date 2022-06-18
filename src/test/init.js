@@ -1,13 +1,13 @@
 /* eslint-disable max-len */
 
 
-import Sistema from './systemClass.mjs';
-import Usuario from './userClass.mjs';
-import Carta from './cardClass.mjs';
-import generateRandomDate from './fecha.mjs';
-import randomName from './names.mjs';
-import usuarios from './users.mjs';
-import gifFiles from './cartas.mjs';
+import Sistema from './systemClass.js';
+import Usuario from './userClass.js';
+import Carta from './cardClass.js';
+import generateRandomDate from './fecha.js';
+import randomName from './names.js';
+import usuarios from './users.js';
+import gifFiles from './cartas.js';
 
 /**
  *
@@ -39,4 +39,5 @@ export default function init() {
     system.agregarCarta(carta);
   }
   return system;
+
 }
