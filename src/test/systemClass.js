@@ -32,7 +32,7 @@ export default class Sistema {
    * @param {Usuario} usuario
    */
   agregarUsuario(usuario) {
-    if (!this.findUser(usuario)) {
+    if (!this.findUser(usuario.nombre)) {
       this.usuarios.push(usuario);
     }
   }
