@@ -1,5 +1,3 @@
-import { symlinkSync } from 'graceful-fs';
-import { not } from 'micromatch';
 import Carta from './cardClass.js';
 import init from './init.js';
 import Usuario from './userClass.js';
