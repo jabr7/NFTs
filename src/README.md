@@ -88,6 +88,7 @@ Ejemplo 2 Marketplace:
 ![plot](./imagenes/NFT%20Marketplace%20chico.png)
 
 GIF para mostrar la propiedad responsive del sistema:
+![plot](./imagenes/Responsive.gif)
 
 
 ### Página única con navegación entre secciones
