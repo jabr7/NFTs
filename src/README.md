@@ -248,3 +248,11 @@ Javascript
 HTML
 SCSS
 Screen to GIF
+
+Tomas Caetano:
+
+Se aplicaron tecnicas para subir issues, lables (algunos abiertos y otros cerrados). Tuve que tomar decisiones en conjunto con mi equipo para definir que funciones se podian omitir en la primera version y cuales eran necesarias para llegar a una funcionalidad aceptables
+
+Aplicar eslint a el codigo de sistema, agrgando los comentarios requeridos los cuales hubieran sido de mayor utilidad para quienes aplicaron front end.
+
+Utilizar jest tuvo como challenge pensar posibles resultados que puedan hacer fallar un test y luego solucionar dichos problemas para pasar los test unitarios.
