@@ -256,3 +256,11 @@ Se aplicaron tecnicas para subir issues, lables (algunos abiertos y otros cerrad
 Aplicar eslint a el codigo de sistema, agrgando los comentarios requeridos los cuales hubieran sido de mayor utilidad para quienes aplicaron front end.
 
 Utilizar jest tuvo como challenge pensar posibles resultados que puedan hacer fallar un test y luego solucionar dichos problemas para pasar los test unitarios.
+
+Rafael Cadenas: 
+
+Se profundizo mi uso de la documentación de varios elementos aplicados al sistema (esto sucedio al usar los Tabs en la pestaña perfil), donde tuve que usar en conjunto mi ingenio, la documentación de material y de HTML5. El como arreglar y omitir claúsulas de Eslint. 
+
+La configuración de jest en donde tuvimos que cambiar el tipo de archivo .mjs a .js, y la revisión de los test para que den los resultados esperados.
+
+Mejora en las soft skill de comunicación entre los miembros del equipo, como a la hora de realizar cambios en los requerimientos y casos de uso establecidos en la primera entrega.
