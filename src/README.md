@@ -257,3 +257,16 @@ Se profundizo mi uso de la documentación de varios elementos aplicados al siste
 La configuración de jest en donde tuvimos que cambiar el tipo de archivo .mjs a .js, y la revisión de los test para que den los resultados esperados.
 
 Mejora en las soft skill de comunicación entre los miembros del equipo, como a la hora de realizar cambios en los requerimientos y casos de uso establecidos en la primera entrega.
+
+Joaquin Bonifacino:
+Fue un proyecto en el cual fue totalmente necesario aplicar una cantidad de horas alta en investigacion de nuevas tecnologias, su documentacion y como podian ser aplicadas al sistema, sobre todo en la interfaz con la utilizacion de SCSS y Material Design, aprendi un poco mas a como implementar cosas por mi cuenta y sobre que es necesario para crear una pagina web.
+
+Diria que mi aprendizaje principal y mas util fueron 4 puntos:
+1 - Aprendi como usar correctamente Github, el cual nos salvo muchisimas veces y es una herramienta increiblemente potente
+
+2 - Aprendi no solo a buscar como implementar ciertos aspectos basicos de una pagina sino que tambien como funciona un servicio node, webpack etc...
+
+3 - Tambien fue la primera vez que utilice un editor IDE tan util como Visual Basic, al punto de que se volvio mi editor favorito, en parte por el sistema de extensiones que admite plugins como ESlint y parecidos
+
+4 - Finalmente, un punto muy importante fue a aprender a hacer testing formal como parte del proyecto, siempre en mis proyectos grandes el mayor problema era que la documentacion era un desastre y el testing era casi imposible de hacer. Formalizandolo con programas, tecnicas y procesos ayudo muchisimo a mi entendimiento de como se hace mas en la industria y lo facilito un monton al momento de su aplicación.
+
