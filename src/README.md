@@ -115,14 +115,24 @@ Se aplicaron los estandares de codificacion de google para javascript
 
 Se utilizaron buenas practicas de OOP separando la logica (dominio) de la interfaz
 
+
+
 ## Test unitario
 
-Test unitarios en Jest
+Test unitarios con Jest en la clase sistema exitosos, por ende es implícito que el testing en las clases utilizadas en sistema es satisfactorio.
 
 100% cobertura en clases de dominio
 
-| En la semana previa a la entrega se debe congelar el desarrollo (22-nov-2021).
-A partir de este punto solo se realizan actividades de test de sistema, reporte de issues y generación del informe académico.
+![plot](./imagenes/jest.gif)
+
+## Code freeze
+
+Se realizo un code freeze previo a la presentacion en clase.
+
+El mismo puede ser chequeado en un tag del repositorio "freeze", el mismo puede ser utilizado como punto de prueba para la correccion del mismo (```git checkout freeze```).
+
+![plot](./imagenes/freeze.png)
+
 
 ## Test de sistema
 
