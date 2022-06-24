@@ -1,4 +1,4 @@
-## Instalación
+## Ejecutar
 
 Descargar la ultima versión estable de Node.JS de https://nodejs.org/.
 Instalar en la computadora de desarollo.
