@@ -121,7 +121,6 @@ Test unitarios en Jest
 
 100% cobertura en clases de dominio
 
-
 | En la semana previa a la entrega se debe congelar el desarrollo (22-nov-2021).
 A partir de este punto solo se realizan actividades de test de sistema, reporte de issues y generación del informe académico.
 
@@ -218,6 +217,24 @@ Un claro ejemplo es el uso de Jquery, pero el mismo esta fuera del scope del pro
 
 ## Reflexión
 
-Detalle del trabajo individual
+### Detalle del trabajo individual:
+Bonifacino: Interfaz de login, registro, restaurar contraseña, banner, marketplace, perfil-Informacion, perfil-Libreria, perfil-Favoritos, Responsive general, Estandares de accesibilidad
 
-Técnicas aplicadas y aprendizajes
+Cadenas: Perfil, Perfil-Libreria, Perfil-Wallet, JEST, Banner, Documentacion de la Construccion
+
+Caetano: JEST, Clase Usuario, Clase Sistema, Clase Carta, Generador de Nombre, Generador de fechas, Inicializador del sistema, Base de Datos de usuario, Configuracion de plataforma (Node, Webpack) y librerias externas/dependencias (UUID), documentacion de la plataforma y librerias externas
+
+Todos: Test exploratorio, ESlint y tecnicas de estilo de Google, Base de datos de NFTs
+
+### Técnicas aplicadas y aprendizajes
+
+JEST 
+ESlint 
+Issues Github
+Tags de Github
+Github
+Node
+Javascript
+HTML
+SCSS
+Screen to GIF
