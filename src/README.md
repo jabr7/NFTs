@@ -226,6 +226,7 @@ Un claro ejemplo es el uso de Jquery, pero el mismo esta fuera del scope del pro
 
 
 ## Reflexión
+Este trabajo es una buena forma de tener una experiencia laboral en un ambiente controlado, asi el choque entre lo académico y la realidad laboral no es tan fuerte y vendríamos mejor preparados para nuestra vida profesional.
 
 ### Detalle del trabajo individual:
 Bonifacino: Interfaz de login, registro, restaurar contraseña, banner, marketplace, perfil-Informacion, perfil-Libreria, perfil-Favoritos, Responsive general, Estandares de accesibilidad
