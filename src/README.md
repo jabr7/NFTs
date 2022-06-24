@@ -88,6 +88,7 @@ Ejemplo 2 Marketplace:
 ![plot](./imagenes/NFT%20Marketplace%20chico.png)
 
 GIF para mostrar la propiedad responsive del sistema:
+![plot](./imagenes/Responsive.gif)
 
 
 ### Página única con navegación entre secciones
@@ -226,6 +227,24 @@ Un claro ejemplo es el uso de Jquery, pero el mismo esta fuera del scope del pro
 
 ## Reflexión
 
-Detalle del trabajo individual
+### Detalle del trabajo individual:
+Bonifacino: Interfaz de login, registro, restaurar contraseña, banner, marketplace, perfil-Informacion, perfil-Libreria, perfil-Favoritos, Responsive general, Estandares de accesibilidad
 
-Técnicas aplicadas y aprendizajes
+Cadenas: Perfil, Perfil-Libreria, Perfil-Wallet, JEST, Banner, Documentacion de la Construccion
+
+Caetano: JEST, Clase Usuario, Clase Sistema, Clase Carta, Generador de Nombre, Generador de fechas, Inicializador del sistema, Base de Datos de usuario, Configuracion de plataforma (Node, Webpack) y librerias externas/dependencias (UUID), documentacion de la plataforma y librerias externas
+
+Todos: Test exploratorio, ESlint y tecnicas de estilo de Google, Base de datos de NFTs
+
+### Técnicas aplicadas y aprendizajes
+
+JEST 
+ESlint 
+Issues Github
+Tags de Github
+Github
+Node
+Javascript
+HTML
+SCSS
+Screen to GIF
