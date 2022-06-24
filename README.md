@@ -1,4 +1,4 @@
-# Repositorio plantilla para proyectos FIS
+# Proyecto Sitio Web de NFTs
 
 | Identificación del proyecto
 |-----------
