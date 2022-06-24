@@ -1,5 +1,9 @@
 # Informe académico entrega 2
-Fecha de entrega: 29-nov-2021
+Fecha de entrega: 27-Junio-2022
+Integrantes: Joaquin Bonifacino, Tomas Caetano, Rafael Cadenas
+
+[Link al repositorio]( https://github.com/ORTFIS2022/obligatorio-Bonifacino-Cadenas-Caetano)
+## Repositorio Git
 
 ## Construcción
 
