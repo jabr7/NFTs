@@ -239,16 +239,8 @@ Todos: Test exploratorio, ESlint y tecnicas de estilo de Google, Base de datos d
 
 ### Técnicas aplicadas y aprendizajes
 
-JEST 
-ESlint 
-Issues Github
-Tags de Github
-Github
-Node
-Javascript
-HTML
-SCSS
-Screen to GIF
+Utilizamos `JEST` para la planificacion, ejecucion y documentacion de las pruebas unitarias del dominio del sistema. `ESlint` para la aplicacion de el estandar de estilos de google, generando un codigo mas limpio y legible. Utilizamos los `Issues de Github` como una forma de mantener una documentacion y linea de tiempo de los errores del sistema y sobre que funcion eran, complementando con la creacion de nuevos `Tags de Github`. Otra de las tecnologias mas utilizadas fue `Github` en general para el versionado de codigo y el facil merge entre codigo que habilita el mismo. Como plataforma base para ejecutar `javascript`, `HTML` y `SCSS` utilizamos `Node.js` con un un plugin de `Webpack 3`. Para la presentacion y defensa se utilizo `google slides` de `google drive`, igualmente para la escritura del testing exploratorio primero se hizo en `google sheets` de `google drive` y se utilizo `Table to Markdown` para masarlo a formato markdown. Finalmente para crear los gifs de las presentaciones y la documentacion utilizamos `Screen to GIF`
+
 
 Tomas Caetano:
 
